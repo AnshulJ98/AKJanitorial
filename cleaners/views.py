@@ -6,8 +6,12 @@ from django.contrib.auth import authenticate, login
 from django.views.generic import View
 
 # Create your views here.
+'''
+def index(request):
+    return render(request,'index.html')
+'''
 class IndexView(generic.ListView):
-    template_name = 'cleaners/index.html'
+    template_name = 'index.html'
     
     def get_queryset(self):
         print(self)
