@@ -1,0 +1,15 @@
+export { default as Navigation } from "./Navigation";
+export { default as Footer } from "./Footer";
+export { default as Home } from "./Home";
+export { default as AboutUs } from "./AboutUs";
+export { default as Services } from "./services/Services";
+export { default as ServicesHome } from "./services/ServicesHome";
+export { default as HouseCleaning } from "./services/HouseCleaning";
+export { default as OfficeCleaning } from "./services/OfficeCleaning";
+export { default as Sanitization } from "./services/Sanitization";
+export { default as PressureWashing } from "./services/PressureWashing";
+export { default as RenovationCleaning } from "./services/RenovationCleaning";
+export { default as MoveInMoveOutCleaning } from "./services/MoveInMoveOutCleaning";
+export { default as Pricing } from "./Pricing";
+export { default as Testimonials } from "./Testimonials";
+export { default as ContactUs } from "./ContactUs";
