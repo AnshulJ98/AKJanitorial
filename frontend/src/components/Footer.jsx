@@ -1,157 +1,106 @@
 import React from "react";
-import {
-  MDBFooter,
-  MDBContainer,
-  MDBIcon,
-  MDBInput,
-  MDBCol,
-  MDBRow,
-  MDBBtn,
-} from "mdb-react-ui-kit";
 
 export default function Footer() {
   return (
-    <MDBFooter className="footer justify-content-between" color="white">
-      <MDBContainer className="p-4">
-        <section className="align-left">
-          <MDBRow>
-            <MDBCol
-              lg="4"
-              md="6"
-              className="mb-4 mb-md-0"
-              style={{ textAlign: "left" }}
-            >
-              <h5 className="text-uppercase">AK Janitorial</h5>
-              <ul className="list-unstyled mb-0">
-                <li>
-                  <a href="#!" className="text-white">
-                    No. 1 cleaning service providers in all of Canada
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Call Us Now
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    604-537-6712
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    778-713-6712
-                  </a>
-                </li>
-              </ul>
-            </MDBCol>
+    <footer class="text-center text-lg-start bg-light text-muted">
+      <section class="d-flex justify-content-center justify-content-lg-between p-2 "></section>
 
-            <MDBCol
-              lg="4"
-              md="6"
-              className="mb-4 mb-md-0"
-              style={{ textAlign: "left" }}
-            >
-              <h5 className="text-uppercase">Features</h5>
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3"></i>AK Janitorial
+              </h6>
+              <p>No. 1 cleaning service providers in all of Canada</p>
+              <div>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
 
-              <ul className="list-unstyled mb-0">
-                <li>
-                  <a href="#!" className="text-white">
-                    Our Services
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Our Blog
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Testimonials
-                  </a>
-                </li>
-              </ul>
-            </MDBCol>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Features</h6>
+              <p>
+                <a href="#!" class="text-reset">
+                  Our Services
+                </a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">
+                  Our Blog
+                </a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">
+                  Testimonials
+                </a>
+              </p>
+            </div>
 
-            <MDBCol
-              lg="4"
-              md="6"
-              className="mb-4 mb-md-0"
-              style={{ textAlign: "left" }}
-            >
-              <h5 className="text-uppercase">Company</h5>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Company</h6>
+              <p>
+                <a href="#!" class="text-reset">
+                  About Us
+                </a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">
+                  Settings
+                </a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">
+                  Privacy Policy
+                </a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">
+                  Contact Us
+                </a>
+              </p>
+            </div>
 
-              <ul className="list-unstyled mb-0">
-                <li>
-                  <a href="#!" className="text-white">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#!" className="text-white">
-                    Contact Us
-                  </a>
-                </li>
-              </ul>
-            </MDBCol>
-          </MDBRow>
-        </section>
-      </MDBContainer>
-      <section className="mb-4 text-center">
-        <a
-          className="btn btn-outline-light btn-floating m-1"
-          href="#!"
-          role="button"
-        >
-          <MDBIcon fab icon="facebook-f" />
-        </a>
-
-        <a
-          className="btn btn-outline-light btn-floating m-1"
-          href="#!"
-          role="button"
-        >
-          <MDBIcon fab icon="twitter" />
-        </a>
-
-        <a
-          className="btn btn-outline-light btn-floating m-1"
-          href="#!"
-          role="button"
-        >
-          <MDBIcon fab icon="google" />
-        </a>
-
-        <a
-          className="btn btn-outline-light btn-floating m-1"
-          href="#!"
-          role="button"
-        >
-          <MDBIcon fab icon="instagram" />
-        </a>
-
-        <a
-          className="btn btn-outline-light btn-floating m-1"
-          href="#!"
-          role="button"
-        >
-          <MDBIcon fab icon="linkedin-in" />
-        </a>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p>
+                <i class="fas fa-home me-3"></i> Surrey, BC, Canada
+              </p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                akartar@hotmail.com
+              </p>
+              <p>
+                <i class="fas fa-phone me-3"></i> + 1 604-537-6712
+              </p>
+              <p>
+                <i class="fas fa-phone me-3"></i> + 1 778-713-6712
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
-      <div
-        className="text-center p-3"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-      >
-        © 2021
-        <a className="text-white" href="#">
+
+      <div class="text-center p-4">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">
           AK Janitorials. All Rights Reserved.
         </a>
       </div>
-    </MDBFooter>
+    </footer>
   );
 }

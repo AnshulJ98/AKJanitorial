@@ -138,6 +138,12 @@ function Home() {
           then our team are equipped to meet your needs.
         </p>
       </div>
+      <div className="m-5 p-5 text-center">
+        {" "}
+        <video width="750" height="500" controls>
+          <source src="/AK-Janitorial-clip.mp4" type="video/mp4" />
+        </video>
+      </div>
     </div>
   );
 }
