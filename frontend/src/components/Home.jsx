@@ -1,4 +1,6 @@
 import React from "react";
+import Form from "./Form";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   return (
@@ -10,9 +12,9 @@ function Home() {
             Our best in class cleaning service will make it a priority to leave
             your house unbeliavably fresh and super clean.
           </p>
-          <a className="btn btn-outline-secondary" href="#">
-            Book Now
-          </a>
+          <NavLink to="/form">
+            <span className="btn btn-outline-secondary"> Book Now</span>
+          </NavLink>
         </div>
         <div className="product-device shadow-sm d-none d-md-block"></div>
         <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
@@ -26,15 +28,15 @@ function Home() {
 
       <div
         id="myCarousel"
-        class="carousel slide pointer-event m-4 p-4"
+        className="carousel slide pointer-event m-4 p-4"
         data-bs-ride="carousel"
       >
-        <div class="carousel-indicators">
+        <div className="carousel-indicators">
           <button
             type="button"
             data-bs-target="#myCarousel"
             data-bs-slide-to="0"
-            class=""
+            className=""
             aria-label="Slide 1"
           ></button>
           <button
@@ -42,19 +44,19 @@ function Home() {
             data-bs-target="#myCarousel"
             data-bs-slide-to="1"
             aria-label="Slide 2"
-            class=""
+            className=""
           ></button>
           <button
             type="button"
             data-bs-target="#myCarousel"
             data-bs-slide-to="2"
             aria-label="Slide 3"
-            class="active"
+            className="active"
             aria-current="true"
           ></button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active justify-content-center mx-5">
+        <div className="carousel-inner">
+          <div className="carousel-item active justify-content-center mx-5">
             <img
               className="m-2"
               width="22%"
@@ -76,7 +78,7 @@ function Home() {
               src="Sanitization-min-2-scaled.jpg"
             ></img>
           </div>
-          <div class="carousel-item mx-5">
+          <div className="carousel-item mx-5">
             <img
               className="m-2"
               width="22%"
@@ -90,7 +92,7 @@ function Home() {
               src="Move-in-Move-out-Cleaning-min-1024x683.jpg"
             ></img>
           </div>
-          <div class="carousel-item  mx-5">
+          <div className="carousel-item  mx-5">
             <img
               className="m-2"
               width="22%"
@@ -110,22 +112,28 @@ function Home() {
           </div>
         </div>
         <button
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           type="button"
           data-bs-target="#myCarousel"
           data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
         </button>
         <button
-          class="carousel-control-next"
+          className="carousel-control-next"
           type="button"
           data-bs-target="#myCarousel"
           data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
         </button>
       </div>
       <div className="text-left m-5 p-5">

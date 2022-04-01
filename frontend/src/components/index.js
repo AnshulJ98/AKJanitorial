@@ -13,3 +13,4 @@ export { default as MoveInMoveOutCleaning } from "./services/MoveInMoveOutCleani
 export { default as Pricing } from "./Pricing";
 export { default as Testimonials } from "./Testimonials";
 export { default as ContactUs } from "./ContactUs";
+export { default as Form } from "./Form";

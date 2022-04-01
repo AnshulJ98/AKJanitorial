@@ -18,6 +18,7 @@ import {
   Pricing,
   Testimonials,
   ContactUs,
+  Form,
 } from "./components";
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/form" element={<Form />} />
         </Routes>
         <Footer />
       </Router> );
