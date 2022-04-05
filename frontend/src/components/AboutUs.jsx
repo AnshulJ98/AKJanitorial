@@ -38,10 +38,10 @@ function AboutUs() {
       </div>
       <div className="text-center">
         <p className="lead ">
-          Whether you want to schedule a one off clean in your home,<br></br>a
+          Whether you want to schedule a one off clean for your home,<br></br>a
           weekly visit or even need an emergency call out, or have a commercial
           cleaning need<br></br>
-          then our team are equipped to meet your needs.
+          our team is equipped to meet your needs.
         </p>
       </div>
       <div className="container px-5 py-5 justify-content-center w-75">
@@ -54,10 +54,10 @@ function AboutUs() {
                 src="Expert-Employee-1-300x300-1.png"
               ></img>
             </div>
-            <h2 className="edgeTile display-6  fs-1">Expert Employee</h2>
+            <h2 className="edgeTile display-6  fs-1">Expert Employees</h2>
             <p className="edgeTile lead">
               We have helped clean hundreds of homes and apartments in Lower
-              Mainland, Abbotsford, Mission & Vancouver
+              Mainland, Abbotsford, Mission & Vancouver, Surrey
             </p>
           </div>
           <div class="pb-4">
@@ -74,8 +74,8 @@ function AboutUs() {
               </h2>
               <p className="middleTile text-white lead">
                 We provide professional and affordable home cleaning services in
-                Toronto. We charge flat rates for awesome cleaning. What you see
-                is what you get.<br></br>
+                Lower Mainland, BC. We charge reasonable prices for awesome
+                cleaning. What you see is what you get.<br></br>
                 <br></br>
                 <br></br>
               </p>
@@ -104,15 +104,13 @@ function AboutUs() {
               <span class="text-muted">
                 Why Choose Us. <br></br>
               </span>
-              Our Expertise Making Your Business Shine
+              Our Expertise Making Places Shine
             </h2>
             <p class="lead">
               At AK Janitorials we believe that we have a duty to adhere to good
-              environmental practice and operate in a sustainable manner. As
-              lovers of plants and environment it is only natural for us to want
-              to reduce man’s impact wherever possible. We at AK Janitorial are
-              committed to helping people make sustainable choices in their
-              house.
+              environmental practice and operate in a sustainable manner. We at
+              AK Janitorial are committed to helping people make sustainable
+              choices in their house.
             </p>
           </div>
 
@@ -125,10 +123,9 @@ function AboutUs() {
                   src="Expert-Employee-1-300x300-1.png"
                 ></img>
               </div>
-              <h2 className="edgeTile display-6  fs-1">Expert Employee</h2>
+              <h2 className="edgeTile display-6  fs-1">Expert Cleaning Team</h2>
               <p className="edgeTile lead">
-                House cleaning professionals who have helped clean hundreds of
-                places.
+                Cleaning professionals who have helped clean hundreds of places.
               </p>
             </div>
             <div class="feature row edgeTile text-left px-4">
@@ -139,7 +136,7 @@ function AboutUs() {
                   src="Affordable-Package-300x300-1.png"
                 ></img>
               </div>
-              <h2 className="edgeTile display-6  fs-1">Comfortabe Price</h2>
+              <h2 className="edgeTile display-6  fs-1">Modest Price</h2>
               <p className="edgeTile lead">
                 Price is what you pay. Value is what you get. We believe that
                 value is what you're looking for.
@@ -153,10 +150,10 @@ function AboutUs() {
                   src="100-Satisfaction-300x300-1.png"
                 ></img>
               </div>
-              <h2 className="edgeTile display-6  fs-1">Affordable Service</h2>
+              <h2 className="edgeTile display-6  fs-1">Reliable Service</h2>
               <p className="edgeTile lead">
-                Total number of rating and reviews are based on data collected
-                during the time.
+                You can rely on the expericnce of our highly skilled team to
+                make your place shine like new.
               </p>
             </div>
           </div>

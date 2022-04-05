@@ -48,10 +48,10 @@ function MoveInMoveOutCleaning() {
             </h2>
             <p class="lead">
               <span className="fw-normal">$300.00 (Approx.)</span>
-              <br></br>Relieve some stress of move in/move out clean up with
-              Akartar Janitorial’s cleaning service. We make it smooth and easy
-              for everyone to bid adieu to an old house full of memories to
-              feeling welcomed in the new home cleaned by the professionals.
+              <br></br>Relieve some stress of move in/move out clean up with AK
+              Janitorial’s cleaning service. We make it smooth and easy for
+              everyone to bid adieu to an old house full of memories to feeling
+              welcomed in the new home cleaned by the professionals.
             </p>
           </div>
         </div>

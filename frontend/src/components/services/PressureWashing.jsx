@@ -45,8 +45,8 @@ function PressureWashing() {
             <p class="lead">
               <span className="fw-normal">$100.00 (Approx.)</span>
               <br></br>Some moments and some stains are stubborn in our lives.
-              Akartar Janitorial’s pressure washing services makes sure that you
-              have one less stubborn thing to worry about in day to day life.
+              AK Janitorial’s pressure washing services makes sure that you have
+              one less stubborn thing to worry about in day to day life.
             </p>
           </div>
         </div>

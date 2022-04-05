@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 function Testimonials() {
+  const [feedBackData, setFeedBackData] = useState("");
+  useEffect(() => {
+    getFeedbackData();
+    console.log(feedBackData);
+  }, []);
+  const getFeedbackData = () => {
+    axios
+      .post("http://localhost:8000/get-feedback-data/")
+      .then((res) => {
+        console.log(res.data);
+        const fd = res.data;
+        setFeedBackData(fd);
+      })
+      .catch((errors) => console.log(errors));
+  };
+
   return (
     <div className="testimonials">
       <div className="position-relative overflow-hidden p-5 p-md-5 m-0  bg-light testimonials-banner">
@@ -32,7 +49,7 @@ function Testimonials() {
       </div>
       <div className="text-center mt-5 pt-5">
         <h1 className="display-6  fs-1">
-          What out clients say <br></br>
+          What our clients say <br></br>
         </h1>
         <h3 className="display-6 fs-3">about us?</h3>
       </div>

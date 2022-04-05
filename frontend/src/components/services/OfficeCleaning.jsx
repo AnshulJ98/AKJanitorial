@@ -46,7 +46,7 @@ function OfficeCleaning() {
               <span className="fw-normal">$300.00 (Approx.)</span>
               <br></br>It has been scientifically proven that when we work in a
               tidy place, productivity shoots up. AK Janitorial is at your
-              service to help you gain that extra inch every single day.
+              service to help you go the extra mile every single day.
             </p>
           </div>
         </div>

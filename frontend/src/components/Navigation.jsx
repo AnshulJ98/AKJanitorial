@@ -105,6 +105,11 @@ function Navigation() {
                     Move In/ Move Out Cleaning
                   </NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/services/maidcleaning">
+                    Maid Cleaning
+                  </NavLink>
+                </li>
               </ul>
             </li>
             <li className="nav-item">

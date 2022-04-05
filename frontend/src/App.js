@@ -15,9 +15,11 @@ import {
   PressureWashing,
   RenovationCleaning,
   MoveInMoveOutCleaning,
+  MaidCleaning,
   Pricing,
   Testimonials,
   ContactUs,
+  TestimonialsForm,
   Form,
 } from "./components";
 
@@ -35,10 +37,12 @@ const App = () => {
             <Route path="pressurewashing" element={<PressureWashing />} />
             <Route path="renovationcleaning" element={<RenovationCleaning />} />
             <Route path="moveinmoveoutcleaning" element={<MoveInMoveOutCleaning />} />
+            <Route path="maidcleaning" element={<MaidCleaning />} />
           </Route>
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/feedback/testimonial-submit" element={<TestimonialsForm />} />
           <Route path="/form" element={<Form />} />
         </Routes>
         <Footer />

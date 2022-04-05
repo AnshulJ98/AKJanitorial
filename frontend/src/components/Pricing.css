@@ -133,3 +133,10 @@ body {
   background-position: 85%;
   background-size: cover;
 }
+
+.maid-img {
+  background-image: url("/public/Cleaning-Lady..png");
+  background-repeat: repeat-y;
+  background-position: 50%;
+  background-size: contain;
+}

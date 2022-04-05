@@ -39,10 +39,10 @@ function ServicesHome() {
       <div className="text-center">
         <p className="lead ">
           <br></br>
-          Akartar Janitorial is a local business based in lower mainland.{" "}
-          <br></br> We have expanded our cleaning services to an extent{" "}
-          <br></br> where we became a massive cleaning firm which provides
-          services<br></br> all over Canada.
+          AK Janitorial is a local business based in lower mainland. <br></br>{" "}
+          We have expanded our cleaning services to an extent <br></br> where we
+          became a massive cleaning firm which provides services<br></br> all
+          over Canada.
         </p>
       </div>
 
@@ -61,8 +61,8 @@ function ServicesHome() {
                   <p className="lead ">
                     <br></br>
                     For the times you need a touch of a professional to get a
-                    clean and fresh feel in your home, Akartar Janitorial will
-                    be there for you to take a load off from your hands
+                    clean and fresh feel in your home, AK Janitorial will be
+                    there for you to take a load off from your hands
                   </p>
 
                   <NavLink
@@ -83,9 +83,8 @@ function ServicesHome() {
                   <p className="lead ">
                     <br></br>
                     It has been scientifically proven that when we work in a
-                    tidy place, productivity shoots up. Akartar Janitorial is at
-                    your service to help you gain that extra inch every single
-                    day.
+                    tidy place, productivity shoots up. AK Janitorial is at your
+                    service to help you go the extra mile every single day.
                   </p>
 
                   <NavLink
@@ -106,8 +105,8 @@ function ServicesHome() {
                   <p className="lead ">
                     <br></br>
                     Gave Your house a makeover? But left a Big Mess? No Worries!
-                    Akartar Janitorial will make sure nothing stays behind which
-                    is not meant to stay there. From dust to debris we clean it
+                    AK Janitorial will make sure nothing stays behind which is
+                    not meant to stay there. From dust to debris we clean it
                     all.
                   </p>
 
@@ -131,8 +130,8 @@ function ServicesHome() {
                   <p className="lead ">
                     <br></br>
                     These are uncertain times and during these times we want
-                    surety that the places we get into are free of microbes.
-                    With Akartar Janitorial’s service you get that peace of mind
+                    assurance that the places we get into are free of germs.
+                    With AK Janitorial’s service you get that peace of mind
                     where we make sure that the spaces are sanitized and safe
                     for use.
                   </p>
@@ -154,10 +153,10 @@ function ServicesHome() {
                   <span class="excerpt d-block">Pressure Washing</span>
                   <p className="lead ">
                     <br></br>
-                    Some moments and some stains are stubborn in our lives.
-                    Akartar Janitorial’s pressure washing services makes sure
-                    that you have one less stubborn thing to worry about in day
-                    to day life.
+                    Some moments and some stains are stubborn in our lives. AK
+                    Janitorial’s pressure washing services makes sure that you
+                    have one less stubborn thing to worry about in day to day
+                    life.
                   </p>
 
                   <NavLink
@@ -179,16 +178,41 @@ function ServicesHome() {
                   </span>
                   <p className="lead ">
                     <br></br>
-                    Relieve some stress of move in/move out clean up with
-                    Akartar Janitorial’s cleaning service. We make it smooth and
-                    easy for everyone to bid adieu to an old house full of
-                    memories to feeling welcomed in the new home cleaned by the
-                    professionals.
+                    Relieve some stress of move in/move out clean up with AK
+                    Janitorial’s cleaning service. We make it smooth and easy
+                    for everyone to leave your old house behind, to feeling
+                    welcomed in the new home cleaned by the professionals.
                   </p>
 
                   <NavLink
                     class="btn btn-primary d-block px-1 py-3"
                     to="/services/moveinmoveoutcleaning"
+                  >
+                    {" "}
+                    Read More
+                  </NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 ftco-animate fadeInUp ftco-animated">
+              <div class="block-7">
+                <div class="img maid-img"></div>
+                <div class="text-center p-4">
+                  <span class="excerpt d-block">Maid Cleaning</span>
+                  <p className="lead ">
+                    <br></br>
+                    These are uncertain times and during these times we want
+                    surety that the places we get into are free of microbes.
+                    With AK Janitorial’s service you get that peace of mind
+                    where we make sure that the spaces are sanitized and safe
+                    for use.
+                  </p>
+
+                  <NavLink
+                    class="btn btn-primary d-block px-1 py-3"
+                    to="/services/maidcleaning"
                   >
                     {" "}
                     Read More

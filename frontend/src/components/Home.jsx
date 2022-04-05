@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "./Form";
+import Form from "./bookingform/Form";
 import { NavLink } from "react-router-dom";
 
 function Home() {
@@ -84,7 +84,7 @@ function Home() {
               width="22%"
               src="House-Cleaning-min-300x187.jpg"
             ></img>
-            <img className="m-2" width="22%" src="IMG-2561.jpg"></img>
+            <img className="m-2" width="22%" src="IMG-2561-1.jpg"></img>
             <img className="m-2" width="22%" src="IMG-3979.jpg"></img>
             <img
               className="m-2"
@@ -96,7 +96,7 @@ function Home() {
             <img
               className="m-2"
               width="22%"
-              src="Expertise-min-300x300.jpg"
+              src="Expertise-min-300x300-1.jpg"
             ></img>
             <img className="m-2" width="22%" src="patio-deck.png"></img>
             <img
@@ -144,6 +144,72 @@ function Home() {
           weekly visit or even need an emergency call out, or have a commercial
           cleaning need<br></br>
           then our team are equipped to meet your needs.
+        </p>
+      </div>
+      <div className="container justify-content-center ">
+        <div class="row g-3 py-5 row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-4 justify-content-center">
+          <div class="feature col text-left px-4 edgeTile">
+            <div class="feature-icon edgeTile mt-5 mb-3">
+              <img width="25%" className="edgeTile" src="Office.png"></img>
+            </div>
+            <h2 className="edgeTile display-6  fs-1">Office Cleaning</h2>
+            <p className="edgeTile lead">
+              We make sure that your space shines and impresses your clients and
+              employees alike.
+            </p>
+          </div>
+          <div class="feature col edgeTile text-left px-4">
+            <div class="feature-icon edgeTile mt-5 mb-3">
+              <img width="25%" className="edgeTile" src="Home.png"></img>
+            </div>
+            <h2 className="edgeTile display-6  fs-1">Home Cleaning</h2>
+            <p className="edgeTile lead">
+              If you require home cleaning, apartment cleaning or maid service,
+              we are simply the best.
+            </p>
+          </div>
+          <div class="feature col edgeTile text-left px-4">
+            <div class="feature-icon edgeTile mt-5 mb-3">
+              <img
+                width="25%"
+                className="edgeTile"
+                src="Pressure-Washing (1).png"
+              ></img>
+            </div>
+            <h2 className="edgeTile display-6  fs-1">Pressure Wash</h2>
+            <p className="edgeTile lead">
+              Jet Spray used to achieve maximum cleaning with the minimum energy
+              and time.
+            </p>
+          </div>
+          <div class="feature col edgeTile text-left px-4">
+            <div class="feature-icon edgeTile mt-5 mb-3">
+              <img
+                width="25%"
+                className="edgeTile"
+                src="Gutter-Cleaning.png"
+              ></img>
+            </div>
+            <h2 className="edgeTile display-6  fs-1">Gutter Cleaning</h2>
+            <p className="edgeTile lead">
+              Washing, cleaning and removing leaves from gutters and de-clogging
+              them.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="text-center mt-5 pt-5">
+        <img width="4%" className="edgeTile mb-5" src="Half-Circles.png"></img>
+        <h1 className="display-6  fs-1">
+          Simple, Transparent Pricing <br></br>
+        </h1>
+      </div>
+      <div className="text-center">
+        <p className="lead ">
+          Whether you want to schedule a one off clean for your home,<br></br>a
+          weekly visit or even need an emergency call out, or have a commercial
+          cleaning need<br></br>
+          our team is equipped to meet your needs.
         </p>
       </div>
       <div className="m-5 p-5 text-center">

@@ -40,65 +40,12 @@ function Pricing() {
       <div className="text-center">
         <p className="lead ">
           <br></br>
-          Our Prices are Affordable and Easy on the pockets<br></br>
-          when compared to the high street prices
+          We have kept our prices reasonable to be affordable<br></br>
+          to the masses while providing great service
         </p>
       </div>
-      <div className="container px-5 py-5 justify-content-center w-75">
-        <div class="row g-3 py-5 row-cols-1 row-cols-lg-3 justify-content-center">
-          <div class="feature col text-center px-4 edgeTile">
-            <div class="feature-icon edgeTile mt-5 mb-3">
-              <img
-                width="25%"
-                className="edgeTile"
-                src="Expert-Employee-1-300x300-1.png"
-              ></img>
-            </div>
-            <h2 className="edgeTile display-6  fs-1">Expert Employee</h2>
-            <p className="edgeTile lead">
-              We have helped clean hundreds of homes and apartments in Lower
-              Mainland, Abbotsford, Mission & Vancouver
-            </p>
-          </div>
-          <div class="pb-4">
-            <div class="feature col text-center middleTile px-4">
-              <div class="feature-icon icon-square text-center middleTile mb-3">
-                <img
-                  width="25%"
-                  className="edgeTile mt-5"
-                  src="Affordable-Package-1-300x300-2.png"
-                ></img>
-              </div>
-              <h2 className="middleTile text-white display-6  fs-1">
-                Affordable Package
-              </h2>
-              <p className="middleTile text-white lead lead">
-                We provide professional and affordable home cleaning services in
-                Toronto. We charge flat rates for awesome cleaning. What you see
-                is what you get.<br></br>
-                <br></br>
-                <br></br>
-              </p>
-            </div>
-          </div>
-          <div class="feature col edgeTile text-center px-4">
-            <div class="feature-icon edgeTile mt-5 mb-3">
-              <img
-                width="25%"
-                className="edgeTile"
-                src="100-Satisfaction-300x300-1.png"
-              ></img>
-            </div>
-            <h2 className="edgeTile display-6  fs-1">100% Satisfaction</h2>
-            <p className="edgeTile lead">
-              We takes pride in offering you peace of mind with a 100% Customer
-              Satisfaction Guarantee for our professional cleaning service
-            </p>
-          </div>
-        </div>
-      </div>
 
-      <section class="ftco-section bg-light">
+      <section class="ftco-section bg-light my-5 py-5">
         <div class="container">
           <div class="row justify-content-center pb-5 mb-3">
             <div class="col-md-7 heading-section text-center ftco-animate fadeInUp ftco-animated"></div>
@@ -110,9 +57,9 @@ function Pricing() {
                 <div class="text-center p-4">
                   <span class="excerpt d-block">House Cleaning</span>
                   <span class="price">
-                    <sub>upto</sub>
+                    <sub>from</sub>
                     <sup>$</sup> <span class="number">200</span>{" "}
-                    <sub>/month</sub>
+                    <sub>approx.</sub>
                   </span>
                   <ul class="pricing-text mb-5 text">
                     <li>
@@ -152,9 +99,9 @@ function Pricing() {
                 <div class="text-center p-4">
                   <span class="excerpt d-block">Office Cleaning</span>
                   <span class="price">
-                    <sub>upto</sub>
+                    <sub>from</sub>
                     <sup>$</sup> <span class="number">300</span>{" "}
-                    <sub>/month</sub>
+                    <sub>approx.</sub>
                   </span>
                   <ul class="pricing-text mb-5">
                     <li>
@@ -200,9 +147,9 @@ function Pricing() {
                 <div class="text-center p-4">
                   <span class="excerpt d-block">Renovation Cleaning</span>
                   <span class="price">
-                    <sub>upto</sub>
+                    <sub>from</sub>
                     <sup>$</sup> <span class="number">300</span>{" "}
-                    <sub>/month</sub>
+                    <sub>approx.</sub>
                   </span>
                   <ul class="pricing-text mb-5">
                     <li>
@@ -247,9 +194,9 @@ function Pricing() {
                 <div class="text-center p-4">
                   <span class="excerpt d-block">Sanitization</span>
                   <span class="price">
-                    <sub>upto</sub>
+                    <sub>from</sub>
                     <sup>$</sup> <span class="number">150</span>{" "}
-                    <sub>/month</sub>
+                    <sub>approx.</sub>
                   </span>
                   <ul class="pricing-text mb-5 text">
                     <li>
@@ -287,8 +234,9 @@ function Pricing() {
                 <div class="text-center p-4">
                   <span class="excerpt d-block">Pressure Washing</span>
                   <span class="price">
-                    <sub>upto</sub>
+                    <sub>from</sub>
                     <sup>$</sup> <span class="number">100</span>{" "}
+                    <sub>approx.</sub>
                   </span>
                   <ul class="pricing-text mb-5">
                     <li>
@@ -326,9 +274,9 @@ function Pricing() {
                     Move In/ Move Out Cleaning
                   </span>
                   <span class="price">
-                    <sub>upto</sub>
+                    <sub>from</sub>
                     <sup>$</sup> <span class="number">300</span>{" "}
-                    <sub>/month</sub>
+                    <sub>approx.</sub>
                   </span>
                   <ul class="pricing-text mb-5">
                     <li>
@@ -350,6 +298,47 @@ function Pricing() {
                   <NavLink
                     class="btn btn-primary d-block px-1 py-3"
                     to="/services/moveinmoveoutcleaning"
+                  >
+                    <span class="btn btn-primary d-block px-1 py-3">
+                      {" "}
+                      Book Now
+                    </span>
+                  </NavLink>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 ftco-animate fadeInUp ftco-animated">
+              <div class="block-7">
+                <div class="img maid-img"></div>
+                <div class="text-center p-4">
+                  <span class="excerpt d-block">Maid Cleaning</span>
+                  <span class="price">
+                    <sub>from</sub>
+                    <sup>$</sup> <span class="number">30</span> <sub>/hr</sub>
+                  </span>
+                  <ul class="pricing-text mb-5 text">
+                    <li>
+                      <i class="fa-sm fa-circle mx-2"></i>Cleaning dirt, dust,
+                      and germs from surfaces
+                    </li>
+                    <li>
+                      <i class="fa-sm fa-circle mx-2"></i>Disinfecting to kill
+                      germs on surfaces
+                    </li>
+                    <li>
+                      <i class="fa-sm fa-circle mx-2"></i>Sanitizing all the
+                      surfaces and objects
+                    </li>
+                    <li>
+                      <i class="fa-sm fa-circle mx-2"></i>Handling and Disposing
+                      waste
+                    </li>
+                  </ul>
+                  <NavLink
+                    class="btn btn-primary d-block px-1 py-3"
+                    to="/services/maidcleaning"
                   >
                     <span class="btn btn-primary d-block px-1 py-3">
                       {" "}

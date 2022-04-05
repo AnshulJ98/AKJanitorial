@@ -45,9 +45,9 @@ function Sanitization() {
             <p class="lead">
               <span className="fw-normal">$150.00 (Approx.)</span>
               <br></br>These are uncertain times and during these times we want
-              surety that the places we get into are free of microbes. With
-              Akartar Janitorial’s service you get that peace of mind where we
-              make sure that the spaces are sanitized and safe for use.
+              surety that the places we get into are free of microbes. With AK
+              Janitorial’s service you get that peace of mind where we make sure
+              that the spaces are sanitized and safe for use.
             </p>
           </div>
         </div>

@@ -49,8 +49,8 @@ function HouseCleaning() {
               <span className="fw-normal">$200.00 (Approx.)</span>
               <br></br>Price may vary as per the detail. For the times you need
               a touch of a professional to get a clean and fresh feel in your
-              home, Akartar Janitorial will be there for you to take a load off
-              from your hands.
+              home, AK Janitorial will be there for you to take a load off from
+              your hands.
             </p>
           </div>
         </div>
