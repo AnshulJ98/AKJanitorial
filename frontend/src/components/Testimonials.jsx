@@ -6,7 +6,6 @@ function Testimonials() {
   const [feedBackData, setFeedBackData] = useState("");
   useEffect(() => {
     getFeedbackData();
-    console.log(feedBackData);
   }, []);
   const getFeedbackData = () => {
     axios
@@ -19,6 +18,7 @@ function Testimonials() {
       .catch((errors) => console.log(errors));
   };
 
+  console.log(feedBackData);
   return (
     <div className="testimonials">
       <div className="position-relative overflow-hidden p-5 p-md-5 m-0  bg-light testimonials-banner">
@@ -68,13 +68,13 @@ function Testimonials() {
           </div>
           <div class="col-md-7  align-middle">
             <h2 class="featurette-heading display-6  fs-1">Testimonials</h2>
-            <p class="lead">
-              TestimonialsTestimonialsTestimonialsTestimonials <br></br>{" "}
-              TestimonialsTestimonialsTestimonialsTestimonials <br></br>{" "}
-              TestimonialsTestimonialsTestimonialsTestimonialsTestimonials{" "}
-              <br></br>{" "}
-              TestimonialsTestimonialsTestimonialsTestimonialsTestimonials
-            </p>
+            {feedBackData &&
+              feedBackData.map((review, index) => (
+                <ul key={index}>
+                  {review.name && <p class="lead">{review.name}</p>}
+                  {review.message && <p class="lead">{review.message}</p>}
+                </ul>
+              ))}
           </div>
         </div>
       </div>
