@@ -1,4 +1,9 @@
 import json
+
+import googleapiclient.discovery
+import datetime
+from google.oauth2 import service_account
+
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -13,6 +18,10 @@ from rest_framework.response import Response
 from django.views.decorators.csrf import csrf_exempt
 from .models import Feedback
 from .serializers import FeedbackSerializer
+
+CAL_ID='67caopf2kqtiud7trcge6flk7s@group.calendar.google.com'
+SCOPES = ['https://www.googleapis.com/auth/calendar']
+SERVICE_ACCOUNT_FILE = './google-credentials.json'
 
 # Create your views here.
 '''
@@ -61,3 +70,35 @@ def GetFeedbackView(request, *args, **kwargs):
     queryset=Feedback.objects.all()
     serializer_class = FeedbackSerializer(queryset, many=True)
     return Response(serializer_class.data)
+@api_view(['GET', 'POST'])
+@csrf_exempt
+def GetEvents(request, *args, **kwargs):
+    credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+    service = googleapiclient.discovery.build('calendar', 'v3', credentials=credentials)
+    events_result = service.events().list(calendarId=CAL_ID, maxResults=2500).execute()
+    events = events_result.get('items', [])
+    for e in events:
+        print(e)
+    return Response(events,status=200)
+    
+@api_view(['GET', 'POST'])
+@csrf_exempt
+def CreateEvent(request, *args, **kwargs):
+    credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+    service = googleapiclient.discovery.build('calendar', 'v3', credentials=credentials)
+    new_event = {
+    'summary': "Events TEsTT22",
+    'location': 'Toronto',
+    'description': 'Test',
+    'start': {
+        'date': f"{datetime.date.today()+ datetime.timedelta(days=3)}",
+        'timeZone': 'America/Toronto',
+    },
+    'end': {
+        'date': f"{datetime.date.today() + datetime.timedelta(days=3)}",
+        'timeZone': 'America/Toronto',
+    },
+    }
+    service.events().insert(calendarId=CAL_ID, body=new_event).execute()
+    print('Event Created')
+    return Response(status=200)
