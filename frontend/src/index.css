@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.349);
+}
+
+.call-us {
+  background-color: #2386ec;
+  border-radius: 10px;
+}
+
+.footer {
+  background-color: #304057;
+}
+#carousel {
+  max-width: 260px;
+}
+.home-banner {
+  background-image: url("/public/Cleaning-Lady..png");
+  background-repeat: repeat-y;
+  background-position: 85%;
+  background-size: contain;
+}
+
+.about-banner {
+  background-image: url("/public/Sanitization-min-2-scaled.jpg");
+  background-repeat: repeat-y;
+  background-position: 85%;
+  background-size: cover;
+}
+
+.contact-banner {
+  background-image: url("/public/IMG-3989.jpg");
+  background-repeat: repeat-y;
+  background-position: 85%;
+  background-size: cover;
+}
+
+.pricing-banner {
+  background-image: url("/public/IMG-3987.jpg");
+  background-repeat: repeat-y;
+  background-position: 85%;
+  background-size: cover;
+}
+
+.house-cleaning-banner {
+  background-image: url("/public/IMG-3987.jpg");
+  background-repeat: repeat-y;
+  background-position: 85%;
+  background-size: cover;
+}
+
+.office-cleaning-banner {
+  background-image: url("/public/IMG-2561.jpg");
+  background-repeat: repeat-y;
+  background-position: 85%;
+  background-size: cover;
+}
+
+.sanitization-banner {
+  background-image: url("/public/Sanitization-min-2-scaled.jpg");
+  background-repeat: repeat-y;
+  background-position: 85%;
+  background-size: cover;
+}
+.pressure-washing-banner {
+  background-image: url("/public/Pressure-Washing-min-2-300x222.jpg");
+  background-repeat: repeat-y;
+  background-position: 85%;
+  background-size: cover;
+}
+
+.renovation-cleaning-banner {
+  background-image: url("/public/Renovation-Cleaning-min-2-scaled.jpg");
+  background-repeat: repeat-y;
+  background-position: 85%;
+  background-size: cover;
+}
+
+.move-cleaning-banner {
+  background-image: url("/public/IMG-3981.jpg ");
+  background-repeat: repeat-y;
+  background-position: 85%;
+  background-size: cover;
+}
+.services-home-banner {
+  background-image: url("/public/House-Cleaning-min-2-1024x683.jpg ");
+  background-repeat: repeat-y;
+  background-position: 85%;
+  background-size: cover;
+}
+
+.testimonials-banner {
+  background-image: url("/public/Office-Cleaning-min-2-1024x683.jpg");
+  background-repeat: repeat-y;
+  background-position: 85%;
+  background-size: cover;
+}
+
+.navbar-brand {
+  width: 12%;
+}
+.middleTile {
+  background-color: #2386ec;
+  border-radius: 10px;
+}
+
+.edgeTile {
+  border-radius: 20px;
+}
+
+.send-message {
+  background-color: #2386ec;
+  border-radius: 10px;
+}
+.logo {
+  background-image: url("/public/Thumbnail.png");
+}
