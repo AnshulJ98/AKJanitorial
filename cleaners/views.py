@@ -1,8 +1,11 @@
 import json
-
+import copy
 import googleapiclient.discovery
 import datetime
+import pytz
+
 from google.oauth2 import service_account
+from dateutil import parser
 
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -23,6 +26,25 @@ CAL_ID='67caopf2kqtiud7trcge6flk7s@group.calendar.google.com'
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 SERVICE_ACCOUNT_FILE = './google-credentials.json'
 
+TIME_LIST=[
+        '08:00-09:00',
+        '09:00-10:00',
+        '10:00-11:00',
+        '11:00-12:00',
+        '12:00-13:00',
+        '13:00-14:00',
+        '14:00-15:00',
+        '15:00-16:00',
+        '16:00-17:00',
+        '17:00-18:00',
+        '18:00-19:00',
+        '19:00-20:00',
+        '20:00-21:00',
+        '21:00-22:00',
+        '22:00-23:00',
+        '23:00-00:00'
+    ]
+
 # Create your views here.
 '''
 def index(request):
@@ -39,13 +61,7 @@ class IndexView(generic.ListView):
 @csrf_exempt
 def ApiView(request, *args, **kwargs):
     from pprint import pprint
-    #pprint(vars(request))
-    #pprint((request.POST))
-    
-
-    #data=request.POST
     jdata=json.loads(json.dumps(request.data))
-    #pprint(((request.data.get('formData'))))
     pprint(list(jdata))
     f=request.data['formData']
     for i in f:
@@ -75,28 +91,57 @@ def GetFeedbackView(request, *args, **kwargs):
 def GetEvents(request, *args, **kwargs):
     credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
     service = googleapiclient.discovery.build('calendar', 'v3', credentials=credentials)
-    events_result = service.events().list(calendarId=CAL_ID, maxResults=2500).execute()
+    events_result = service.events().list(calendarId=CAL_ID, maxResults=250, singleEvents=True, orderBy='startTime').execute()
     events = events_result.get('items', [])
-    for e in events:
-        print(e)
-    return Response(events,status=200)
     
+    time_slots={
+        '08:00-09:00':{'available':True},
+        '09:00-10:00':{'available':True},
+        '10:00-11:00':{'available':True},
+        '11:00-12:00':{'available':True},
+        '12:00-13:00':{'available':True},
+        '13:00-14:00':{'available':True},
+        '14:00-15:00':{'available':True},
+        '15:00-16:00':{'available':True},
+        '16:00-17:00':{'available':True},
+        '17:00-18:00':{'available':True},
+        '18:00-19:00':{'available':True},
+        '19:00-20:00':{'available':True},
+        '20:00-21:00':{'available':True},
+        '21:00-22:00':{'available':True},
+        '22:00-23:00':{'available':True},
+        '23:00-00:00':{'available':True}
+    }
+    dates={}
+    for i in range(0,30):
+        dates[(datetime.datetime.today() + datetime.timedelta(i)).strftime('%d-%B-%Y')]=copy.copy(time_slots)
+
+    availableDatetimes = {}
+    for e in events:
+        time_format = "%H:%M"
+        time_slots[(parser.parse(e['start'].get('dateTime'))).strftime(time_format)+'-'+(parser.parse(e['end'].get('dateTime'))).strftime(time_format)]['available']=False
+        print(TIME_LIST.index((parser.parse(e['start'].get('dateTime'))).strftime(time_format)+'-'+(parser.parse(e['end'].get('dateTime'))).strftime(time_format)))
+    return Response(dates,status=200)
+
+
 @api_view(['GET', 'POST'])
 @csrf_exempt
 def CreateEvent(request, *args, **kwargs):
     credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
     service = googleapiclient.discovery.build('calendar', 'v3', credentials=credentials)
+    utc = pytz.utc
+    startdt =   utc.localize(datetime.datetime.strptime('2022-05-05 17:00:00','%Y-%m-%d %H:%M:%S'))
+    enddt =     utc.localize(datetime.datetime.strptime('2022-05-05 18:00:00','%Y-%m-%d %H:%M:%S'))
     new_event = {
     'summary': "Events TEsTT22",
-    'location': 'Toronto',
     'description': 'Test',
     'start': {
-        'date': f"{datetime.date.today()+ datetime.timedelta(days=3)}",
-        'timeZone': 'America/Toronto',
+        'dateTime': startdt.isoformat("T"),
+        'timeZone': 'America/Vancouver',
     },
     'end': {
-        'date': f"{datetime.date.today() + datetime.timedelta(days=3)}",
-        'timeZone': 'America/Toronto',
+        'dateTime': enddt.isoformat("T"),
+        'timeZone': 'America/Vancouver',
     },
     }
     service.events().insert(calendarId=CAL_ID, body=new_event).execute()
