@@ -21,8 +21,13 @@ from rest_framework.response import Response
 from django.views.decorators.csrf import csrf_exempt
 from .models import Feedback
 from .serializers import FeedbackSerializer
+from os import environ, path
+from dotenv import load_dotenv
 
-CAL_ID='67caopf2kqtiud7trcge6flk7s@group.calendar.google.com'
+basedir = path.abspath(path.dirname(__file__))
+load_dotenv(path.join(basedir, '.env'))
+
+CAL_ID= environ.get('CAL_ID')
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 SERVICE_ACCOUNT_FILE = './google-credentials.json'
 

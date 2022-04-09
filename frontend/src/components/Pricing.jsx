@@ -59,7 +59,6 @@ function Pricing() {
                   <span class="price">
                     <sub>from</sub>
                     <sup>$</sup> <span class="number">200</span>{" "}
-                    <sub>approx.</sub>
                   </span>
                   <ul class="pricing-text mb-5 text">
                     <li>
@@ -101,7 +100,6 @@ function Pricing() {
                   <span class="price">
                     <sub>from</sub>
                     <sup>$</sup> <span class="number">300</span>{" "}
-                    <sub>approx.</sub>
                   </span>
                   <ul class="pricing-text mb-5">
                     <li>
@@ -149,7 +147,6 @@ function Pricing() {
                   <span class="price">
                     <sub>from</sub>
                     <sup>$</sup> <span class="number">300</span>{" "}
-                    <sub>approx.</sub>
                   </span>
                   <ul class="pricing-text mb-5">
                     <li>
@@ -196,7 +193,6 @@ function Pricing() {
                   <span class="price">
                     <sub>from</sub>
                     <sup>$</sup> <span class="number">150</span>{" "}
-                    <sub>approx.</sub>
                   </span>
                   <ul class="pricing-text mb-5 text">
                     <li>
@@ -236,7 +232,6 @@ function Pricing() {
                   <span class="price">
                     <sub>from</sub>
                     <sup>$</sup> <span class="number">100</span>{" "}
-                    <sub>approx.</sub>
                   </span>
                   <ul class="pricing-text mb-5">
                     <li>
@@ -276,7 +271,6 @@ function Pricing() {
                   <span class="price">
                     <sub>from</sub>
                     <sup>$</sup> <span class="number">300</span>{" "}
-                    <sub>approx.</sub>
                   </span>
                   <ul class="pricing-text mb-5">
                     <li>
@@ -320,20 +314,16 @@ function Pricing() {
                   </span>
                   <ul class="pricing-text mb-5 text">
                     <li>
-                      <i class="fa-sm fa-circle mx-2"></i>Cleaning dirt, dust,
-                      and germs from surfaces
+                      <i class="fa-sm fa-circle mx-2"></i>Bedroom Deep Cleaning
                     </li>
                     <li>
-                      <i class="fa-sm fa-circle mx-2"></i>Disinfecting to kill
-                      germs on surfaces
+                      <i class="fa-sm fa-circle mx-2"></i>Bathroom Deep Cleaning
                     </li>
                     <li>
-                      <i class="fa-sm fa-circle mx-2"></i>Sanitizing all the
-                      surfaces and objects
+                      <i class="fa-sm fa-circle mx-2"></i>Kitchen Deep Cleaning
                     </li>
                     <li>
-                      <i class="fa-sm fa-circle mx-2"></i>Handling and Disposing
-                      waste
+                      <i class="fa-sm fa-circle mx-2"></i>Carpet Shampooing
                     </li>
                   </ul>
                   <NavLink

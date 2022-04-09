@@ -43,11 +43,11 @@ function Sanitization() {
           <div class="col-md-7  align-middle">
             <h2 class="featurette-heading display-6  fs-1">Maid Cleaning</h2>
             <p class="lead">
-              <span className="fw-normal">Starting From $150.00</span>
-              <br></br>These are uncertain times and during these times we want
-              surety that the places we get into are free of microbes. With AK
-              Janitorial’s service you get that peace of mind where we make sure
-              that the spaces are sanitized and safe for use.
+              <span className="fw-normal">Starting From $35.00/hr</span>
+              <br></br>Need some extra help after the weekend's party. We at AK
+              Janitorial are here to provide the very help you need to make your
+              place spotless. Our maid cleaning services include dusting around
+              the place, taking care of garbage and overall cleaning.
             </p>
           </div>
         </div>

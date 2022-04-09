@@ -12,7 +12,7 @@ function Home() {
             Our best in class cleaning service will make it a priority to leave
             your house unbeliavably fresh and super clean.
           </p>
-          <NavLink to="/form">
+          <NavLink to="#">
             <span className="btn btn-outline-secondary"> Book Now</span>
           </NavLink>
         </div>
@@ -25,116 +25,116 @@ function Home() {
           Making your house <br></br>As good as new
         </h1>
       </div>
-
-      <div
-        id="myCarousel"
-        className="carousel slide pointer-event m-4 p-4"
-        data-bs-ride="carousel"
-      >
-        <div className="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="0"
-            className=""
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-            className=""
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-            className="active"
-            aria-current="true"
-          ></button>
-        </div>
-        <div className="carousel-inner">
-          <div className="carousel-item active justify-content-center mx-5">
-            <img
-              className="m-2"
-              width="22%"
-              src="Move-in-Move-out-Cleaning-min-2.jpg"
-            ></img>
-            <img
-              className="m-2"
-              width="22%"
-              src="Office-Cleaning-min-2-1024x683.jpg"
-            ></img>
-            <img
-              className="m-2"
-              width="22%"
-              src="House_Calls_Michigan_City_Frost_House_living.jpg"
-            ></img>
-            <img
-              className="m-2"
-              width="22%"
-              src="Sanitization-min-2-scaled.jpg"
-            ></img>
-          </div>
-          <div className="carousel-item mx-5">
-            <img
-              className="m-2"
-              width="22%"
-              src="House-Cleaning-min-300x187.jpg"
-            ></img>
-            <img className="m-2" width="22%" src="IMG-2561-1.jpg"></img>
-            <img className="m-2" width="22%" src="IMG-3979.jpg"></img>
-            <img
-              className="m-2"
-              width="22%"
-              src="Move-in-Move-out-Cleaning-min-1024x683.jpg"
-            ></img>
-          </div>
-          <div className="carousel-item  mx-5">
-            <img
-              className="m-2"
-              width="22%"
-              src="Expertise-min-300x300-1.jpg"
-            ></img>
-            <img className="m-2" width="22%" src="patio-deck.png"></img>
-            <img
-              className="m-2"
-              width="22%"
-              src="pressure-washing-deck.png"
-            ></img>
-            <img
-              className="m-2"
-              width="22%"
-              src="Office-Cleaning-min.jpg"
-            ></img>
-          </div>
-        </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#myCarousel"
-          data-bs-slide="prev"
+      <div className="mx-5 px-5">
+        <div
+          id="myCarousel"
+          className="carousel slide pointer-event m-4 p-4"
+          data-bs-ride="carousel"
         >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#myCarousel"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
+          <div className="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide-to="0"
+              className=""
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+              className=""
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+              className="active"
+              aria-current="true"
+            ></button>
+          </div>
+          <div className="carousel-inner">
+            <div className="carousel-item active ">
+              <img
+                className="m-2"
+                width="22%"
+                src="Move-in-Move-out-Cleaning-min-2.jpg"
+              ></img>
+              <img
+                className="m-2"
+                width="22%"
+                src="Office-Cleaning-min-2-1024x683.jpg"
+              ></img>
+              <img
+                className="m-2"
+                width="22%"
+                src="House_Calls_Michigan_City_Frost_House_living.jpg"
+              ></img>
+              <img
+                className="m-2"
+                width="22%"
+                src="Sanitization-min-2-scaled.jpg"
+              ></img>
+            </div>
+            <div className="carousel-item ">
+              <img
+                className="m-2"
+                width="22%"
+                src="House-Cleaning-min-300x187.jpg"
+              ></img>
+              <img className="m-2" width="22%" src="IMG-2561-1.jpg"></img>
+              <img className="m-2" width="22%" src="IMG-3979.jpg"></img>
+              <img
+                className="m-2"
+                width="22%"
+                src="Move-in-Move-out-Cleaning-min-1024x683.jpg"
+              ></img>
+            </div>
+            <div className="carousel-item  mx-5">
+              <img
+                className="m-2"
+                width="22%"
+                src="Expertise-min-300x300-1.jpg"
+              ></img>
+              <img className="m-2" width="22%" src="patio-deck.png"></img>
+              <img
+                className="m-2"
+                width="22%"
+                src="pressure-washing-deck.png"
+              ></img>
+              <img
+                className="m-2"
+                width="22%"
+                src="Office-Cleaning-min.jpg"
+              ></img>
+            </div>
+          </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+          </button>
+        </div>
       </div>
       <div className="text-left m-5 p-5">
         <h3 className="display-6 fs-3">Our Services</h3>
