@@ -59,22 +59,41 @@ function Testimonials() {
           successfully establish our presence in the cleaning business <br></br>{" "}
           with a strong customer base.
         </p>
+        <a
+          className="lead"
+          target={"_blank"}
+          href="https://maps.app.goo.gl/HDfixCLF5L6EE4NL7"
+        >
+          Check Out Our Reviews on Google.
+        </a>
       </div>
 
-      <div className="container px-5 mt-5 py-5 justify-content-center w-75">
+      <div className="container px-5 my-5 py-5 justify-content-center w-75">
         <div class="row featurette align-items-center">
-          <div class="img-responsive col-md-5">
-            <img width={"70%"} src="/Move-in-Move-out-Cleaning-min-2.jpg"></img>
-          </div>
-          <div class="col-md-7  align-middle">
-            <h2 class="featurette-heading display-6  fs-1">Testimonials</h2>
-            {feedBackData &&
-              feedBackData.map((review, index) => (
-                <ul key={index}>
-                  {review.name && <p class="lead">{review.name}</p>}
-                  {review.message && <p class="lead">{review.message}</p>}
-                </ul>
-              ))}
+          <div class="col-md-12  align-middle">
+            <section class="ftco-section bg-light">
+              <div class="container">
+                <div class="row justify-content-center pb-5 mb-3">
+                  <div class="col-md-7 heading-section text-center ftco-animate fadeInUp ftco-animated"></div>
+                </div>
+
+                <div class="row">
+                  {feedBackData &&
+                    feedBackData.map((review, index) => (
+                      <div class="col-md-6 ftco-animate fadeInUp ftco-animated">
+                        <div class="block-7">
+                          <div class="text-center p-4">
+                            {review.name && <p class="lead">{review.name}</p>}
+                            {review.name && (
+                              <span className="text-left">{review.name}</span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>

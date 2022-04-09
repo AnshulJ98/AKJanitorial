@@ -82,6 +82,13 @@ function ContactUs() {
                 </p>
               </div>
             </div>
+            <a
+              className="lead"
+              target={"_blank"}
+              href="https://maps.app.goo.gl/HDfixCLF5L6EE4NL7"
+            >
+              Check Out Our Reviews on Google.
+            </a>
           </div>
 
           <div class="col-md-5">

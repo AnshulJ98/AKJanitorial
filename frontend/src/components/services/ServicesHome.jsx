@@ -203,11 +203,11 @@ function ServicesHome() {
                   <span class="excerpt d-block">Maid Cleaning</span>
                   <p className="lead ">
                     <br></br>
-                    These are uncertain times and during these times we want
-                    surety that the places we get into are free of microbes.
-                    With AK Janitorial’s service you get that peace of mind
-                    where we make sure that the spaces are sanitized and safe
-                    for use.
+                    Need some extra help after the weekend's party. We at AK
+                    Janitorial are here to provide the very help you need to
+                    make your place spotless. Our maid cleaning services include
+                    dusting around the place, taking care of garbage and overall
+                    cleaning.
                   </p>
 
                   <NavLink
