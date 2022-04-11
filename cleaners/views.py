@@ -32,22 +32,14 @@ SCOPES = ['https://www.googleapis.com/auth/calendar']
 SERVICE_ACCOUNT_FILE = './google-credentials.json'
 
 TIME_LIST=[
-        '08:00-09:00',
-        '09:00-10:00',
-        '10:00-11:00',
-        '11:00-12:00',
-        '12:00-13:00',
-        '13:00-14:00',
-        '14:00-15:00',
-        '15:00-16:00',
-        '16:00-17:00',
-        '17:00-18:00',
-        '18:00-19:00',
-        '19:00-20:00',
-        '20:00-21:00',
-        '21:00-22:00',
-        '22:00-23:00',
-        '23:00-00:00'
+        '08:00-10:00',
+        '10:00-12:00',
+        '12:00-14:00',
+        '14:00-16:00',
+        '16:00-18:00',
+        '18:00-20:00',
+        '20:00-22:00',
+        '22:00-00:00'
     ]
 
 # Create your views here.
@@ -100,32 +92,33 @@ def GetEvents(request, *args, **kwargs):
     events = events_result.get('items', [])
     
     time_slots={
-        '08:00-09:00':{'available':True},
-        '09:00-10:00':{'available':True},
-        '10:00-11:00':{'available':True},
-        '11:00-12:00':{'available':True},
-        '12:00-13:00':{'available':True},
-        '13:00-14:00':{'available':True},
-        '14:00-15:00':{'available':True},
-        '15:00-16:00':{'available':True},
-        '16:00-17:00':{'available':True},
-        '17:00-18:00':{'available':True},
-        '18:00-19:00':{'available':True},
-        '19:00-20:00':{'available':True},
-        '20:00-21:00':{'available':True},
-        '21:00-22:00':{'available':True},
-        '22:00-23:00':{'available':True},
-        '23:00-00:00':{'available':True}
+        '08:00-10:00':{'available':True},
+        '10:00-12:00':{'available':True},
+        '12:00-14:00':{'available':True},
+        '14:00-16:00':{'available':True},
+        '16:00-18:00':{'available':True},
+        '18:00-20:00':{'available':True},
+        '20:00-22:00':{'available':True},
+        '22:00-00:00':{'available':True}
     }
     dates={}
     for i in range(0,30):
-        dates[(datetime.datetime.today() + datetime.timedelta(i)).strftime('%d-%B-%Y')]=copy.copy(time_slots)
+        dates[(datetime.datetime.today() + datetime.timedelta(i)).strftime('%d-%B-%Y')]=copy.deepcopy(time_slots)
 
     availableDatetimes = {}
+    from pprint import pprint
+    pprint(dates)
     for e in events:
         time_format = "%H:%M"
-        time_slots[(parser.parse(e['start'].get('dateTime'))).strftime(time_format)+'-'+(parser.parse(e['end'].get('dateTime'))).strftime(time_format)]['available']=False
-        print(TIME_LIST.index((parser.parse(e['start'].get('dateTime'))).strftime(time_format)+'-'+(parser.parse(e['end'].get('dateTime'))).strftime(time_format)))
+        date_format = "%d-%B-%Y" 
+        start_time = (parser.parse(e['start'].get('dateTime'))).strftime(time_format)
+        end_time = (parser.parse(e['end'].get('dateTime'))).strftime(time_format)
+        date = (parser.parse(e['start'].get('dateTime'))).strftime(date_format  )
+        print(date)
+        dates[date][start_time+'-'+end_time]['available']=False
+        print(dates[date])
+        print(TIME_LIST.index(start_time+"-"+end_time))
+    pprint(dates)
     return Response(dates,status=200)
 
 

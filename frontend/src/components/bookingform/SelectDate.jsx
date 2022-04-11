@@ -51,7 +51,7 @@ function SelectDate({ formData, setFormData }) {
       <TimePickerComponent
         id="timepicker"
         placeholder="Select a Time"
-        step={60}
+        step={120}
       />
       <DatePickerComponent
         placeholder="Select a Date"

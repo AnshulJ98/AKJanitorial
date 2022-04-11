@@ -12,7 +12,7 @@ function Home() {
             Our best in class cleaning service will make it a priority to leave
             your house unbeliavably fresh and super clean.
           </p>
-          <NavLink to="#">
+          <NavLink to="/form">
             <span className="btn btn-outline-secondary"> Book Now</span>
           </NavLink>
         </div>
