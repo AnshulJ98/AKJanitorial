@@ -5,6 +5,6 @@
     "@mui/icons-material": "^5.5.1",
     "@mui/material": "^5.5.2",
     "build": "react-scripts --max_old_space_size=256 build"
-
+"
   }
 }
