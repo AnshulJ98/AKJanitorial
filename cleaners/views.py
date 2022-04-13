@@ -129,60 +129,67 @@ def GetEvents(request, *args, **kwargs):
 @csrf_exempt
 def CreateEvent(request):
     from pprint import pprint
-    print(request)
+    pprint(request)
     credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
     service = googleapiclient.discovery.build('calendar', 'v3', credentials=credentials)
-    utc = pytz.utc
-    #print(datetime.datetime.strptime(request.get('bookingTime'),'%Y-%m-%d %H:%M:%S'))
-    x=parser.parse(request.get('bookingTime'))
-    pprint(dir(x))
-    print(x.tzname())
+
     time_format = "%H:%M"
+    date_format = '%Y-%m-%dT%H:%M:%S.%fZ'
     startdt =  parser.parse(request.get('bookingTime'))
     enddt =     parser.parse(request.get('bookingTime'))
     prereserve = parser.parse(request.get('bookingTime'))
     postreserve = parser.parse(request.get('bookingTime'))
     start_hour =  startdt.hour
-    date_format = '%Y-%m-%dT%H:%M:%S.%fZ'
-
 
     enddt = enddt + datetime.timedelta(hours=2)
     end_hour = enddt.hour
     prereserve = prereserve - datetime.timedelta(hours=2)
     postreserve = postreserve + datetime.timedelta(hours=4)
-    slot = startdt.strftime(time_format)+'-'+enddt.strftime(time_format)
-    print(startdt)
-    print(enddt)
-    print(prereserve)
-    print(postreserve)
-    print(slot)
-    print(TIME_LIST.index(slot))
-    startdt = startdt.strftime(date_format)
-    enddt = enddt.strftime(date_format)
-    prereserve = prereserve.strftime(date_format)
-    postreserve = postreserve.strftime(date_format)
+    slot = TIME_LIST.index(startdt.strftime(time_format)+'-'+enddt.strftime(time_format))
     
+    user_data = request.get('userData')
+    
+    desc = ""
+    for i in request.get('services'):
+        if i=='1':
+            desc+="\n\nHouse Cleaning"+"\nNumber of Rooms: " + str(request.get('houseCleaningData')['numberOfRooms']) + "\nNumber of Bathrooms: " + str(request.get('houseCleaningData')['numberOfBathrooms'])+"\nArea: " + str(request.get('houseCleaningData')['area'])+"\nBasement: " + str(request.get('houseCleaningData')['basement'])+"\nKitchen: " + str(request.get('houseCleaningData')['kitchen'])+"\nLiving Area: " + str(request.get('houseCleaningData')['livingArea'])+"\nCarpet: " + str(request.get('houseCleaningData')['carpet'])
+        if i=='2':
+            desc+="\n\nOffice Cleaning"+"\nNumber of Washrooms: " + str(request.get('officeCleaningData')['numberOfWashrooms'])+"\nArea: " + str(request.get('officeCleaningData')['area'])+"\Cabins: " + str(request.get('officeCleaningData')['cabins'])+"\Carpet: " + str(request.get('officeCleaningData')['carpet'])
+        if i=='3':
+            desc+="\n\nRenovation Cleaning"+"\nNumber of Rooms: " + str(request.get('renovationCleaningData')['numberOfRooms']) + "\nNumber of Bathrooms: " + str(request.get('renovationCleaningData')['numberOfBathrooms'])+"\nArea: " + str(request.get('renovationCleaningData')['area'])+"\nBasement: " + str(request.get('renovationCleaningData')['basement'])+"\nKitchen: " + str(request.get('renovationCleaningData')['kitchen'])+"\nLiving Area: " + str(request.get('renovationCleaningData')['livingArea'])+"\nCarpet: " + str(request.get('renovationCleaningData')['carpet'])
+        if i=='4':
+            desc+="\n\nSanitization"+"\nRequest: " + str(request.get('sanitizationData')['request'])
+        if i=='5':
+            desc+="\n\nPressure Washing"+"\nArea: " + str(request.get('pressureWashingData')['area'])+"\nCemented Backyard: " + str(request.get('pressureWashingData')['cementedBackyard'])+"\nDriveway: " + str(request.get('pressureWashingData')['driveway'])+"\nPatio: " + str(request.get('pressureWashingData')['patio'])
+        if i=='6':
+            desc+="\n\nMove In / Move Out Cleaning"+"\nNumber of Rooms: " + str(request.get('moveCleaningData')['numberOfRooms']) + "\nNumber of Bathrooms: " + str(request.get('moveCleaningData')['numberOfBathrooms'])+"\nArea: " + str(request.get('moveCleaningData')['area'])+"\nBasement: " + str(request.get('moveCleaningData')['basement'])+"\nKitchen: " + str(request.get('moveCleaningData')['kitchen'])+"\nLiving Area: " + str(request.get('moveCleaningData')['livingArea'])+"\nCarpet: " + str(request.get('moveCleaningData')['carpet'])
+        if i=='7':
+            desc+="\n\nMaid Cleaning"+"\nNumber of Rooms: " + str(request.get('maidCleaningData')['numberOfRooms']) + "\nNumber of Bathrooms: " + str(request.get('maidCleaningData')['numberOfBathrooms'])+"\nArea: " + str(request.get('maidCleaningData')['area'])
+        if i=='8':
+            desc+="\n\nOther(Garage, Gym, School)"+"\nRequest: " + str(request.get('otherCleaningData')['request']) 
+        
+
     pre_event = {
     'summary': "Reserved",
     'description': 'Reserved',
     'start': {
-        'dateTime': prereserve,
+        'dateTime': prereserve.isoformat("T"),
         'timeZone': 'America/Vancouver',
     },
     'end': {
-        'dateTime': startdt,
+        'dateTime': startdt.isoformat("T"),
         'timeZone': 'America/Vancouver',
     },
     }
     new_event = {
-    'summary': "Events TEsTT22",
-    'description': 'Test',
+    'summary': "Cleaning Scheduled for "+user_data['name']+" "+ user_data['email'],
+    'description': desc,
     'start': {
-        'dateTime': startdt,
+        'dateTime': startdt.isoformat("T"),
         'timeZone': 'America/Vancouver',
     },
     'end': {
-        'dateTime': enddt,
+        'dateTime': enddt.isoformat("T"),
         'timeZone': 'America/Vancouver',
     },
     }
@@ -190,17 +197,23 @@ def CreateEvent(request):
     'summary': "Reserved",
     'description': 'Reserved',
     'start': {
-        'dateTime': enddt,
+        'dateTime': enddt.isoformat("T"),
         'timeZone': 'America/Vancouver',
     },
     'end': {
-        'dateTime': postreserve,
+        'dateTime': postreserve.isoformat("T"),
         'timeZone': 'America/Vancouver',
     },
     }
-    print(new_event)
-    #service.events().insert(calendarId=CAL_ID, body=new_event).execute()
-    #service.events().insert(calendarId=CAL_ID, body=pre_event).execute()
-    #service.events().insert(calendarId=CAL_ID, body=post_event).execute()
+    pprint(new_event)
+    if slot !=0:
+        print("PRE")
+        service.events().insert(calendarId=CAL_ID, body=pre_event).execute()
+    if slot !=7:
+        print("POST")
+        service.events().insert(calendarId=CAL_ID, body=post_event).execute()
+    service.events().insert(calendarId=CAL_ID, body=new_event).execute()
+    
+    
     print('Event Created')
     return Response(status=200)
