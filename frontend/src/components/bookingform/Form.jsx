@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ServiceType from "./ServiceType";
 import ServiceOptions from "./ServiceOptions";
 import SelectDate from "./SelectDate";
+import UserData from "./UserData";
 import ImageUpload from "./ImageUpload";
 
 import "./Form.css";
@@ -12,6 +13,7 @@ function Form() {
   const [formData, setFormData] = useState({
     services: ["1"],
     image1: "",
+    bookingTime: "",
     houseCleaningSelected: true,
     officeCleaningSelected: false,
     pressureWashingSelected: false,
@@ -94,6 +96,7 @@ function Form() {
     "Select All Options",
     "Image Upload",
     "Select Date",
+    "Please Enter Your Details",
   ];
 
   const PageDisplay = () => {
@@ -103,8 +106,10 @@ function Form() {
       return <ServiceOptions formData={formData} setFormData={setFormData} />;
     } else if (page === 2) {
       return <ImageUpload formData={formData} setFormData={setFormData} />;
-    } else {
+    } else if (page === 3) {
       return <SelectDate formData={formData} setFormData={setFormData} />;
+    } else {
+      return <UserData formData={formData} setFormData={setFormData} />;
     }
   };
 

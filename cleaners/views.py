@@ -63,6 +63,7 @@ def ApiView(request, *args, **kwargs):
     f=request.data['formData']
     for i in f:
         print(i, '\n',f[i])
+    CreateEvent(f)
     return Response(status=200)
 
 @api_view(['GET', 'POST'])
@@ -92,14 +93,14 @@ def GetEvents(request, *args, **kwargs):
     events = events_result.get('items', [])
     
     time_slots={
-        '08:00-10:00':{'available':True},
-        '10:00-12:00':{'available':True},
-        '12:00-14:00':{'available':True},
-        '14:00-16:00':{'available':True},
-        '16:00-18:00':{'available':True},
-        '18:00-20:00':{'available':True},
-        '20:00-22:00':{'available':True},
-        '22:00-00:00':{'available':True}
+        '08:00-10:00':True,
+        '10:00-12:00':True,
+        '12:00-14:00':True,
+        '14:00-16:00':True,
+        '16:00-18:00':True,
+        '18:00-20:00':True,
+        '20:00-22:00':True,
+        '22:00-00:00':True
     }
     dates={}
     for i in range(0,30):
@@ -115,33 +116,82 @@ def GetEvents(request, *args, **kwargs):
         end_time = (parser.parse(e['end'].get('dateTime'))).strftime(time_format)
         date = (parser.parse(e['start'].get('dateTime'))).strftime(date_format  )
         print(date)
-        dates[date][start_time+'-'+end_time]['available']=False
-        print(dates[date])
+        if date in dates:
+            dates[date][start_time+'-'+end_time]=False
+            print("YYOYO")
+        else: 
+            print("NOOO")
         print(TIME_LIST.index(start_time+"-"+end_time))
     pprint(dates)
     return Response(dates,status=200)
 
 
-@api_view(['GET', 'POST'])
 @csrf_exempt
-def CreateEvent(request, *args, **kwargs):
+def CreateEvent(request):
+    print(request)
     credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
     service = googleapiclient.discovery.build('calendar', 'v3', credentials=credentials)
     utc = pytz.utc
-    startdt =   utc.localize(datetime.datetime.strptime('2022-05-05 17:00:00','%Y-%m-%d %H:%M:%S'))
-    enddt =     utc.localize(datetime.datetime.strptime('2022-05-05 18:00:00','%Y-%m-%d %H:%M:%S'))
+    #print(datetime.datetime.strptime(request.get('bookingTime'),'%Y-%m-%d %H:%M:%S'))
+    startdt =  parser.parse(request.get('bookingTime'))
+    enddt =     parser.parse(request.get('bookingTime'))
+    prereserve = parser.parse(request.get('bookingTime'))
+    postreserve = parser.parse(request.get('bookingTime'))
+    start_hour =  startdt.hour
+    date_format = '%Y-%m-%dT%H:%M:%S.%fZ'
+
+
+    enddt = enddt + datetime.timedelta(hours=2)
+    end_hour = enddt.hour
+    prereserve = prereserve - datetime.timedelta(hours=2)
+    postreserve = postreserve + datetime.timedelta(hours=4)
+    print(startdt)
+    print(enddt)
+    print(prereserve)
+    print(postreserve)
+    startdt = startdt.strftime(date_format)
+    enddt = enddt.strftime(date_format)
+    prereserve = prereserve.strftime(date_format)
+    postreserve = postreserve.strftime(date_format)
+    pre_event = {
+    'summary': "Reserved",
+    'description': 'Reserved',
+    'start': {
+        'dateTime': prereserve,
+        'timeZone': 'America/Vancouver',
+    },
+    'end': {
+        'dateTime': startdt,
+        'timeZone': 'America/Vancouver',
+    },
+    }
     new_event = {
     'summary': "Events TEsTT22",
     'description': 'Test',
     'start': {
-        'dateTime': startdt.isoformat("T"),
+        'dateTime': startdt,
         'timeZone': 'America/Vancouver',
     },
     'end': {
-        'dateTime': enddt.isoformat("T"),
+        'dateTime': enddt,
         'timeZone': 'America/Vancouver',
     },
     }
+    post_event = {
+    'summary': "Reserved",
+    'description': 'Reserved',
+    'start': {
+        'dateTime': enddt,
+        'timeZone': 'America/Vancouver',
+    },
+    'end': {
+        'dateTime': postreserve,
+        'timeZone': 'America/Vancouver',
+    },
+    }
+    print(new_event)
     service.events().insert(calendarId=CAL_ID, body=new_event).execute()
+    service.events().insert(calendarId=CAL_ID, body=pre_event).execute()
+    service.events().insert(calendarId=CAL_ID, body=post_event).execute()
     print('Event Created')
     return Response(status=200)
