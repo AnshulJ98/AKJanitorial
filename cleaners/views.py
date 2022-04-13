@@ -128,11 +128,16 @@ def GetEvents(request, *args, **kwargs):
 
 @csrf_exempt
 def CreateEvent(request):
+    from pprint import pprint
     print(request)
     credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
     service = googleapiclient.discovery.build('calendar', 'v3', credentials=credentials)
     utc = pytz.utc
     #print(datetime.datetime.strptime(request.get('bookingTime'),'%Y-%m-%d %H:%M:%S'))
+    x=parser.parse(request.get('bookingTime'))
+    pprint(dir(x))
+    print(x.tzname())
+    time_format = "%H:%M"
     startdt =  parser.parse(request.get('bookingTime'))
     enddt =     parser.parse(request.get('bookingTime'))
     prereserve = parser.parse(request.get('bookingTime'))
@@ -145,14 +150,18 @@ def CreateEvent(request):
     end_hour = enddt.hour
     prereserve = prereserve - datetime.timedelta(hours=2)
     postreserve = postreserve + datetime.timedelta(hours=4)
+    slot = startdt.strftime(time_format)+'-'+enddt.strftime(time_format)
     print(startdt)
     print(enddt)
     print(prereserve)
     print(postreserve)
+    print(slot)
+    print(TIME_LIST.index(slot))
     startdt = startdt.strftime(date_format)
     enddt = enddt.strftime(date_format)
     prereserve = prereserve.strftime(date_format)
     postreserve = postreserve.strftime(date_format)
+    
     pre_event = {
     'summary': "Reserved",
     'description': 'Reserved',
@@ -190,8 +199,8 @@ def CreateEvent(request):
     },
     }
     print(new_event)
-    service.events().insert(calendarId=CAL_ID, body=new_event).execute()
-    service.events().insert(calendarId=CAL_ID, body=pre_event).execute()
-    service.events().insert(calendarId=CAL_ID, body=post_event).execute()
+    #service.events().insert(calendarId=CAL_ID, body=new_event).execute()
+    #service.events().insert(calendarId=CAL_ID, body=pre_event).execute()
+    #service.events().insert(calendarId=CAL_ID, body=post_event).execute()
     print('Event Created')
     return Response(status=200)
