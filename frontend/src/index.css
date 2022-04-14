@@ -29,9 +29,7 @@ a:hover {
 .footer {
   background-color: #304057;
 }
-#carousel {
-  max-width: 260px;
-}
+
 .home-banner {
   background-image: url("/public/IZI_glowne2.jpg");
   background-position: 65%;
@@ -45,7 +43,7 @@ a:hover {
 }
 
 .contact-banner {
-  background-image: url("/public/IMG-3989.jpg");
+  background-image: url("/public/IMG-3987.jpg");
   background-repeat: repeat-y;
   background-position: 85%;
   background-size: cover;
@@ -131,3 +129,64 @@ a:hover {
 .logo {
   background-image: url("/public/Thumbnail.png");
 }
+
+#call-us{
+  width: 120px;
+  margin: 10px 25px 25px 0px;
+}
+
+#landing-video{
+  width:700px;
+  height:500px ;
+}
+@media (max-width: 799.98px) {
+  #landing-video{
+    width:400px;
+    height:270px ;
+  }
+}
+@media (min-width: 850px) {
+    #myCarousel{
+      display: block;
+    }
+    #carouselExampleDark{
+      display: none;
+    }
+
+
+  /* .carousel-inner .carousel-item-end.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(25%);
+  }
+  
+  .carousel-inner .carousel-item-start.active, 
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-25%);
+  }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start { 
+transform: translateX(0); */
+}
+
+@media (max-width: 850px) {
+  #myCarousel{
+    display: none;
+  }
+  #carouselExampleDark{
+    display: block;
+  }
+}
+
+
+.box {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-family: sans-serif;
+  line-height: 1;
+ -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px 40px;
+}
+

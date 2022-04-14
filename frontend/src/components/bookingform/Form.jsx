@@ -66,7 +66,6 @@ function Form() {
       driveway: false,
       patio: false,
       cementedBackyard: false,
-      carpet: false,
     },
     moveCleaningData: {
       numberOfRooms: 1,

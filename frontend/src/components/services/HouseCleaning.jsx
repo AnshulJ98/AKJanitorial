@@ -4,11 +4,11 @@ import { NavLink } from "react-router-dom";
 function HouseCleaning() {
   return (
     <div className="homecleaning">
-      <div className="position-relative overflow-hidden p-5 p-md-5 m-0  bg-light house-cleaning-banner">
-        <div className="col-md-4 p-lg-5 m-5">
-          <h1 className="display-4 fw-normal text-white">House Cleaning</h1>
+      <div className="position-relative overflow-hidden p-3 p-md-5 m-0  bg-light house-cleaning-banner">
+        <div className="col-md-4 my-5 box">
+          <h1 className="display-4 fw-normal text-black">House Cleaning</h1>
           <hr
-            className="text-white fs-1 fw-bold"
+            className="text-black fs-1 fw-bold"
             alignSelf="center"
             width="50%"
           ></hr>
@@ -16,34 +16,32 @@ function HouseCleaning() {
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <NavLink className="text-white" to="/">
+                <NavLink className="text-black" to="/">
                   Home
                 </NavLink>
               </li>
               <li class="breadcrumb-item">
-                <NavLink className="text-white" to="/services/serviceshome">
+                <NavLink className="text-black" to="/services/serviceshome">
                   Services
                 </NavLink>
               </li>
 
-              <li class="breadcrumb-item active text-white" aria-current="page">
+              <li class="breadcrumb-item active text-black" aria-current="page">
                 House Cleaning
               </li>
             </ol>
           </nav>
         </div>
-        <div className="product-device shadow-sm d-none d-md-block"></div>
-        <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
       </div>
-      <div className="container px-5 mt-5 py-5 justify-content-center w-75">
+      <div className="container mt-5 py-5 justify-content-center ">
         <div class="row featurette align-items-center">
-          <div class="img-responsive col-md-5">
+          <div class="img-responsive col-md-5 mb-3 text-center">
             <img
               width={"70%"}
               src="/House_Calls_Michigan_City_Frost_House_living.jpg"
             ></img>
           </div>
-          <div class="col-md-7  align-middle">
+          <div class="col-md-7 my-3 align-middle">
             <h2 class="featurette-heading display-6  fs-1">House Cleaning</h2>
             <p class="lead">
               <span className="fw-normal">$200.00 (Approx.)</span>
