@@ -8,7 +8,7 @@ function UserData({ formData, setFormData }) {
   const getAvailableDates = () => {};
 
   return (
-    <div className="other-info-container mx-5 px-5  justify-content-center">
+    <div className="other-info-container px-5 justify-content-center">
       <div class="input-group m-3 justify-content-between">
         <span class="input-group-text">Name: </span>
         <input
