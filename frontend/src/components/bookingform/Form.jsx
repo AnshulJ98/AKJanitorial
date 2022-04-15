@@ -152,7 +152,7 @@ function Form() {
               console.log(formData);
               if (page === FormTitles.length - 1) {
                 axios
-                  .post("http://localhost:8000/api/", {
+                  .post("http://31.220.108.76:8000/api/", {
                     formData: formData,
                   })
                   .then((res) => alert("Form Submitted"))

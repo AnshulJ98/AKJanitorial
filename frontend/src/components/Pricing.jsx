@@ -107,8 +107,8 @@ function Pricing() {
                       surfaces
                     </li>
                     <li>
-                      <i className="fs-4 px-2">&bull;</i>Wiping clean and
-                      disinfect door handles
+                      <i className="fs-4 px-2">&bull;</i>Wipe, disinfect door
+                      handles
                     </li>
                     <li>
                       <i className="fs-4 px-2">&bull;</i>Cleaning air

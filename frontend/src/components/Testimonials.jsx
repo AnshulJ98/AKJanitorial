@@ -9,7 +9,7 @@ function Testimonials() {
   }, []);
   const getFeedbackData = () => {
     axios
-      .post("http://127.0.0.1:8000/get-feedback-data/")
+      .post("http://31.220.108.76:8000/get-feedback-data/")
       .then((res) => {
         const fd = res.data;
         setFeedBackData(fd);
