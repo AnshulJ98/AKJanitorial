@@ -6,11 +6,15 @@ import UserData from "./UserData";
 import BookingDetails from "./BookingDetails";
 import BookingFee from "./BookingFee";
 import ImageUpload from "./ImageUpload";
+import { useLocation } from "react-router-dom";
 
 import "./Form.css";
 import axios from "axios";
 
 function Form() {
+  const props = useLocation();
+  console.log(props);
+
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     services: ["1"],

@@ -6,7 +6,7 @@ function AboutUs() {
     <div className="about">
       <div className="position-relative overflow-hidden p-5 p-md-5 m-0  bg-light about-banner">
         <div className="col-md-4 p-lg-5 my-5 box">
-          <h1 className="display-4 text-black">About Us</h1>
+          <h1 className="display-4 fw-normal text-black">About Us</h1>
           <hr className="text-black fs-1 fw-bold" width="50%"></hr>
 
           <nav aria-label="breadcrumb">

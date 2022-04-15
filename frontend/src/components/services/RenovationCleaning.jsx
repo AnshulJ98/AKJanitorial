@@ -4,55 +4,59 @@ import { NavLink } from "react-router-dom";
 function RenovationCleaning() {
   return (
     <div className="home">
-      <div className="position-relative overflow-hidden p-5 p-md-5 m-0  bg-light renovation-cleaning-banner">
-        <div className="col-md-4 p-lg-5 m-5">
-          <h1 className="display-4 fw-normal text-white">
+      <div className="position-relative overflow-hidden p-3 p-md-5 m-0  bg-light renovation-cleaning-banner">
+        <div className="col-md-4 p-lg-5 my-5 box">
+          <h1 className="display-4 fw-normal text-black">
             Renovation Cleaning
           </h1>
-          <hr
-            className="text-white fs-1 fw-bold"
-            alignSelf="center"
-            width="50%"
-          ></hr>
+          <hr className="text-black fs-1 fw-bold" width="50%"></hr>
 
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <NavLink className="text-white" to="/">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
+                <NavLink className="text-black" to="/">
                   Home
                 </NavLink>
               </li>
-              <li class="breadcrumb-item">
-                <NavLink className="text-white" to="/services/serviceshome">
+              <li className="breadcrumb-item">
+                <NavLink className="text-black" to="/services/serviceshome">
                   Services
                 </NavLink>
               </li>
 
-              <li class="breadcrumb-item active text-white" aria-current="page">
+              <li
+                className="breadcrumb-item active text-black"
+                aria-current="page"
+              >
                 Renovation Cleaning
               </li>
             </ol>
           </nav>
         </div>
-        <div className="product-device shadow-sm d-none d-md-block"></div>
-        <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
       </div>
-      <div className="container px-5 mt-5 py-5 justify-content-center w-75">
-        <div class="row featurette align-items-center">
-          <div class="img-responsive col-md-5">
+      <div className="container  mt-5 py-5 justify-content-center ">
+        <div className="row featurette align-items-center">
+          <div className="img-responsive col-md-5 mb-3 text-center">
             <img width={"70%"} src="/Renovation-Cleaning-min-300x200.jpg"></img>
           </div>
-          <div class="col-md-7  align-middle">
-            <h2 class="featurette-heading display-6  fs-1">
+          <div className="col-md-7 my-3 align-middle">
+            <h2 className="featurette-heading display-6  fs-1">
               Renovation Cleaning
             </h2>
-            <p class="lead">
+            <p className="lead">
               <span className="fw-normal">$300.00 (Approx.)</span>
               <br></br>Gave Your house a makeover? But left a Big Mess? No
               Worries! <br></br>AK Janitorial will make sure nothing stays
               behind which is not meant to stay there. From dust to debris we
               clean it all.
             </p>
+            <NavLink
+              className="btn btn-primary  px-4 py-3 my-4 "
+              to="/services/renovationcleaning"
+            >
+              {" "}
+              Book Now
+            </NavLink>
           </div>
         </div>
       </div>

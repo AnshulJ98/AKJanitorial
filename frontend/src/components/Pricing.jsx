@@ -1,13 +1,13 @@
 import React from "react";
 import "./Pricing.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Pricing() {
   return (
     <div className="pricing">
       <div className="position-relative overflow-hidden p-5 p-md-5 m-0  bg-light pricing-banner">
         <div className="col-md-4 p-lg-5 my-5 box">
-          <h1 className="display-4">Pricing</h1>
+          <h1 className="display-4 text-black fw-normal">Pricing</h1>
           <hr className="text-black fs-1 fw-bold" width="50%"></hr>
 
           <nav aria-label="breadcrumb">
@@ -58,35 +58,37 @@ function Pricing() {
                   </span>
                   <ul className="pricing-text mb-5 text">
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Bedroom Deep
-                      Cleaning
+                      <i className="fs-4 px-2">&bull;</i>Bedroom Deep Cleaning
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Bathroom Deep
-                      Cleaning
+                      <i className="fs-4 px-2">&bull;</i>Bathroom Deep Cleaning
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Kitchen Deep
-                      Cleaning
+                      <i className="fs-4 px-2">&bull;</i>Kitchen Deep Cleaning
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Carpet Shampooing
+                      <i className="fs-4 px-2">&bull;</i>Carpet Shampooing
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Living Area
-                      Cleaning
+                      <i className="fs-4 px-2">&bull;</i>Living Area Cleaning
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Basement Cleaning
+                      <i className="fs-4 px-2">&bull;</i>Basement Cleaning
                     </li>
                   </ul>
 
-                  <NavLink to="/services/housecleaning">
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "houseCleaning",
+                      state: { houseCleaning: true },
+                    }}
+                  >
                     <span className="btn btn-primary d-block px-1 py-3">
                       {" "}
                       Book Now
                     </span>
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -101,26 +103,25 @@ function Pricing() {
                   </span>
                   <ul className="pricing-text mb-5">
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Dusting/polishing
+                      <i className="fs-4 px-2">&bull;</i>Dusting/polishing
                       surfaces
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Wiping clean and
+                      <i className="fs-4 px-2">&bull;</i>Wiping clean and
                       disinfect door handles
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Cleaning air
+                      <i className="fs-4 px-2">&bull;</i>Cleaning air
                       conditioning vents
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Polishing floors
+                      <i className="fs-4 px-2">&bull;</i>Polishing floors
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Staff washrooms
-                      and WCs
+                      <i className="fs-4 px-2">&bull;</i>Staff washrooms and WCs
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Carpent Shampooing
+                      <i className="fs-4 px-2">&bull;</i>Carpent Shampooing
                     </li>
                   </ul>
                   <NavLink to="/services/officecleaning">
@@ -143,28 +144,27 @@ function Pricing() {
                   </span>
                   <ul className="pricing-text mb-5">
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Vacuuming &
-                      Mopping Floors
+                      <i className="fs-4 px-2">&bull;</i>Vacuuming & Mopping
+                      Floors
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Cleaning
+                      <i className="fs-4 px-2">&bull;</i>Cleaning
                       Air-Conditioner Vents
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Cleaning Kitchen
-                      Hoods
+                      <i className="fs-4 px-2">&bull;</i>Cleaning Kitchen Hoods
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Cleaning Mirror &
-                      Glass Surfaces
-                    </li>
-                    <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Disinfecting The
+                      <i className="fs-4 px-2">&bull;</i>Cleaning Mirror & Glass
                       Surfaces
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Kitchen and food
-                      prep areas
+                      <i className="fs-4 px-2">&bull;</i>Disinfecting The
+                      Surfaces
+                    </li>
+                    <li>
+                      <i className="fs-4 px-2">&bull;</i>Kitchen and food prep
+                      areas
                     </li>
                   </ul>
                   <NavLink to="/services/renovationcleaning">
@@ -188,20 +188,20 @@ function Pricing() {
                   </span>
                   <ul className="pricing-text mb-5 text">
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Cleaning dirt,
-                      dust from surfaces
+                      <i className="fs-4 px-2">&bull;</i>Cleaning dirt, dust
+                      from surfaces
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Disinfecting to
-                      kill germs on surfaces
+                      <i className="fs-4 px-2">&bull;</i>Disinfecting to kill
+                      germs on surfaces
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Sanitizing all the
+                      <i className="fs-4 px-2">&bull;</i>Sanitizing all the
                       surfaces and objects
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Handling and
-                      Disposing waste
+                      <i className="fs-4 px-2">&bull;</i>Handling and Disposing
+                      waste
                     </li>
                     <div className="text-white">.</div>
                     <p className="text-white">.</p>
@@ -227,18 +227,18 @@ function Pricing() {
                   </span>
                   <ul className="pricing-text mb-5">
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Washing Driveways
+                      <i className="fs-4 px-2">&bull;</i>Washing Driveways
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Washing Decks and
+                      <i className="fs-4 px-2">&bull;</i>Washing Decks and
                       Patios
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Washing Bricks and
+                      <i className="fs-4 px-2">&bull;</i>Washing Bricks and
                       Concrete
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Washing Vinyl
+                      <i className="fs-4 px-2">&bull;</i>Washing Vinyl
                     </li>
                     <div className="text-white">.</div>
                     <p className="text-white">.</p>
@@ -266,19 +266,18 @@ function Pricing() {
                   </span>
                   <ul className="pricing-text mb-5">
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Rooms Deep
-                      Cleaning
+                      <i className="fs-4 px-2">&bull;</i>Rooms Deep Cleaning
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Dusting/polishing
+                      <i className="fs-4 px-2">&bull;</i>Dusting/polishing
                       surfaces
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Cleaning
+                      <i className="fs-4 px-2">&bull;</i>Cleaning
                       Air-Conditioner Vents
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Disinfecting The
+                      <i className="fs-4 px-2">&bull;</i>Disinfecting The
                       Surfaces
                     </li>
                     <div className="text-white">.</div>
@@ -307,19 +306,16 @@ function Pricing() {
                   </span>
                   <ul className="pricing-text mb-5 text">
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Bedroom Deep
-                      Cleaning
+                      <i className="fs-4 px-2">&bull;</i>Bedroom Deep Cleaning
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Bathroom Deep
-                      Cleaning
+                      <i className="fs-4 px-2">&bull;</i>Bathroom Deep Cleaning
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Kitchen Deep
-                      Cleaning
+                      <i className="fs-4 px-2">&bull;</i>Kitchen Deep Cleaning
                     </li>
                     <li>
-                      <i className="fa-sm fa-circle mx-2"></i>Carpet Shampooing
+                      <i className="fs-4 px-2">&bull;</i>Carpet Shampooing
                     </li>
                     <div className="text-white">.</div>
                     <p className="text-white">.</p>

@@ -13,11 +13,9 @@ function Home() {
             your house unbeliavably fresh and super clean.
           </p>
           <NavLink to="/form">
-            <span className="btn btn-outline-secondary"> Book Now</span>
+            <span className="btn btn-secondary"> Book Now</span>
           </NavLink>
         </div>
-        <div className="product-device shadow-sm d-none d-md-block"></div>
-        <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
       </div>
 
       <div className="text-center mt-3 pt-3">
@@ -227,6 +225,7 @@ function Home() {
           </div>
         </div>
         <button
+          id="carousel-left"
           className="carousel-control-prev"
           type="button"
           data-bs-target="#myCarousel"
@@ -239,6 +238,7 @@ function Home() {
           <span className="visually-hidden">Previous</span>
         </button>
         <button
+          id="carousel-right"
           className="carousel-control-next"
           type="button"
           data-bs-target="#myCarousel"

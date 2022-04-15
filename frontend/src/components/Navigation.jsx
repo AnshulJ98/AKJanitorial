@@ -22,6 +22,13 @@ function Navigation() {
             src="/Thumbnail.png"
           ></img>
         </NavLink>
+        <NavLink
+          className="display-6  fs-1 fw-normal text-decoration-none navbar-toggler border-0"
+          to="/"
+        >
+          {" "}
+          AK Janitorial{" "}
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -33,7 +40,6 @@ function Navigation() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
         <div
           className="collapse navbar-collapse justify-content-around"
           id="navbarNavDropdown"
@@ -155,10 +161,10 @@ function Navigation() {
               <div className="modal-content">
                 <div className="modal-body text-center">
                   <h1 className="display-6  fs-1">Call Us Now</h1>
-                  <p className="display-6  fs-1 p-3">
+                  <p className="display-6  fs-3 p-3">
                     <i className="fas fa-phone me-3"></i> + 1 604-537-6712
                   </p>
-                  <p className="display-6  fs-1 p-3">
+                  <p className="display-6  fs-3 p-3">
                     <i className="fas fa-phone me-3"></i> + 1 778-713-6712
                   </p>
                 </div>

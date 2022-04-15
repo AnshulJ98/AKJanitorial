@@ -93,6 +93,7 @@ function ContactUs() {
                     cols="20"
                     rows="8"
                     placeholder="Enter your Message"
+                    required
                   ></textarea>
                   <div className="row">
                     <div className="col-6">
@@ -101,6 +102,7 @@ function ContactUs() {
                         className="form-control"
                         id="exampleFormControlInput1"
                         placeholder="Your Name"
+                        required
                       ></input>
                     </div>
                     <div className="col-6">
@@ -109,6 +111,7 @@ function ContactUs() {
                         className="form-control"
                         id="exampleFormControlInput2"
                         placeholder="Your Email"
+                        required
                       ></input>
                     </div>
                   </div>

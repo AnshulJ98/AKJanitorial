@@ -190,3 +190,12 @@ transform: translateX(0); */
   padding: 20px 40px;
 }
 
+@media (min-width: 998px) {
+#carousel-left{
+  left:-40px;
+}
+
+#carousel-right{
+  right:40px;
+}
+}
