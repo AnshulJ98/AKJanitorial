@@ -11,34 +11,31 @@ function Testimonials() {
     axios
       .post("http://127.0.0.1:8000/get-feedback-data/")
       .then((res) => {
-        console.log(res.data);
         const fd = res.data;
         setFeedBackData(fd);
       })
       .catch((errors) => console.log(errors));
   };
 
-  console.log(feedBackData);
   return (
     <div className="testimonials">
       <div className="position-relative overflow-hidden p-5 p-md-5 m-0  bg-light testimonials-banner">
-        <div className="col-md-4 p-lg-5 m-5">
-          <h1 className="display-4 fw-normal text-white">Testimonials</h1>
-          <hr
-            className="text-white fs-1 fw-bold"
-            alignSelf="center"
-            width="50%"
-          ></hr>
+        <div className="col-md-6 p-lg-6 my-5 box">
+          <h1 className="display-4 fw-normal text-black">Testimonials</h1>
+          <hr className="text-black fs-1 fw-bold" width="50%"></hr>
 
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <NavLink className="text-white" to="/">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
+                <NavLink className="text-black" to="/">
                   Home
                 </NavLink>
               </li>
 
-              <li class="breadcrumb-item active text-white" aria-current="page">
+              <li
+                className="breadcrumb-item active text-black"
+                aria-current="page"
+              >
                 Testimonials
               </li>
             </ol>
@@ -47,7 +44,7 @@ function Testimonials() {
         <div className="product-device shadow-sm d-none d-md-block"></div>
         <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
       </div>
-      <div className="text-center mt-5 pt-5">
+      <div className="text-center mt-5 pt-5 container">
         <h1 className="display-6  fs-1">
           What our clients say <br></br>
         </h1>
@@ -68,22 +65,27 @@ function Testimonials() {
         </a>
       </div>
 
-      <div className="container px-5 my-5 py-5 justify-content-center w-75">
-        <div class="row featurette align-items-center">
-          <div class="col-md-12  align-middle">
-            <section class="ftco-section bg-light">
-              <div class="container">
-                <div class="row justify-content-center pb-5 mb-3">
-                  <div class="col-md-7 heading-section text-center ftco-animate fadeInUp ftco-animated"></div>
+      <div className="container  my-5 py-5 justify-content-center ">
+        <div className="row featurette align-items-center">
+          <div className="col-md-12  align-middle">
+            <section className="ftco-section bg-light">
+              <div className="container">
+                <div className="row justify-content-center pb-5 mb-3">
+                  <div className="col-md-7 heading-section text-center ftco-animate fadeInUp ftco-animated"></div>
                 </div>
 
-                <div class="row">
+                <div className="row">
                   {feedBackData &&
                     feedBackData.map((review, index) => (
-                      <div class="col-md-6 ftco-animate fadeInUp ftco-animated">
-                        <div class="block-7">
-                          <div class="text-center p-4">
-                            {review.name && <p class="lead">{review.name}</p>}
+                      <div
+                        className="col-md-6 ftco-animate fadeInUp ftco-animated"
+                        key={index}
+                      >
+                        <div className="block-7">
+                          <div className="text-center p-4">
+                            {review.name && (
+                              <p className="lead">{review.name}</p>
+                            )}
                             {review.name && (
                               <span className="text-left">{review.name}</span>
                             )}

@@ -1,10 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url("https://cdn.syncfusion.com/ej2/material.css");
-@import "../../../node_modules/@syncfusion/ej2-base/styles/material.css";
-@import "../../../node_modules/@syncfusion/ej2-inputs/styles/material.css";
-@import "../../../node_modules/@syncfusion/ej2-popups/styles/material.css";
-@import "../../../node_modules/@syncfusion/ej2-lists/styles/material.css";
-@import "../../../node_modules/@syncfusion/ej2-react-calendars/styles/material.css";
+
 .App {
   background: rgb(255, 0, 228);
   background: radial-gradient(
@@ -44,6 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  overflow-x:hidden;
 }
 
 .form-container .header {

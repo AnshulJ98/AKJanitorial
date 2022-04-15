@@ -32,22 +32,14 @@ SCOPES = ['https://www.googleapis.com/auth/calendar']
 SERVICE_ACCOUNT_FILE = './google-credentials.json'
 
 TIME_LIST=[
-        '08:00-09:00',
-        '09:00-10:00',
-        '10:00-11:00',
-        '11:00-12:00',
-        '12:00-13:00',
-        '13:00-14:00',
-        '14:00-15:00',
-        '15:00-16:00',
-        '16:00-17:00',
-        '17:00-18:00',
-        '18:00-19:00',
-        '19:00-20:00',
-        '20:00-21:00',
-        '21:00-22:00',
-        '22:00-23:00',
-        '23:00-00:00'
+        '08:00-10:00',
+        '10:00-12:00',
+        '12:00-14:00',
+        '14:00-16:00',
+        '16:00-18:00',
+        '18:00-20:00',
+        '20:00-22:00',
+        '22:00-00:00'
     ]
 
 # Create your views here.
@@ -71,6 +63,7 @@ def ApiView(request, *args, **kwargs):
     f=request.data['formData']
     for i in f:
         print(i, '\n',f[i])
+    CreateEvent(f)
     return Response(status=200)
 
 @api_view(['GET', 'POST'])
@@ -100,46 +93,97 @@ def GetEvents(request, *args, **kwargs):
     events = events_result.get('items', [])
     
     time_slots={
-        '08:00-09:00':{'available':True},
-        '09:00-10:00':{'available':True},
-        '10:00-11:00':{'available':True},
-        '11:00-12:00':{'available':True},
-        '12:00-13:00':{'available':True},
-        '13:00-14:00':{'available':True},
-        '14:00-15:00':{'available':True},
-        '15:00-16:00':{'available':True},
-        '16:00-17:00':{'available':True},
-        '17:00-18:00':{'available':True},
-        '18:00-19:00':{'available':True},
-        '19:00-20:00':{'available':True},
-        '20:00-21:00':{'available':True},
-        '21:00-22:00':{'available':True},
-        '22:00-23:00':{'available':True},
-        '23:00-00:00':{'available':True}
+        '08:00-10:00':True,
+        '10:00-12:00':True,
+        '12:00-14:00':True,
+        '14:00-16:00':True,
+        '16:00-18:00':True,
+        '18:00-20:00':True,
+        '20:00-22:00':True,
+        '22:00-00:00':True
     }
     dates={}
     for i in range(0,30):
-        dates[(datetime.datetime.today() + datetime.timedelta(i)).strftime('%d-%B-%Y')]=copy.copy(time_slots)
+        dates[(datetime.datetime.today() + datetime.timedelta(i)).strftime('%d-%B-%Y')]=copy.deepcopy(time_slots)
 
     availableDatetimes = {}
+    from pprint import pprint
+    pprint(dates)
     for e in events:
         time_format = "%H:%M"
-        time_slots[(parser.parse(e['start'].get('dateTime'))).strftime(time_format)+'-'+(parser.parse(e['end'].get('dateTime'))).strftime(time_format)]['available']=False
-        print(TIME_LIST.index((parser.parse(e['start'].get('dateTime'))).strftime(time_format)+'-'+(parser.parse(e['end'].get('dateTime'))).strftime(time_format)))
+        date_format = "%d-%B-%Y" 
+        start_time = (parser.parse(e['start'].get('dateTime'))).strftime(time_format)
+        end_time = (parser.parse(e['end'].get('dateTime'))).strftime(time_format)
+        date = (parser.parse(e['start'].get('dateTime'))).strftime(date_format  )
+        print(date)
+        if date in dates:
+            dates[date][start_time+'-'+end_time]=False
+            print("YYOYO")
+        else: 
+            print("NOOO")
+        print(TIME_LIST.index(start_time+"-"+end_time))
+    pprint(dates)
     return Response(dates,status=200)
 
 
-@api_view(['GET', 'POST'])
 @csrf_exempt
-def CreateEvent(request, *args, **kwargs):
+def CreateEvent(request):
+    from pprint import pprint
+    pprint(request)
     credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
     service = googleapiclient.discovery.build('calendar', 'v3', credentials=credentials)
-    utc = pytz.utc
-    startdt =   utc.localize(datetime.datetime.strptime('2022-05-05 17:00:00','%Y-%m-%d %H:%M:%S'))
-    enddt =     utc.localize(datetime.datetime.strptime('2022-05-05 18:00:00','%Y-%m-%d %H:%M:%S'))
+
+    time_format = "%H:%M"
+    date_format = '%Y-%m-%dT%H:%M:%S.%fZ'
+    startdt =  parser.parse(request.get('bookingTime'))
+    enddt =     parser.parse(request.get('bookingTime'))
+    prereserve = parser.parse(request.get('bookingTime'))
+    postreserve = parser.parse(request.get('bookingTime'))
+    start_hour =  startdt.hour
+
+    enddt = enddt + datetime.timedelta(hours=2)
+    end_hour = enddt.hour
+    prereserve = prereserve - datetime.timedelta(hours=2)
+    postreserve = postreserve + datetime.timedelta(hours=4)
+    slot = TIME_LIST.index(startdt.strftime(time_format)+'-'+enddt.strftime(time_format))
+    
+    user_data = request.get('userData')
+    
+    desc = ""
+    for i in request.get('services'):
+        if i=='1':
+            desc+="\n\nHouse Cleaning"+"\nNumber of Rooms: " + str(request.get('houseCleaningData')['numberOfRooms']) + "\nNumber of Bathrooms: " + str(request.get('houseCleaningData')['numberOfBathrooms'])+"\nArea: " + str(request.get('houseCleaningData')['area'])+"\nBasement: " + str(request.get('houseCleaningData')['basement'])+"\nKitchen: " + str(request.get('houseCleaningData')['kitchen'])+"\nLiving Area: " + str(request.get('houseCleaningData')['livingArea'])+"\nCarpet: " + str(request.get('houseCleaningData')['carpet'])
+        if i=='2':
+            desc+="\n\nOffice Cleaning"+"\nNumber of Washrooms: " + str(request.get('officeCleaningData')['numberOfWashrooms'])+"\nArea: " + str(request.get('officeCleaningData')['area'])+"\Cabins: " + str(request.get('officeCleaningData')['cabins'])+"\Carpet: " + str(request.get('officeCleaningData')['carpet'])
+        if i=='3':
+            desc+="\n\nRenovation Cleaning"+"\nNumber of Rooms: " + str(request.get('renovationCleaningData')['numberOfRooms']) + "\nNumber of Bathrooms: " + str(request.get('renovationCleaningData')['numberOfBathrooms'])+"\nArea: " + str(request.get('renovationCleaningData')['area'])+"\nBasement: " + str(request.get('renovationCleaningData')['basement'])+"\nKitchen: " + str(request.get('renovationCleaningData')['kitchen'])+"\nLiving Area: " + str(request.get('renovationCleaningData')['livingArea'])+"\nCarpet: " + str(request.get('renovationCleaningData')['carpet'])
+        if i=='4':
+            desc+="\n\nSanitization"+"\nRequest: " + str(request.get('sanitizationData')['request'])
+        if i=='5':
+            desc+="\n\nPressure Washing"+"\nArea: " + str(request.get('pressureWashingData')['area'])+"\nCemented Backyard: " + str(request.get('pressureWashingData')['cementedBackyard'])+"\nDriveway: " + str(request.get('pressureWashingData')['driveway'])+"\nPatio: " + str(request.get('pressureWashingData')['patio'])
+        if i=='6':
+            desc+="\n\nMove In / Move Out Cleaning"+"\nNumber of Rooms: " + str(request.get('moveCleaningData')['numberOfRooms']) + "\nNumber of Bathrooms: " + str(request.get('moveCleaningData')['numberOfBathrooms'])+"\nArea: " + str(request.get('moveCleaningData')['area'])+"\nBasement: " + str(request.get('moveCleaningData')['basement'])+"\nKitchen: " + str(request.get('moveCleaningData')['kitchen'])+"\nLiving Area: " + str(request.get('moveCleaningData')['livingArea'])+"\nCarpet: " + str(request.get('moveCleaningData')['carpet'])
+        if i=='7':
+            desc+="\n\nMaid Cleaning"+"\nNumber of Rooms: " + str(request.get('maidCleaningData')['numberOfRooms']) + "\nNumber of Bathrooms: " + str(request.get('maidCleaningData')['numberOfBathrooms'])+"\nArea: " + str(request.get('maidCleaningData')['area'])
+        if i=='8':
+            desc+="\n\nOther(Garage, Gym, School)"+"\nRequest: " + str(request.get('otherCleaningData')['request']) 
+        
+
+    pre_event = {
+    'summary': "Reserved",
+    'description': 'Reserved',
+    'start': {
+        'dateTime': prereserve.isoformat("T"),
+        'timeZone': 'America/Vancouver',
+    },
+    'end': {
+        'dateTime': startdt.isoformat("T"),
+        'timeZone': 'America/Vancouver',
+    },
+    }
     new_event = {
-    'summary': "Events TEsTT22",
-    'description': 'Test',
+    'summary': "Cleaning Scheduled for "+user_data['name']+" "+ user_data['email'],
+    'description': desc,
     'start': {
         'dateTime': startdt.isoformat("T"),
         'timeZone': 'America/Vancouver',
@@ -149,6 +193,27 @@ def CreateEvent(request, *args, **kwargs):
         'timeZone': 'America/Vancouver',
     },
     }
+    post_event = {
+    'summary': "Reserved",
+    'description': 'Reserved',
+    'start': {
+        'dateTime': enddt.isoformat("T"),
+        'timeZone': 'America/Vancouver',
+    },
+    'end': {
+        'dateTime': postreserve.isoformat("T"),
+        'timeZone': 'America/Vancouver',
+    },
+    }
+    pprint(new_event)
+    if slot !=0:
+        print("PRE")
+        service.events().insert(calendarId=CAL_ID, body=pre_event).execute()
+    if slot !=7:
+        print("POST")
+        service.events().insert(calendarId=CAL_ID, body=post_event).execute()
     service.events().insert(calendarId=CAL_ID, body=new_event).execute()
+    
+    
     print('Event Created')
     return Response(status=200)

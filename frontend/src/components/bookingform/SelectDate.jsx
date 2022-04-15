@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
-import { enableRipple } from "@syncfusion/ej2-base";
-import { TimePickerComponent } from "@syncfusion/ej2-react-calendars";
-enableRipple(true);
+import DayTimePicker from "react-day-time-picker-timeslots";
 
 function SelectDate({ formData, setFormData }) {
   const [availableDates, setAvailableDates] = useState("");
@@ -20,9 +17,6 @@ function SelectDate({ formData, setFormData }) {
       })
       .catch((errors) => console.log(errors));
   };
-
-  const [selectedDate, setSelectedDate] = useState("");
-  console.log(selectedDate);
 
   const dateToYMD = (date) => {
     var strArray = [
@@ -44,46 +38,63 @@ function SelectDate({ formData, setFormData }) {
     var y = date.getFullYear();
     return "" + (d <= 9 ? "0" + d : d) + "-" + m + "-" + y;
   };
-  //console.log(Object.values(availableDates[selectedDate]));
+
+  const timeSlotValidator = (slotTime) => {
+    let date = availableDates[dateToYMD(slotTime)];
+    let endDate = new Date(Object.keys(availableDates).pop());
+
+    if (
+      Date.parse(endDate.toDateString()) < Date.parse(slotTime.toDateString())
+    ) {
+      return false;
+    }
+
+    let startHours = String(slotTime.getHours()).padStart(2, "0");
+
+    let endHours =
+      String(slotTime.getHours() + 2).padStart(2, "0") == 24
+        ? "00"
+        : String(slotTime.getHours() + 2).padStart(2, "0");
+
+    let s = startHours + ":00-" + endHours + ":00";
+    return availableDates[dateToYMD(slotTime)][s];
+  };
+
+  const onConfirm = (slotTime) => {
+    let pacificString = new Date(
+      slotTime.getFullYear(),
+      slotTime.getMonth(),
+      slotTime.getDate(),
+      slotTime.getHours(),
+      slotTime.getMinutes(),
+      0
+    ).toLocaleString("en-US", {
+      hour12: false,
+      timeZone: "America/Vancouver",
+    });
+
+    let x = new Date(pacificString);
+    let diff = slotTime.getHours() - x.getHours();
+    x.setHours(slotTime.getHours() + diff);
+    let y = new Date(x).toLocaleString("en-US", {
+      hour12: false,
+      timeZone: "America/Vancouver",
+    });
+
+    setFormData({
+      ...formData,
+      bookingTime: y,
+    });
+  };
+
   return (
-    <div className="other-info-container mx-5 px-5 w-50 justify-content-center">
+    <div className="other-info-container   justify-content-center">
       <div>{availableDates[0]}</div>
-      <TimePickerComponent
-        id="timepicker"
-        placeholder="Select a Time"
-        step={60}
+      <DayTimePicker
+        timeSlotSizeMinutes={120}
+        timeSlotValidator={timeSlotValidator}
+        onConfirm={onConfirm}
       />
-      <DatePickerComponent
-        placeholder="Select a Date"
-        onChange={(e) => {
-          setFormData({ ...formData, date: dateToYMD(e.target.value) });
-          setSelectedDate(dateToYMD(e.target.value));
-        }}
-        value={selectedDate}
-        min={Object.keys(availableDates)[0]}
-        max={
-          Object.keys(availableDates)[Object.keys(availableDates).length - 1]
-        }
-      ></DatePickerComponent>
-      {selectedDate &&
-        Object.values(availableDates[selectedDate]).map((review, index) => (
-          <span key={index}>
-            {review && (
-              <p class="lead">{Object.keys(availableDates[selectedDate])}2</p>
-            )}
-            {index}
-            {review && (
-              <p class="lead">
-                {
-                  Object.values(availableDates[selectedDate])[index][
-                    "available"
-                  ]
-                }
-                x
-              </p>
-            )}
-          </span>
-        ))}
     </div>
   );
 }

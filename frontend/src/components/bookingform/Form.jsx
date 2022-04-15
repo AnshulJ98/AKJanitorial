@@ -2,16 +2,24 @@ import React, { useState } from "react";
 import ServiceType from "./ServiceType";
 import ServiceOptions from "./ServiceOptions";
 import SelectDate from "./SelectDate";
+import UserData from "./UserData";
+import BookingDetails from "./BookingDetails";
+import BookingFee from "./BookingFee";
 import ImageUpload from "./ImageUpload";
+import { useLocation } from "react-router-dom";
 
 import "./Form.css";
 import axios from "axios";
 
 function Form() {
+  const props = useLocation();
+  console.log(props);
+
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     services: ["1"],
     image1: "",
+    bookingTime: "",
     houseCleaningSelected: true,
     officeCleaningSelected: false,
     pressureWashingSelected: false,
@@ -62,7 +70,6 @@ function Form() {
       driveway: false,
       patio: false,
       cementedBackyard: false,
-      carpet: false,
     },
     moveCleaningData: {
       numberOfRooms: 1,
@@ -94,6 +101,9 @@ function Form() {
     "Select All Options",
     "Image Upload",
     "Select Date",
+    "Please Enter Your Details",
+    "Booking Details",
+    "Booking Fee",
   ];
 
   const PageDisplay = () => {
@@ -103,8 +113,14 @@ function Form() {
       return <ServiceOptions formData={formData} setFormData={setFormData} />;
     } else if (page === 2) {
       return <ImageUpload formData={formData} setFormData={setFormData} />;
-    } else {
+    } else if (page === 3) {
       return <SelectDate formData={formData} setFormData={setFormData} />;
+    } else if (page === 4) {
+      return <UserData formData={formData} setFormData={setFormData} />;
+    } else if (page === 5) {
+      return <BookingDetails formData={formData} setFormData={setFormData} />;
+    } else {
+      return <BookingFee formData={formData} setFormData={setFormData} />;
     }
   };
 

@@ -332,7 +332,7 @@ function SanitizationOptions({ formData, setFormData }) {
         <span class="input-group-text">Request: </span>
         <textarea
           type="text"
-          value={formData.sanitizationData.numberOfRooms}
+          value={formData.sanitizationData.request}
           onChange={(e) => {
             let h1 = formData.sanitizationData;
             h1.request = e.target.value;
@@ -416,27 +416,6 @@ function PressureWashingOptions({ formData, setFormData }) {
             });
           }}
         ></input>
-      </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Carpet: </span>
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="check-box"
-          checked={formData.pressureWashingData.carpet}
-          onChange={(e) => {
-            let h1 = formData.pressureWashingData;
-            h1.carpet = !h1.carpet;
-            setFormData({
-              ...formData,
-              pressureWashingData: h1,
-            });
-          }}
-        ></input>
-      </div>
-      <div className="carpet-text m-3 p-3">
-        Note: Carpet Cleaning is only vaccumm. Steam Cleaning carpet is extra
-        and can be requested.
       </div>
     </div>
   );

@@ -5,23 +5,22 @@ function AboutUs() {
   return (
     <div className="about">
       <div className="position-relative overflow-hidden p-5 p-md-5 m-0  bg-light about-banner">
-        <div className="col-md-4 p-lg-5 m-5">
-          <h1 className="display-4 fw-normal text-white">About Us</h1>
-          <hr
-            className="text-white fs-1 fw-bold"
-            alignSelf="center"
-            width="50%"
-          ></hr>
+        <div className="col-md-4 p-lg-5 my-5 box">
+          <h1 className="display-4 fw-normal text-black">About Us</h1>
+          <hr className="text-black fs-1 fw-bold" width="50%"></hr>
 
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <NavLink className="text-white" to="/">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
+                <NavLink className="text-black" to="/">
                   Home
                 </NavLink>
               </li>
 
-              <li class="breadcrumb-item active text-white" aria-current="page">
+              <li
+                className="breadcrumb-item active text-black"
+                aria-current="page"
+              >
                 About Us
               </li>
             </ol>
@@ -45,9 +44,9 @@ function AboutUs() {
         </p>
       </div>
       <div className="container px-5 py-5 justify-content-center w-75">
-        <div class="row g-3 py-5 row-cols-1 row-cols-lg-3 justify-content-center">
-          <div class="feature col text-center px-4 edgeTile">
-            <div class="feature-icon edgeTile mt-5 mb-3">
+        <div className="row g-3 py-5 row-cols-1 row-cols-lg-3 justify-content-center">
+          <div className="feature col text-center px-4 edgeTile">
+            <div className="feature-icon edgeTile mt-5 mb-3">
               <img
                 width="25%"
                 className="edgeTile"
@@ -60,9 +59,9 @@ function AboutUs() {
               Mainland, Abbotsford, Mission & Vancouver, Surrey
             </p>
           </div>
-          <div class="pb-4">
-            <div class="feature col text-center middleTile px-4">
-              <div class="feature-icon icon-square text-center middleTile mb-3">
+          <div className="pb-4">
+            <div className="feature col text-center middleTile px-4">
+              <div className="feature-icon icon-square text-center middleTile mb-3">
                 <img
                   width="25%"
                   className="edgeTile mt-5"
@@ -81,8 +80,8 @@ function AboutUs() {
               </p>
             </div>
           </div>
-          <div class="feature col edgeTile text-center px-4">
-            <div class="feature-icon edgeTile mt-5 mb-3">
+          <div className="feature col edgeTile text-center px-4">
+            <div className="feature-icon edgeTile mt-5 mb-3">
               <img
                 width="25%"
                 className="edgeTile"
@@ -98,15 +97,15 @@ function AboutUs() {
         </div>
       </div>
       <div className="container px-5 py-5 justify-content-center w-75">
-        <div class="row featurette align-items-center">
-          <div class="col-md-7  align-middle">
-            <h2 class="featurette-heading display-6  fs-1">
-              <span class="text-muted">
+        <div className="row featurette align-items-center">
+          <div className="col-md-7  align-middle">
+            <h2 className="featurette-heading display-6  fs-1">
+              <span className="text-muted">
                 Why Choose Us. <br></br>
               </span>
               Our Expertise Making Places Shine
             </h2>
-            <p class="lead">
+            <p className="lead">
               At AK Janitorials we believe that we have a duty to adhere to good
               environmental practice and operate in a sustainable manner. We at
               AK Janitorial are committed to helping people make sustainable
@@ -114,9 +113,9 @@ function AboutUs() {
             </p>
           </div>
 
-          <div class="col-md-5 mg-5 pb-5">
-            <div class="feature row edgeTile text-left px-4">
-              <div class="feature-icon edgeTile  mb-3">
+          <div className="col-md-5 mg-5 pb-5">
+            <div className="feature row edgeTile text-left px-4">
+              <div className="feature-icon edgeTile  mb-3">
                 <img
                   width="20%"
                   className="edgeTile"
@@ -128,8 +127,8 @@ function AboutUs() {
                 Cleaning professionals who have helped clean hundreds of places.
               </p>
             </div>
-            <div class="feature row edgeTile text-left px-4">
-              <div class="feature-icon edgeTile mt-3 ">
+            <div className="feature row edgeTile text-left px-4">
+              <div className="feature-icon edgeTile mt-3 ">
                 <img
                   width="20%"
                   className="edgeTile"
@@ -142,8 +141,8 @@ function AboutUs() {
                 value is what you're looking for.
               </p>
             </div>
-            <div class="feature row edgeTile text-left px-4">
-              <div class="feature-icon edgeTile mt-3 mb-3">
+            <div className="feature row edgeTile text-left px-4">
+              <div className="feature-icon edgeTile mt-3 mb-3">
                 <img
                   width="20%"
                   className="edgeTile"
