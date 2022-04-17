@@ -9,6 +9,7 @@ urlpatterns = [
     path('get-feedback-data/', views.GetFeedbackView, name='getfeedbackview'),
     path('get-events/', views.GetEvents, name='geteventsview'),
     path('create-event/', views.CreateEvent, name='createeventview'),
+    path('payment/', views.PaymentView, name='paymentview'),
     re_path(r'^(?:.*)/?$', views.IndexView.as_view(template_name="index.html"), 
     ),
 ]

@@ -18,6 +18,11 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+
+from square.client import Client
+from nanoid import generate
+
+
 from django.views.decorators.csrf import csrf_exempt
 from .models import Feedback
 from .serializers import FeedbackSerializer
@@ -28,6 +33,7 @@ basedir = path.abspath(path.dirname(__file__))
 load_dotenv(path.join(basedir, '.env'))
 
 CAL_ID= environ.get('CAL_ID')
+
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 SERVICE_ACCOUNT_FILE = './google-credentials.json'
 
@@ -41,6 +47,13 @@ TIME_LIST=[
         '20:00-22:00',
         '22:00-00:00'
     ]
+
+SQUARE_ACCESS_TOKEN= environ.get('SQUARE_ACCESS_TOKEN')
+
+client = Client(
+    access_token=SQUARE_ACCESS_TOKEN,
+    environment='sandbox',
+)
 
 # Create your views here.
 '''
@@ -217,3 +230,26 @@ def CreateEvent(request):
     
     print('Event Created')
     return Response(status=200)
+
+@api_view(['GET', 'POST'])
+@csrf_exempt
+def PaymentView(request, *args, **kwargs):
+    from pprint import pprint
+    pprint(request.data)
+    jdata=json.loads(json.dumps(request.data))
+    pprint(list(jdata))
+    idempotency_key=generate()
+    print(request.data['sourceId'])
+    result = client.payments.create_payment(
+    body = {
+        "source_id": request.data['sourceId'],
+        "idempotency_key": idempotency_key,
+        "amount_money": {
+        "amount": 3000,
+        "currency": "CAD",
+        "location_id": request.data['locationId'],
+        }
+    }
+    )
+    pprint(result.body)
+    return Response(result.body)

@@ -14,6 +14,7 @@
     "dotenv": "^16.0.0",
     "focus-trap-react": "5.0.1",
     "jquery": "^3.6.0",
+    "nanoid": "^3.3.2",
     "qs": "^6.10.3",
     "react": "^17.0.2",
     "react-bootstrap": "^2.2.2",
@@ -24,7 +25,6 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "react-select": "^5.2.2",
-    "react-square-web-payments-sdk": "^1.5.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

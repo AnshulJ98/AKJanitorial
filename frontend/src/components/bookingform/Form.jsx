@@ -147,23 +147,25 @@ function Form() {
           >
             Prev
           </button>
-          <button
-            onClick={() => {
-              console.log(formData);
-              if (page === FormTitles.length - 1) {
-                axios
-                  .post("http://31.220.108.76:8000/api/", {
-                    formData: formData,
-                  })
-                  .then((res) => alert("Form Submitted"))
-                  .catch((errors) => console.log(errors));
-              } else {
-                setPage((currPage) => currPage + 1);
-              }
-            }}
-          >
-            {page === FormTitles.length - 1 ? "Submit" : "Next"}
-          </button>
+          {page != FormTitles.length - 1 && (
+            <button
+              onClick={() => {
+                console.log(formData);
+                if (page === FormTitles.length - 1) {
+                  axios
+                    .post("http://31.220.108.76:8000/api/", {
+                      formData: formData,
+                    })
+                    .then((res) => alert("Form Submitted"))
+                    .catch((errors) => console.log(errors));
+                } else {
+                  setPage((currPage) => currPage + 1);
+                }
+              }}
+            >
+              {"Next"}
+            </button>
+          )}
         </div>
       </div>
     </div>
