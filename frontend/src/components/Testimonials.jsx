@@ -9,7 +9,7 @@ function Testimonials() {
   }, []);
   const getFeedbackData = () => {
     axios
-      .post("http://31.220.108.76:8000/get-feedback-data/")
+      .post("https://akjanitorial.ca:8000/get-feedback-data/")
       .then((res) => {
         const fd = res.data;
         setFeedBackData(fd);

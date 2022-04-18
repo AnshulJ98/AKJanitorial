@@ -87,9 +87,12 @@ function TestimonialsForm() {
                       ) {
                         console.log(formData);
                         axios
-                          .post("http://31.220.108.76:8000/feedback-submit/", {
-                            formData: formData,
-                          })
+                          .post(
+                            "https://akjanitorial.ca:8000/feedback-submit/",
+                            {
+                              formData: formData,
+                            }
+                          )
                           .then((res) => alert("Form Submitted"))
                           .catch((errors) => console.log(errors));
                       } else {

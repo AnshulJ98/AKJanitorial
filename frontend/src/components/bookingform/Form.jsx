@@ -191,7 +191,7 @@ function Form() {
                   console.log(formData);
                   if (page === FormTitles.length - 1) {
                     axios
-                      .post("http://31.220.108.76:8000/api/", {
+                      .post("https://akjanitorial.ca:8000/api/", {
                         formData: formData,
                       })
                       .then((res) => alert("Form Submitted"))
