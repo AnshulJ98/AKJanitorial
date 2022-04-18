@@ -9,7 +9,7 @@ function SelectDate({ formData, setFormData }) {
   }, []);
   const getAvailableDates = () => {
     axios
-      .post("http://31.220.108.76:8000/get-events/")
+      .post("http://192.168.0.172:8000/get-events/")
       .then((res) => {
         console.log(res.data);
         const fd = res.data;
@@ -88,13 +88,16 @@ function SelectDate({ formData, setFormData }) {
   };
 
   return (
-    <div className="other-info-container   justify-content-center">
-      <div>{availableDates[0]}</div>
-      <DayTimePicker
-        timeSlotSizeMinutes={120}
-        timeSlotValidator={timeSlotValidator}
-        onConfirm={onConfirm}
-      />
+    <div className="select-date-container">
+      <div className="input-group  px-5">
+        <DayTimePicker
+          timeSlotSizeMinutes={120}
+          timeSlotValidator={timeSlotValidator}
+          onConfirm={onConfirm}
+        />
+
+        <label className="gap"> </label>
+      </div>
     </div>
   );
 }

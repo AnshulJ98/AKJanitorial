@@ -43,7 +43,7 @@ function AboutUs() {
           our team is equipped to meet your needs.
         </p>
       </div>
-      <div className="container px-5 py-5 justify-content-center w-75">
+      <div className="container px-5 py-5 justify-content-center">
         <div className="row g-3 py-5 row-cols-1 row-cols-lg-3 justify-content-center">
           <div className="feature col text-center px-4 edgeTile">
             <div className="feature-icon edgeTile mt-5 mb-3">
@@ -96,7 +96,7 @@ function AboutUs() {
           </div>
         </div>
       </div>
-      <div className="container px-5 py-5 justify-content-center w-75">
+      <div className="container px-5 py-5 justify-content-center">
         <div className="row featurette align-items-center">
           <div className="col-md-7  align-middle">
             <h2 className="featurette-heading display-6  fs-1">
@@ -113,8 +113,8 @@ function AboutUs() {
             </p>
           </div>
 
-          <div className="col-md-5 mg-5 pb-5">
-            <div className="feature row edgeTile text-left px-4">
+          <div className="col-md-5 ">
+            <div className="feature row edgeTile text-left ">
               <div className="feature-icon edgeTile  mb-3">
                 <img
                   width="20%"
@@ -127,8 +127,8 @@ function AboutUs() {
                 Cleaning professionals who have helped clean hundreds of places.
               </p>
             </div>
-            <div className="feature row edgeTile text-left px-4">
-              <div className="feature-icon edgeTile mt-3 ">
+            <div className="feature row edgeTile text-left ">
+              <div className="feature-icon edgeTile my-3 ">
                 <img
                   width="20%"
                   className="edgeTile"
@@ -141,7 +141,7 @@ function AboutUs() {
                 value is what you're looking for.
               </p>
             </div>
-            <div className="feature row edgeTile text-left px-4">
+            <div className="feature row edgeTile text-left ">
               <div className="feature-icon edgeTile mt-3 mb-3">
                 <img
                   width="20%"

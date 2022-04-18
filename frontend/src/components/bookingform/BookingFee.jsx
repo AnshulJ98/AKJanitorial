@@ -3,16 +3,24 @@ import { nanoid } from "nanoid";
 
 import "./BookingFee.css";
 
-const appId = "sandbox-sq0idb-iijb3slqYThG-HkqsyIofA";
-const locationId = "L6XX49T2E929P";
-
 function BookingFee({ formData, setFormData }) {
+  const appId = "sandbox-sq0idb-iijb3slqYThG-HkqsyIofA";
+  const locationId = "L6XX49T2E929P";
   useEffect(async () => {
+    const appendSquareScript = () => {
+      const script = document.createElement("script");
+
+      script.src = "https://use.typekit.net/foobar.js";
+      script.async = true;
+
+      document.body.appendChild(script);
+      console.log("Square Script Appended");
+    };
+    appendSquareScript();
     const initializeCard = async (payments) => {
       console.log("INITCARD");
       const card = await payments.card();
 
-      console.log(payments);
       await card.attach("#card-container");
 
       return card;
@@ -34,6 +42,7 @@ function BookingFee({ formData, setFormData }) {
 
       console.log(paymentResponse);
       if (paymentResponse.ok) {
+        console.log("Payment Success");
         return paymentResponse.json();
       }
 
@@ -43,8 +52,8 @@ function BookingFee({ formData, setFormData }) {
 
     const tokenize = async (paymentMethod) => {
       const tokenResult = await paymentMethod.tokenize();
-      console.log(paymentMethod);
-      await console.log(tokenResult);
+      //console.log(paymentMethod);
+      //await console.log(tokenResult);
       if (tokenResult.status === "OK") {
         return tokenResult.token;
       } else {
@@ -104,7 +113,7 @@ function BookingFee({ formData, setFormData }) {
           const paymentResults = await createPayment(token);
           displayPaymentResults("SUCCESS");
 
-          console.debug("Payment Success", paymentResults);
+          //console.debug("Payment Success", paymentResults);
         } catch (e) {
           cardButton.disabled = false;
           displayPaymentResults("FAILURE");
@@ -120,10 +129,14 @@ function BookingFee({ formData, setFormData }) {
     loadPayments();
   });
   return (
-    <div className="other-info-container px-5 justify-content-center">
+    <div className="booking-fee-container">
       <div id="payment-form">
         <div id="card-container"></div>
-        <button className="btn btn-primary" id="card-button" type="button">
+        <button
+          className="btn btn-primary pay-button1"
+          id="card-button"
+          type="button"
+        >
           Pay $30.00
         </button>
       </div>

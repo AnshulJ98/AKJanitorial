@@ -192,8 +192,7 @@ function Pricing() {
                       from surfaces
                     </li>
                     <li>
-                      <i className="fs-4 px-2">&bull;</i>Disinfecting to kill
-                      germs on surfaces
+                      <i className="fs-4 px-2">&bull;</i>Disinfecting surfaces
                     </li>
                     <li>
                       <i className="fs-4 px-2">&bull;</i>Sanitizing all the
@@ -333,7 +332,7 @@ function Pricing() {
           </div>
         </div>
       </section>
-      <div className="p-5 m-5">
+      <div className="p-3 m-3">
         <h1 className="display-6 text-center fs-1">
           Frequently Asked Questions <br></br>
         </h1>

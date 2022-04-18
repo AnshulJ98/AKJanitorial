@@ -25,14 +25,14 @@ function ServiceType({ formData, setFormData }) {
   };
 
   return (
-    <div className="sign-up-container">
+    <div className="service-type-container">
       <div className="form-field p-5">
         <Select
           defaultValue={[options[0]]}
           isMulti
           name="colors"
           options={options}
-          className="basic-multi-select"
+          className="basic-multi-select lead fw-normal"
           classNamePrefix="select"
           isClearable={false}
           onChange={(event) => {

@@ -5,9 +5,11 @@ function HouseCleaningOptions({ formData, setFormData }) {
 
   return (
     <div>
-      <h3 className="px-5 mx-5 my-3">House Cleaning Options</h3>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Rooms: </span>
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        House Cleaning Options
+      </h3>
+      <div className="input-group px-5">
+        <label className="lead fw-normal">Number of Rooms: </label>
         <input
           type="number"
           value={formData.houseCleaningData.numberOfRooms}
@@ -21,8 +23,8 @@ function HouseCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Bathrooms: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal mt-2">Number of Bathrooms: </label>
         <input
           type="number"
           value={formData.houseCleaningData.numberOfBathrooms}
@@ -36,8 +38,9 @@ function HouseCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Area (in sq. ft.): </span>
+
+      <div className="input-group px-5">
+        <label className="lead fw-normal mt-2">Area (in sq. ft.): </label>
         <input
           type="number"
           value={formData.houseCleaningData.area}
@@ -51,10 +54,11 @@ function HouseCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Kitchen: </span>
+
+      <div className="input-group px-5">
+        <label className="lead fw-normal mt-2">Kitchen: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.houseCleaningData.kitchen}
@@ -68,10 +72,10 @@ function HouseCleaningOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Living Area: </span>
+      <div className="input-group px-5">
+        <label className="lead fw-normal mt-2">Living Area: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.houseCleaningData.livingArea}
@@ -85,10 +89,10 @@ function HouseCleaningOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Basement: </span>
+      <div className="input-group px-5">
+        <label className="lead fw-normal mt-2">Basement: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.houseCleaningData.basement}
@@ -102,10 +106,10 @@ function HouseCleaningOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Carpet: </span>
+      <div className="input-group px-5">
+        <label className="lead fw-normal mt-2">Carpet: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.houseCleaningData.carpet}
@@ -119,10 +123,10 @@ function HouseCleaningOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div className="carpet-text m-3 p-3">
+      <p className="px-5 lead fs-6">
         Note: Carpet Cleaning is only vaccumm. Steam Cleaning carpet is extra
         and can be requested.
-      </div>
+      </p>
     </div>
   );
 }
@@ -130,9 +134,11 @@ function HouseCleaningOptions({ formData, setFormData }) {
 function OfficeCleaningOptions({ formData, setFormData }) {
   return (
     <div>
-      <h3 className="px-5 mx-5 my-3">Office Cleaning Options</h3>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Cabins: </span>
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Office Cleaning Options
+      </h3>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Number of Cabins: </label>
         <input
           type="number"
           value={formData.officeCleaningData.cabins}
@@ -146,8 +152,8 @@ function OfficeCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Washrooms: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Number of Washrooms: </label>
         <input
           type="number"
           value={formData.officeCleaningData.numberOfWashrooms}
@@ -161,8 +167,8 @@ function OfficeCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Area (in sq. ft.): </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Area (in sq. ft.): </label>
         <input
           type="number"
           value={formData.officeCleaningData.area}
@@ -176,10 +182,10 @@ function OfficeCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Carpet: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Carpet: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.officeCleaningData.carpet}
@@ -193,19 +199,21 @@ function OfficeCleaningOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div className="carpet-text m-3 p-3">
+      <p className="px-5 lead fs-6">
         Note: Carpet Cleaning is only vaccumm. Steam Cleaning carpet is extra
         and can be requested.
-      </div>
+      </p>
     </div>
   );
 }
 function RenovationCleaningOptions({ formData, setFormData }) {
   return (
     <div>
-      <h3 className="px-5 mx-5 my-3">Renovation Cleaning Options</h3>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Rooms: </span>
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Renovation Cleaning Options
+      </h3>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Number of Rooms: </label>
         <input
           type="number"
           value={formData.renovationCleaningData.numberOfRooms}
@@ -219,8 +227,8 @@ function RenovationCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Bathrooms: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Number of Bathrooms: </label>
         <input
           type="number"
           value={formData.renovationCleaningData.numberOfBathrooms}
@@ -234,8 +242,8 @@ function RenovationCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Area (in sq. ft.): </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Area (in sq. ft.): </label>
         <input
           type="number"
           value={formData.renovationCleaningData.area}
@@ -249,10 +257,10 @@ function RenovationCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Kitchen: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Kitchen: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.renovationCleaningData.kitchen}
@@ -266,10 +274,10 @@ function RenovationCleaningOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Living Area: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Living Area: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.renovationCleaningData.livingArea}
@@ -283,10 +291,10 @@ function RenovationCleaningOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Basement: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Basement: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.renovationCleaningData.basement}
@@ -300,10 +308,10 @@ function RenovationCleaningOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Carpet: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Carpet: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.renovationCleaningData.carpet}
@@ -317,21 +325,25 @@ function RenovationCleaningOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div className="carpet-text m-3 p-3">
+      <p className="px-5 lead fs-6">
         Note: Carpet Cleaning is only vaccumm. Steam Cleaning carpet is extra
         and can be requested.
-      </div>
+      </p>
     </div>
   );
 }
 function SanitizationOptions({ formData, setFormData }) {
   return (
     <div>
-      <h3 className="px-5 mx-5 my-3">Sanitization Cleaning Options</h3>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Request: </span>
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Sanitization Cleaning Options
+      </h3>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Request: </label>
         <textarea
           type="text"
+          rows={5}
+          cols={30}
           value={formData.sanitizationData.request}
           onChange={(e) => {
             let h1 = formData.sanitizationData;
@@ -349,10 +361,12 @@ function SanitizationOptions({ formData, setFormData }) {
 function PressureWashingOptions({ formData, setFormData }) {
   return (
     <div>
-      <h3 className="px-5 mx-5 my-3">Pressure Washing Options</h3>
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Pressure Washing Options
+      </h3>
 
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Area (in sq. ft.): </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Area (in sq. ft.): </label>
         <input
           type="number"
           value={formData.pressureWashingData.area}
@@ -366,10 +380,10 @@ function PressureWashingOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Driveway: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Driveway: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.pressureWashingData.driveway}
@@ -383,10 +397,10 @@ function PressureWashingOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Patio: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Patio: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.pressureWashingData.patio}
@@ -400,10 +414,10 @@ function PressureWashingOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Cemented Backyard: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Cemented Backyard: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.pressureWashingData.cementedBackyard}
@@ -423,9 +437,11 @@ function PressureWashingOptions({ formData, setFormData }) {
 function MoveCleaningOptions({ formData, setFormData }) {
   return (
     <div>
-      <h3 className="px-5 mx-5 my-3">Move Cleaning Options</h3>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Rooms: </span>
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Move Cleaning Options
+      </h3>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Number of Rooms: </label>
         <input
           type="number"
           value={formData.moveCleaningData.numberOfRooms}
@@ -439,8 +455,8 @@ function MoveCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Bathrooms: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Number of Bathrooms: </label>
         <input
           type="number"
           value={formData.moveCleaningData.numberOfBathrooms}
@@ -454,8 +470,8 @@ function MoveCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Area (in sq. ft.): </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Area (in sq. ft.): </label>
         <input
           type="number"
           value={formData.moveCleaningData.area}
@@ -469,10 +485,10 @@ function MoveCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Kitchen: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Kitchen: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.moveCleaningData.kitchen}
@@ -486,10 +502,10 @@ function MoveCleaningOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Living Area: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Living Area: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.moveCleaningData.livingArea}
@@ -503,10 +519,10 @@ function MoveCleaningOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Basement: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Basement: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.moveCleaningData.basement}
@@ -520,10 +536,10 @@ function MoveCleaningOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Carpet: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Carpet: </label>
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           id="check-box"
           checked={formData.moveCleaningData.carpet}
@@ -537,19 +553,21 @@ function MoveCleaningOptions({ formData, setFormData }) {
           }}
         ></input>
       </div>
-      <div className="carpet-text m-3 p-3">
+      <p className="px-5 lead fs-6">
         Note: Carpet Cleaning is only vaccumm. Steam Cleaning carpet is extra
         and can be requested.
-      </div>
+      </p>
     </div>
   );
 }
 function MaidCleaningOptions({ formData, setFormData }) {
   return (
     <div>
-      <h3 className="px-5 mx-5 my-3">Maid Cleaning Options</h3>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Rooms: </span>
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Maid Cleaning Options
+      </h3>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Number of Rooms: </label>
         <input
           type="number"
           value={formData.maidCleaningData.numberOfRooms}
@@ -563,8 +581,8 @@ function MaidCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Bathrooms: </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Number of Bathrooms: </label>
         <input
           type="number"
           value={formData.maidCleaningData.numberOfBathrooms}
@@ -578,8 +596,8 @@ function MaidCleaningOptions({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Area (in sq. ft.): </span>
+      <div className="input-group  px-5">
+        <label className="lead fw-normal">Area (in sq. ft.): </label>
         <input
           type="number"
           value={formData.maidCleaningData.area}
@@ -599,12 +617,16 @@ function MaidCleaningOptions({ formData, setFormData }) {
 function OtherCleaningOptions({ formData, setFormData }) {
   return (
     <div>
-      <h3 className="px-5 mx-5 my-3">Other Cleaning Options</h3>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Request: </span>
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Other Cleaning Options
+      </h3>
+      <div className="input-group mb-3 px-5">
+        <label className="lead fw-normal">Request: </label>
         <textarea
           type="textarea"
-          value={formData.otherCleaningData.numberOfRooms}
+          rows={5}
+          cols={30}
+          value={formData.otherCleaningData.request}
           onChange={(e) => {
             let h1 = formData.otherCleaningData;
             h1.request = e.target.value;
@@ -658,7 +680,7 @@ function ServiceOptions({ formData, setFormData }) {
   }
   console.log(formData);
   return (
-    <div className="personal-info-container">
+    <div className="service-options-container">
       {houseCleaningSelected && (
         <HouseCleaningOptions formData={formData} setFormData={setFormData} />
       )}

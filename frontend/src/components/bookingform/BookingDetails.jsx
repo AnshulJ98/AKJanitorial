@@ -4,39 +4,41 @@ function HouseCleaningOptions({ formData, setFormData }) {
   console.log(formData);
 
   return (
-    <div>
-      <h4 className="mx-3 my-2">House Cleaning:</h4>
-      <div class=" m-3 justify-content-between">
-        <p className="lead">
+    <div className="booking-details-container">
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        House Cleaning:
+      </h3>
+      <div class="px-5">
+        <p className="lead ">
           Number of Rooms: {formData.houseCleaningData.numberOfRooms}
         </p>
       </div>
-      <div class=" m-3 justify-content-between">
+      <div class=" px-5">
         <p className="lead">
           Number of Bathrooms: {formData.houseCleaningData.numberOfBathrooms}
         </p>
       </div>
-      <div class=" m-3 justify-content-between">
+      <div class=" px-5">
         <p className="lead">
           Area (in sq. ft.): {formData.houseCleaningData.area}
         </p>
       </div>
-      <div class=" m-3 justify-content-between">
+      <div class=" px-5">
         <p className="lead">
           Kitchen: {formData.houseCleaningData.kitchen ? "Yes" : "No"}
         </p>
       </div>
-      <div class=" m-3 justify-content-between">
+      <div class=" px-5">
         <p className="lead">
           Living Area: {formData.houseCleaningData.kitchen ? "Yes" : "No"}
         </p>
       </div>
-      <div class=" m-3 justify-content-between">
+      <div class=" px-5">
         <p className="lead">
           Basement: {formData.houseCleaningData.basement ? "Yes" : "No"}
         </p>
       </div>
-      <div class=" m-3 justify-content-between">
+      <div class=" px-5">
         <p className="lead">
           Carpet: {formData.houseCleaningData.carpet ? "Yes" : "No"}
         </p>
@@ -49,23 +51,25 @@ function HouseCleaningOptions({ formData, setFormData }) {
 function OfficeCleaningOptions({ formData, setFormData }) {
   return (
     <div>
-      <h4 className="mx-3">Office Cleaning: </h4>
-      <div class="m-3 justify-content-between">
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Office Cleaning:{" "}
+      </h3>
+      <div class="px-5">
         <p className="lead">
           Number of Cabins: {formData.officeCleaningData.cabins}
         </p>
       </div>
-      <div class=" m-3 justify-content-between">
+      <div class=" px-5">
         <p className="lead">
           Number of Washrooms: {formData.officeCleaningData.numberOfWashrooms}
         </p>
       </div>
-      <div class="m-3 justify-content-between">
+      <div class="px-5">
         <p className="lead">
           Area (in sq. ft.): {formData.officeCleaningData.area}
         </p>
       </div>
-      <div class="input-group m-3 justify-content-between">
+      <div class="input-group px-5">
         <p className="lead">
           Carpet: {formData.officeCleaningData.carpet ? "Yes" : "No"}
         </p>
@@ -77,40 +81,42 @@ function OfficeCleaningOptions({ formData, setFormData }) {
 function RenovationCleaningOptions({ formData, setFormData }) {
   return (
     <div>
-      <h4 className="mx-3">Renovation Cleaning: </h4>
-      <div class=" m-3 justify-content-between">
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Renovation Cleaning:{" "}
+      </h3>
+      <div class=" px-5">
         <p className="lead">
           Number of Rooms: {formData.renovationCleaningData.numberOfRooms}
         </p>
       </div>
-      <div class=" m-3 justify-content-between">
+      <div class=" px-5">
         <p className="lead">
           Number of Bathrooms:{" "}
           {formData.renovationCleaningData.numberOfBathrooms}
         </p>
       </div>
-      <div class=" m-3 justify-content-between">
+      <div class=" px-5">
         <p className="lead">
           Area (in sq. ft.): {formData.renovationCleaningData.area}
         </p>
       </div>
-      <div class="m-3 justify-content-between">
+      <div class="px-5">
         <p className="lead">
           Kitchen: {formData.renovationCleaningData.kitchen ? "Yes" : "No"}
         </p>
       </div>
-      <div class=" m-3 justify-content-between">
+      <div class=" px-5">
         <p className="lead">
           Living Area:{" "}
           {formData.renovationCleaningData.livingArea ? "Yes" : "No"}
         </p>
       </div>
-      <div class=" m-3 justify-content-between">
+      <div class=" px-5">
         <p className="lead">
           Basement: {formData.renovationCleaningData.basement ? "Yes" : "No"}
         </p>
       </div>
-      <div class=" m-3 justify-content-between">
+      <div class=" px-5">
         <p className="lead">
           Carpet: {formData.renovationCleaningData.carpet ? "Yes" : "No"}
         </p>
@@ -122,8 +128,10 @@ function RenovationCleaningOptions({ formData, setFormData }) {
 function SanitizationOptions({ formData, setFormData }) {
   return (
     <div>
-      <h3 className="mx-3">Sanitization Cleaning: </h3>
-      <div class=" m-3 justify-content-between">
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Sanitization Cleaning:{" "}
+      </h3>
+      <div class=" px-5">
         <p className="lead">Request: {formData.sanitizationData.request}</p>
       </div>
       <div className="carpet-text m-3 p-3"></div>
@@ -133,84 +141,35 @@ function SanitizationOptions({ formData, setFormData }) {
 function PressureWashingOptions({ formData, setFormData }) {
   return (
     <div>
-      <h3 className="mx-3">Pressure Washing: </h3>
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Pressure Washing:
+      </h3>
 
-      <div class="m-3 justify-content-between">
+      <div class="px-5">
         <p className="lead">
           Area (in sq. ft.): {formData.pressureWashingData.area}
         </p>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Driveway: </span>
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="check-box"
-          checked={formData.pressureWashingData.driveway}
-          onChange={(e) => {
-            let h1 = formData.pressureWashingData;
-            h1.driveway = !h1.driveway;
-            setFormData({
-              ...formData,
-              pressureWashingData: h1,
-            });
-          }}
-        ></input>
+      <div class="px-5">
+        <p className="lead">
+          Driveway: {formData.pressureWashingData.driveway ? "Yes" : "No"}
+        </p>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Patio: </span>
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="check-box"
-          checked={formData.pressureWashingData.patio}
-          onChange={(e) => {
-            let h1 = formData.pressureWashingData;
-            h1.patio = !h1.patio;
-            setFormData({
-              ...formData,
-              pressureWashingData: h1,
-            });
-          }}
-        ></input>
+      <div class="input-group px-5">
+        <p className="lead">
+          Patio: {formData.pressureWashingData.patio ? "Yes" : "No"}
+        </p>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Cemented Backyard: </span>
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="check-box"
-          checked={formData.pressureWashingData.cementedBackyard}
-          onChange={(e) => {
-            let h1 = formData.pressureWashingData;
-            h1.cementedBackyard = !h1.cementedBackyard;
-            setFormData({
-              ...formData,
-              pressureWashingData: h1,
-            });
-          }}
-        ></input>
+      <div class="input-group px-5">
+        <p className="lead">
+          Cemented Backyard:{" "}
+          {formData.pressureWashingData.cementedBackyard ? "Yes" : "No"}
+        </p>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Carpet: </span>
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="check-box"
-          checked={formData.pressureWashingData.carpet}
-          onChange={(e) => {
-            let h1 = formData.pressureWashingData;
-            h1.carpet = !h1.carpet;
-            setFormData({
-              ...formData,
-              pressureWashingData: h1,
-            });
-          }}
-        ></input>
-      </div>
-      <div className="carpet-text m-3 p-3">
-        Note: Carpet Cleaning is only vaccumm. Steam Cleaning carpet is extra
-        and can be requested.
+      <div class="input-group px-5">
+        <p className="lead">
+          Carpet: {formData.pressureWashingData.carpet ? "Yes" : "No"}
+        </p>
       </div>
     </div>
   );
@@ -218,123 +177,43 @@ function PressureWashingOptions({ formData, setFormData }) {
 function MoveCleaningOptions({ formData, setFormData }) {
   return (
     <div>
-      <h3 className="px-5 mx-5 my-3">Move Cleaning Options</h3>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Rooms: </span>
-        <input
-          type="number"
-          value={formData.moveCleaningData.numberOfRooms}
-          onChange={(e) => {
-            let h1 = formData.moveCleaningData;
-            h1.numberOfRooms = e.target.value;
-            setFormData({
-              ...formData,
-              moveCleaningData: h1,
-            });
-          }}
-        />
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Move Cleaning Options
+      </h3>
+      <div class="input-group px-5">
+        <p className="lead">
+          Number of Rooms: {formData.moveCleaningData.numberOfRooms}
+        </p>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Bathrooms: </span>
-        <input
-          type="number"
-          value={formData.moveCleaningData.numberOfBathrooms}
-          onChange={(e) => {
-            let h1 = formData.moveCleaningData;
-            h1.numberOfBathrooms = e.target.value;
-            setFormData({
-              ...formData,
-              moveCleaningData: h1,
-            });
-          }}
-        />
+      <div class="input-group px-5">
+        <p className="lead">
+          Number of Bathrooms: {formData.moveCleaningData.numberOfBathrooms}
+        </p>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Area (in sq. ft.): </span>
-        <input
-          type="number"
-          value={formData.moveCleaningData.area}
-          onChange={(e) => {
-            let h1 = formData.moveCleaningData;
-            h1.area = e.target.value;
-            setFormData({
-              ...formData,
-              moveCleaningData: h1,
-            });
-          }}
-        />
+      <div class="input-group px-5">
+        <p className="lead">
+          Area (in sq. ft.): {formData.moveCleaningData.area}
+        </p>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Kitchen: </span>
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="check-box"
-          checked={formData.moveCleaningData.kitchen}
-          onChange={(e) => {
-            let h1 = formData.moveCleaningData;
-            h1.kitchen = !h1.kitchen;
-            setFormData({
-              ...formData,
-              moveCleaningData: h1,
-            });
-          }}
-        ></input>
+      <div class="input-group px-5">
+        <p className="lead">
+          Kitchen: {formData.moveCleaningData.kitchen ? "Yes" : "No"}
+        </p>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Living Area: </span>
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="check-box"
-          checked={formData.moveCleaningData.livingArea}
-          onChange={(e) => {
-            let h1 = formData.moveCleaningData;
-            h1.livingArea = !h1.livingArea;
-            setFormData({
-              ...formData,
-              moveCleaningData: h1,
-            });
-          }}
-        ></input>
+      <div class="input-group px-5">
+        <p className="lead">
+          Living Area: {formData.moveCleaningData.livingArea ? "Yes" : "No"}
+        </p>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Basement: </span>
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="check-box"
-          checked={formData.moveCleaningData.basement}
-          onChange={(e) => {
-            let h1 = formData.moveCleaningData;
-            h1.basement = !h1.basement;
-            setFormData({
-              ...formData,
-              moveCleaningData: h1,
-            });
-          }}
-        ></input>
+      <div class="input-group px-5">
+        <p className="lead">
+          Basement: {formData.moveCleaningData.basement ? "Yes" : "No"}
+        </p>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Carpet: </span>
-        <input
-          class="form-check-input"
-          type="checkbox"
-          id="check-box"
-          checked={formData.moveCleaningData.carpet}
-          onChange={(e) => {
-            let h1 = formData.moveCleaningData;
-            h1.carpet = !h1.carpet;
-            setFormData({
-              ...formData,
-              moveCleaningData: h1,
-            });
-          }}
-        ></input>
-      </div>
-      <div className="carpet-text m-3 p-3">
-        Note: Carpet Cleaning is only vaccumm. Steam Cleaning carpet is extra
-        and can be requested.
+      <div class="input-group px-5">
+        <p className="lead">
+          Carpet: {formData.moveCleaningData.carpet ? "Yes" : "No"}
+        </p>
       </div>
     </div>
   );
@@ -342,51 +221,23 @@ function MoveCleaningOptions({ formData, setFormData }) {
 function MaidCleaningOptions({ formData, setFormData }) {
   return (
     <div>
-      <h3 className="px-5 mx-5 my-3">Maid Cleaning Options</h3>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Rooms: </span>
-        <input
-          type="number"
-          value={formData.maidCleaningData.numberOfRooms}
-          onChange={(e) => {
-            let h1 = formData.maidCleaningData;
-            h1.numberOfRooms = e.target.value;
-            setFormData({
-              ...formData,
-              maidCleaningData: h1,
-            });
-          }}
-        />
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Maid Cleaning Options
+      </h3>
+      <div class="input-group px-5">
+        <p className="lead">
+          Number of Rooms: {formData.maidCleaningData.numberOfRooms}
+        </p>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Number of Bathrooms: </span>
-        <input
-          type="number"
-          value={formData.maidCleaningData.numberOfBathrooms}
-          onChange={(e) => {
-            let h1 = formData.maidCleaningData;
-            h1.numberOfBathrooms = e.target.value;
-            setFormData({
-              ...formData,
-              maidCleaningData: h1,
-            });
-          }}
-        />
+      <div class="input-group px-5">
+        <p className="lead">
+          Number of Bathrooms: {formData.maidCleaningData.numberOfBathrooms}
+        </p>
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Area (in sq. ft.): </span>
-        <input
-          type="number"
-          value={formData.maidCleaningData.area}
-          onChange={(e) => {
-            let h1 = formData.maidCleaningData;
-            h1.area = e.target.value;
-            setFormData({
-              ...formData,
-              maidCleaningData: h1,
-            });
-          }}
-        />
+      <div class="input-group px-5">
+        <p className="lead">
+          Area (in sq. ft.): {formData.maidCleaningData.area}
+        </p>
       </div>
     </div>
   );
@@ -394,21 +245,84 @@ function MaidCleaningOptions({ formData, setFormData }) {
 function OtherCleaningOptions({ formData, setFormData }) {
   return (
     <div>
-      <h3 className="px-5 mx-5 my-3">Other Cleaning Options</h3>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Request: </span>
-        <textarea
-          type="textarea"
-          value={formData.otherCleaningData.numberOfRooms}
-          onChange={(e) => {
-            let h1 = formData.otherCleaningData;
-            h1.request = e.target.value;
-            setFormData({
-              ...formData,
-              otherCleaningData: h1,
-            });
-          }}
-        />
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Other Cleaning Options
+      </h3>
+      <div class="input-group px-5">
+        <p className="lead">Request: {formData.otherCleaningData.request}</p>
+      </div>
+    </div>
+  );
+}
+
+function UserData({ formData, setFormData }) {
+  return (
+    <div>
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        User Information
+      </h3>
+      <div class="input-group px-5">
+        <p className="lead">Name: {formData.userData.name}</p>
+      </div>
+      <div class="input-group px-5">
+        <p className="lead">Email: {formData.userData.email}</p>
+      </div>
+      <div class="input-group px-5">
+        <p className="lead">Phone: {formData.userData.phone}</p>
+      </div>
+    </div>
+  );
+}
+function SelectedImages({ formData, setFormData }) {
+  return (
+    <div className="mb-3">
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Uploaded Images
+      </h3>
+      <div className="text-center">
+        {formData.image1 && (
+          <img
+            alt="not found"
+            width={"350px"}
+            src={URL.createObjectURL(formData.image1)}
+          />
+        )}
+      </div>
+      <div className="text-center">
+        {formData.image2 && (
+          <img
+            alt="not found"
+            width={"350px"}
+            src={URL.createObjectURL(formData.image2)}
+          />
+        )}
+      </div>
+      <div className="text-center">
+        {formData.image3 && (
+          <img
+            alt="not found"
+            width={"350px"}
+            src={URL.createObjectURL(formData.image3)}
+          />
+        )}
+      </div>
+      <div className="text-center">
+        {formData.image4 && (
+          <img
+            alt="not found"
+            width={"350px"}
+            src={URL.createObjectURL(formData.image4)}
+          />
+        )}
+      </div>
+      <div className="text-center">
+        {formData.image5 && (
+          <img
+            alt="not found"
+            width={"350px"}
+            src={URL.createObjectURL(formData.image5)}
+          />
+        )}
       </div>
     </div>
   );
@@ -479,6 +393,10 @@ function BookingDetails({ formData, setFormData }) {
       )}
       {otherCleaningSelected && (
         <OtherCleaningOptions formData={formData} setFormData={setFormData} />
+      )}
+      {UserData && <UserData formData={formData} setFormData={setFormData} />}
+      {SelectedImages && (
+        <SelectedImages formData={formData} setFormData={setFormData} />
       )}
     </div>
   );

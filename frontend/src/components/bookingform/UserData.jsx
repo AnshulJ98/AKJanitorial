@@ -8,9 +8,9 @@ function UserData({ formData, setFormData }) {
   const getAvailableDates = () => {};
 
   return (
-    <div className="other-info-container px-5 justify-content-center">
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Name: </span>
+    <div className="user-data-container">
+      <div class="input-group px-5">
+        <label class="lead fw-normal">Name: </label>
         <input
           type="text"
           value={formData.userData.name}
@@ -24,8 +24,8 @@ function UserData({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Email: </span>
+      <div class="input-group px-5">
+        <label class="lead fw-normal">Email: </label>
         <input
           type="text"
           value={formData.userData.email}
@@ -39,8 +39,8 @@ function UserData({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group m-3 justify-content-between">
-        <span class="input-group-text">Phone Number: </span>
+      <div class="input-group px-5">
+        <label class="lead fw-normal">Phone Number: </label>
         <input
           type="number"
           value={formData.userData.phone}

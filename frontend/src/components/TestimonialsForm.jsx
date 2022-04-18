@@ -12,17 +12,17 @@ function TestimonialsForm() {
   return (
     <div className="contact">
       <div className="container px-5 py-5 justify-content-center w-75">
-        <h2 class="featurette-heading display-6  fs-3">
+        <h2 className="featurette-heading display-6  fs-3">
           We really appreciate you leaving a feedback for us!
         </h2>
-        <div class="row featurette align-items-center">
-          <div class="col-md-5">
-            <div class="mb-3">
-              <div class="mb-3">
+        <div className="row featurette align-items-center">
+          <div className="col-md-5">
+            <div className="mb-3">
+              <div className="mb-3">
                 <div className="form">
                   <textarea
                     required
-                    class="form-control mb-3"
+                    className="form-control mb-3"
                     id="exampleFormControlTextarea1"
                     cols="20"
                     rows="8"
@@ -37,7 +37,7 @@ function TestimonialsForm() {
                       <input
                         required
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         id="exampleFormControlInput1"
                         value={formData.name}
                         placeholder="Your Name"
@@ -50,7 +50,7 @@ function TestimonialsForm() {
                       <input
                         required
                         type="email"
-                        class="form-control"
+                        className="form-control"
                         id="exampleFormControlInput2"
                         value={formData.email}
                         placeholder="Your Email"
@@ -63,7 +63,7 @@ function TestimonialsForm() {
                       <input
                         required
                         type="number"
-                        class="form-control"
+                        className="form-control"
                         id="exampleFormControlInput2"
                         value={formData.phone}
                         placeholder="Your Phone"
@@ -76,7 +76,7 @@ function TestimonialsForm() {
                   <br></br>
                   <button
                     type="submit"
-                    class="btn btn-primary send-message"
+                    className="btn btn-primary send-message"
                     onClick={() => {
                       if (
                         formData.name.length > 2 &&

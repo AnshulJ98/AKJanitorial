@@ -29,7 +29,7 @@ function ContactUs() {
         <div className="product-device shadow-sm d-none d-md-block"></div>
         <div className="product-device product-device-2 shadow-sm d-none d-md-block"></div>
       </div>
-      <div className="container py-5 justify-content-center w-75">
+      <div className="container py-5 justify-content-center px-4">
         <div className="row featurette align-items-center">
           <div className="col-md-7  align-middle">
             <h2 className="featurette-heading display-6  fs-3">
@@ -137,7 +137,7 @@ function ContactUs() {
           </a>
         </div>
       </div>
-      <div className="container">
+      <div className="container pb-5">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167039.36295299663!2d-123.06122823380059!3d49.14381340610089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485d9277d5627f7%3A0xd449de4f76f94fc1!2sAkartar%20Janitorial%20Services%20Ltd.!5e0!3m2!1sen!2sus!4v1649927265187!5m2!1sen!2sus"
           width="100%"
