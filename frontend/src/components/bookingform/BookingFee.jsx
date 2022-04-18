@@ -85,7 +85,9 @@ function BookingFee({ formData, setFormData }) {
       let payments;
       try {
         payments = window.Square.payments(appId, locationId);
-      } catch {
+        console.log(payments);
+      } catch (e) {
+        console.log(e);
         const statusContainer = document.getElementById(
           "payment-status-container"
         );
