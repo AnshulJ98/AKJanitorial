@@ -10,7 +10,7 @@ function BookingFee({ formData, setFormData }) {
     const appendSquareScript = () => {
       const script = document.createElement("script");
 
-      script.src = "https://use.typekit.net/foobar.js";
+      script.src = "https://sandbox.web.squarecdn.com/v1/square.js";
       script.async = true;
 
       document.body.appendChild(script);
