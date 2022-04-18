@@ -10,14 +10,31 @@ import { useLocation } from "react-router-dom";
 
 import "./Form.css";
 import axios from "axios";
-
+let i = 0;
 function Form() {
   const props = useLocation();
-  console.log(props);
-
+  const service = props.search.substring(1);
+  if (service == "houseCleaning") {
+    i = 0;
+  } else if (service == "officeCleaning") {
+    i = 1;
+  } else if (service == "renovationCleaning") {
+    i = 2;
+  } else if (service == "sanitization") {
+    i = 3;
+  } else if (service == "pressureWashing") {
+    i = 4;
+  } else if (service == "moveCleaning") {
+    i = 5;
+  } else if (service == "maidCleaning") {
+    i = 6;
+  } else if (service == "otherCleaning") {
+    i = 7;
+  }
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
-    services: ["1"],
+    index: i,
+    services: [i + 1],
     image1: "",
     bookingTime: "",
     houseCleaningSelected: true,
@@ -125,50 +142,6 @@ function Form() {
   };
 
   return (
-    /*<div>
-      <div class="container d-flex align-items-center min-vh-100">
-        <div class="row g-0 justify-content-center">
-          // -- TITLE
-          <div class="col-lg-4 offset-lg-1 mx-0 px-0">
-            <div id="title-container">
-              <img class="covid-image" src="./img/covid-check.png"></img>
-              <h2>COVID-19</h2>
-              <h3>Self Checker Form</h3>
-              <p>
-                A clinical assessment multi-step form that will assist
-                individuals on deciding when to seek testing or medical care if
-                they suspect they or someone they know has contracted COVID-19
-                or has come into close contact with someone who has COVID-19
-              </p>
-            </div>
-          </div>
-          //-- FORMS --
-          <div class="col-lg-7 mx-0 px-0">
-            <div class="progress">
-              <div
-                aria-valuemax="100"
-                aria-valuemin="0"
-                aria-valuenow="50"
-                class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
-                role="progressbar"
-              ></div>
-            </div>
-            <div id="qbox-container">
-              <form
-                class="needs-validation"
-                id="form-wrapper"
-                method="post"
-                name="form-wrapper"
-                novalidate
-              >
-                //-- STEPS HERE
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>*/
-
     <div className="form mt-5">
       <div className="progressbar">
         <div

@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function HouseCleaning() {
   return (
@@ -51,13 +51,18 @@ function HouseCleaning() {
               home, AK Janitorial will be there for you to take a load off from
               your hands.
             </p>
-            <NavLink
-              className="btn btn-primary  px-4 py-3 my-4 "
-              to="/services/housecleaning"
+            <Link
+              to={{
+                pathname: "/form",
+                search: "houseCleaning",
+                state: { houseCleaning: true },
+              }}
             >
-              {" "}
-              Book Now
-            </NavLink>
+              <span className="btn btn-primary d-block px-1 py-3">
+                {" "}
+                Book Now
+              </span>
+            </Link>
           </div>
         </div>
       </div>

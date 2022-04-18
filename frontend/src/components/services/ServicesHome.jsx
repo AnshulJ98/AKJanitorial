@@ -1,6 +1,6 @@
 import React from "react";
 import "./ServicesHome.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function ServicesHome() {
   return (
@@ -56,13 +56,18 @@ function ServicesHome() {
                     that you need to get a clean and fresh feel in your home.
                   </p>
 
-                  <NavLink
-                    className="btn btn-primary d-block px-1 py-3 my-4"
-                    to="/services/housecleaning"
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "houseCleaning",
+                      state: { houseCleaning: true },
+                    }}
                   >
-                    {" "}
-                    Book Now
-                  </NavLink>
+                    <span className="btn btn-primary d-block px-1 py-3 my-4">
+                      {" "}
+                      Book Now
+                    </span>
+                  </Link>
 
                   <NavLink to="/services/housecleaning"> Read More</NavLink>
                 </div>
@@ -79,13 +84,18 @@ function ServicesHome() {
                     and uplift the mental wellbeing of all the employees.
                   </p>
 
-                  <NavLink
-                    className="btn btn-primary d-block px-1 py-3 my-4"
-                    to="/services/officecleaning"
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "officeCleaning",
+                      state: { officeCleaning: true },
+                    }}
                   >
-                    {" "}
-                    Book Now
-                  </NavLink>
+                    <span className="btn btn-primary d-block px-1 py-3 my-4">
+                      {" "}
+                      Book Now
+                    </span>
+                  </Link>
                   <NavLink to="/services/officecleaning"> Read More</NavLink>
                 </div>
               </div>
@@ -101,13 +111,18 @@ function ServicesHome() {
                     AK Janitorial is here to help. From dust to debris we clean
                     it all.
                   </p>
-                  <NavLink
-                    className="btn btn-primary d-block px-1 py-3 my-4"
-                    to="/services/renovationcleaning"
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "renovationCleaning",
+                      state: { renovationCleaning: true },
+                    }}
                   >
-                    {" "}
-                    Book Now
-                  </NavLink>
+                    <span className="btn btn-primary d-block px-1 py-3 my-4">
+                      {" "}
+                      Book Now
+                    </span>
+                  </Link>
                   <NavLink to="/services/renovationcleaning">
                     {" "}
                     Read More
@@ -126,13 +141,18 @@ function ServicesHome() {
                     where we make sure that the spaces are sanitized and safe
                     for use.
                   </p>
-                  <NavLink
-                    className="btn btn-primary d-block px-1 py-3 my-4"
-                    to="/services/sanitization"
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "sanitization",
+                      state: { sanitization: true },
+                    }}
                   >
-                    {" "}
-                    Book Now
-                  </NavLink>
+                    <span className="btn btn-primary d-block px-1 py-3 my-4">
+                      {" "}
+                      Book Now
+                    </span>
+                  </Link>
                   <NavLink to="/services/sanitization"> Read More</NavLink>
                 </div>
               </div>
@@ -148,13 +168,18 @@ function ServicesHome() {
                     you have one less stubborn stain to worry about in day to
                     day life.
                   </p>
-                  <NavLink
-                    className="btn btn-primary d-block px-1 py-3 my-4"
-                    to="/services/pressurewashing"
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "pressureWashing",
+                      state: { pressureWashing: true },
+                    }}
                   >
-                    {" "}
-                    Book Now
-                  </NavLink>
+                    <span className="btn btn-primary d-block px-1 py-3 my-4">
+                      {" "}
+                      Book Now
+                    </span>
+                  </Link>
                   <NavLink to="/services/pressurewashing"> Read More</NavLink>
                 </div>
               </div>
@@ -172,13 +197,18 @@ function ServicesHome() {
                     on your belongings and leave the cleaning to AK Janitorials.
                   </p>
 
-                  <NavLink
-                    className="btn btn-primary d-block px-1 py-3 my-4"
-                    to="/services/moveinmoveoutcleaning"
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "moveCleaning",
+                      state: { moveCleaning: true },
+                    }}
                   >
-                    {" "}
-                    Book Now
-                  </NavLink>
+                    <span className="btn btn-primary d-block px-1 py-3 my-4">
+                      {" "}
+                      Book Now
+                    </span>
+                  </Link>
                   <NavLink to="/services/moveinmoveoutcleaning">
                     {" "}
                     Read More
@@ -198,13 +228,18 @@ function ServicesHome() {
                   </p>
                   <div className="text-white">.</div>
 
-                  <NavLink
-                    className="btn btn-primary d-block px-1 py-3 my-4"
-                    to="/services/maidcleaning"
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "maidCleaning",
+                      state: { maidCleaning: true },
+                    }}
                   >
-                    {" "}
-                    Book Now
-                  </NavLink>
+                    <span className="btn btn-primary d-block px-1 py-3 my-4">
+                      {" "}
+                      Book Now
+                    </span>
+                  </Link>
                   <NavLink to="/services/maidcleaning"> Read More</NavLink>
                 </div>
               </div>

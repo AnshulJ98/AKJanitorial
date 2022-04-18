@@ -9,7 +9,7 @@ function SelectDate({ formData, setFormData }) {
   }, []);
   const getAvailableDates = () => {
     axios
-      .post("http://192.168.0.172:8000/get-events/")
+      .post("http://31.220.108.76:8000/get-events/")
       .then((res) => {
         console.log(res.data);
         const fd = res.data;

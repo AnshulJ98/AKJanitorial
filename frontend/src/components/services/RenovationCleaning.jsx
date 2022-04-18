@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function RenovationCleaning() {
   return (
@@ -50,13 +50,18 @@ function RenovationCleaning() {
               behind which is not meant to stay there. From dust to debris we
               clean it all.
             </p>
-            <NavLink
-              className="btn btn-primary  px-4 py-3 my-4 "
-              to="/services/renovationcleaning"
+            <Link
+              to={{
+                pathname: "/form",
+                search: "renovationCleaning",
+                state: { renovationCleaning: true },
+              }}
             >
-              {" "}
-              Book Now
-            </NavLink>
+              <span className="btn btn-primary d-block px-1 py-3">
+                {" "}
+                Book Now
+              </span>
+            </Link>
           </div>
         </div>
       </div>

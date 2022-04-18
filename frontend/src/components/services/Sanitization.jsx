@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Sanitization() {
   return (
@@ -46,13 +46,18 @@ function Sanitization() {
               Janitorial’s service you get that peace of mind where we make sure
               that the spaces are sanitized and safe for use.
             </p>
-            <NavLink
-              className="btn btn-primary  px-4 py-3 my-4 "
-              to="/services/sanitization"
+            <Link
+              to={{
+                pathname: "/form",
+                search: "sanitization",
+                state: { sanitization: true },
+              }}
             >
-              {" "}
-              Book Now
-            </NavLink>
+              <span className="btn btn-primary d-block px-1 py-3">
+                {" "}
+                Book Now
+              </span>
+            </Link>
           </div>
         </div>
       </div>

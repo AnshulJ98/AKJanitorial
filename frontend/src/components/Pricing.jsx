@@ -124,12 +124,18 @@ function Pricing() {
                       <i className="fs-4 px-2">&bull;</i>Carpent Shampooing
                     </li>
                   </ul>
-                  <NavLink to="/services/officecleaning">
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "officeCleaning",
+                      state: { officeCleaning: true },
+                    }}
+                  >
                     <span className="btn btn-primary d-block px-1 py-3">
                       {" "}
                       Book Now
                     </span>
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -167,12 +173,18 @@ function Pricing() {
                       areas
                     </li>
                   </ul>
-                  <NavLink to="/services/renovationcleaning">
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "renovationCleaning",
+                      state: { renovationCleaning: true },
+                    }}
+                  >
                     <span className="btn btn-primary d-block px-1 py-3">
                       {" "}
                       Book Now
                     </span>
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -206,12 +218,18 @@ function Pricing() {
                     <p className="text-white">.</p>
                     <p className="text-white">.</p>
                   </ul>
-                  <NavLink to="/services/sanitization">
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "sanitization",
+                      state: { sanitization: true },
+                    }}
+                  >
                     <span className="btn btn-primary d-block px-1 py-3">
                       {" "}
                       Book Now
                     </span>
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -243,12 +261,18 @@ function Pricing() {
                     <p className="text-white">.</p>
                     <p className="text-white">.</p>
                   </ul>
-                  <NavLink to="/services/pressurewashing">
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "pressureWashing",
+                      state: { pressureWashing: true },
+                    }}
+                  >
                     <span className="btn btn-primary d-block px-1 py-3">
                       {" "}
                       Book Now
                     </span>
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -283,12 +307,18 @@ function Pricing() {
                     <p className="text-white">.</p>
                     <p className="text-white">.</p>
                   </ul>
-                  <NavLink to="/services/moveinmoveoutcleaning">
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "moveCleaning",
+                      state: { moveCleaning: true },
+                    }}
+                  >
                     <span className="btn btn-primary d-block px-1 py-3">
                       {" "}
                       Book Now
                     </span>
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -320,12 +350,18 @@ function Pricing() {
                     <p className="text-white">.</p>
                     <p className="text-white">.</p>
                   </ul>
-                  <NavLink to="/services/maidcleaning">
+                  <Link
+                    to={{
+                      pathname: "/form",
+                      search: "maidCleaning",
+                      state: { maidCleaning: true },
+                    }}
+                  >
                     <span className="btn btn-primary d-block px-1 py-3">
                       {" "}
                       Book Now
                     </span>
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
             </div>

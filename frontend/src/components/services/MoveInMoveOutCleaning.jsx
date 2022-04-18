@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function MoveInMoveOutCleaning() {
   return (
@@ -50,13 +50,18 @@ function MoveInMoveOutCleaning() {
               everyone to bid adieu to an old house full of memories to feeling
               welcomed in the new home cleaned by the professionals.
             </p>
-            <NavLink
-              className="btn btn-primary  px-4 py-3 my-4 "
-              to="/services/moveinmoveoutcleaning"
+            <Link
+              to={{
+                pathname: "/form",
+                search: "moveCleaning",
+                state: { moveCleaning: true },
+              }}
             >
-              {" "}
-              Book Now
-            </NavLink>
+              <span className="btn btn-primary d-block px-1 py-3">
+                {" "}
+                Book Now
+              </span>
+            </Link>
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ function ServiceType({ formData, setFormData }) {
     <div className="service-type-container">
       <div className="form-field p-5">
         <Select
-          defaultValue={[options[0]]}
+          defaultValue={[options[formData.index]]}
           isMulti
           name="colors"
           options={options}

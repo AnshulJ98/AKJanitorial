@@ -8,37 +8,37 @@ function HouseCleaningOptions({ formData, setFormData }) {
       <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
         House Cleaning:
       </h3>
-      <div class="px-5">
+      <div className="px-5">
         <p className="lead ">
           Number of Rooms: {formData.houseCleaningData.numberOfRooms}
         </p>
       </div>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">
           Number of Bathrooms: {formData.houseCleaningData.numberOfBathrooms}
         </p>
       </div>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">
           Area (in sq. ft.): {formData.houseCleaningData.area}
         </p>
       </div>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">
           Kitchen: {formData.houseCleaningData.kitchen ? "Yes" : "No"}
         </p>
       </div>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">
           Living Area: {formData.houseCleaningData.kitchen ? "Yes" : "No"}
         </p>
       </div>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">
           Basement: {formData.houseCleaningData.basement ? "Yes" : "No"}
         </p>
       </div>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">
           Carpet: {formData.houseCleaningData.carpet ? "Yes" : "No"}
         </p>
@@ -54,22 +54,22 @@ function OfficeCleaningOptions({ formData, setFormData }) {
       <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
         Office Cleaning:{" "}
       </h3>
-      <div class="px-5">
+      <div className="px-5">
         <p className="lead">
           Number of Cabins: {formData.officeCleaningData.cabins}
         </p>
       </div>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">
           Number of Washrooms: {formData.officeCleaningData.numberOfWashrooms}
         </p>
       </div>
-      <div class="px-5">
+      <div className="px-5">
         <p className="lead">
           Area (in sq. ft.): {formData.officeCleaningData.area}
         </p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Carpet: {formData.officeCleaningData.carpet ? "Yes" : "No"}
         </p>
@@ -84,39 +84,39 @@ function RenovationCleaningOptions({ formData, setFormData }) {
       <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
         Renovation Cleaning:{" "}
       </h3>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">
           Number of Rooms: {formData.renovationCleaningData.numberOfRooms}
         </p>
       </div>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">
           Number of Bathrooms:{" "}
           {formData.renovationCleaningData.numberOfBathrooms}
         </p>
       </div>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">
           Area (in sq. ft.): {formData.renovationCleaningData.area}
         </p>
       </div>
-      <div class="px-5">
+      <div className="px-5">
         <p className="lead">
           Kitchen: {formData.renovationCleaningData.kitchen ? "Yes" : "No"}
         </p>
       </div>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">
           Living Area:{" "}
           {formData.renovationCleaningData.livingArea ? "Yes" : "No"}
         </p>
       </div>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">
           Basement: {formData.renovationCleaningData.basement ? "Yes" : "No"}
         </p>
       </div>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">
           Carpet: {formData.renovationCleaningData.carpet ? "Yes" : "No"}
         </p>
@@ -131,7 +131,7 @@ function SanitizationOptions({ formData, setFormData }) {
       <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
         Sanitization Cleaning:{" "}
       </h3>
-      <div class=" px-5">
+      <div className=" px-5">
         <p className="lead">Request: {formData.sanitizationData.request}</p>
       </div>
       <div className="carpet-text m-3 p-3"></div>
@@ -145,28 +145,28 @@ function PressureWashingOptions({ formData, setFormData }) {
         Pressure Washing:
       </h3>
 
-      <div class="px-5">
+      <div className="px-5">
         <p className="lead">
           Area (in sq. ft.): {formData.pressureWashingData.area}
         </p>
       </div>
-      <div class="px-5">
+      <div className="px-5">
         <p className="lead">
           Driveway: {formData.pressureWashingData.driveway ? "Yes" : "No"}
         </p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Patio: {formData.pressureWashingData.patio ? "Yes" : "No"}
         </p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Cemented Backyard:{" "}
           {formData.pressureWashingData.cementedBackyard ? "Yes" : "No"}
         </p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Carpet: {formData.pressureWashingData.carpet ? "Yes" : "No"}
         </p>
@@ -180,37 +180,37 @@ function MoveCleaningOptions({ formData, setFormData }) {
       <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
         Move Cleaning Options
       </h3>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Number of Rooms: {formData.moveCleaningData.numberOfRooms}
         </p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Number of Bathrooms: {formData.moveCleaningData.numberOfBathrooms}
         </p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Area (in sq. ft.): {formData.moveCleaningData.area}
         </p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Kitchen: {formData.moveCleaningData.kitchen ? "Yes" : "No"}
         </p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Living Area: {formData.moveCleaningData.livingArea ? "Yes" : "No"}
         </p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Basement: {formData.moveCleaningData.basement ? "Yes" : "No"}
         </p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Carpet: {formData.moveCleaningData.carpet ? "Yes" : "No"}
         </p>
@@ -224,17 +224,17 @@ function MaidCleaningOptions({ formData, setFormData }) {
       <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
         Maid Cleaning Options
       </h3>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Number of Rooms: {formData.maidCleaningData.numberOfRooms}
         </p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Number of Bathrooms: {formData.maidCleaningData.numberOfBathrooms}
         </p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">
           Area (in sq. ft.): {formData.maidCleaningData.area}
         </p>
@@ -248,7 +248,7 @@ function OtherCleaningOptions({ formData, setFormData }) {
       <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
         Other Cleaning Options
       </h3>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">Request: {formData.otherCleaningData.request}</p>
       </div>
     </div>
@@ -261,13 +261,13 @@ function UserData({ formData, setFormData }) {
       <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
         User Information
       </h3>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">Name: {formData.userData.name}</p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">Email: {formData.userData.email}</p>
       </div>
-      <div class="input-group px-5">
+      <div className="input-group px-5">
         <p className="lead">Phone: {formData.userData.phone}</p>
       </div>
     </div>

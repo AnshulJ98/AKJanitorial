@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Sanitization() {
   return (
@@ -48,13 +48,18 @@ function Sanitization() {
               place spotless. Our maid cleaning services include dusting around
               the place, taking care of garbage and overall cleaning.
             </p>
-            <NavLink
-              className="btn btn-primary  px-4 py-3 my-4 "
-              to="/services/maidcleaning"
+            <Link
+              to={{
+                pathname: "/form",
+                search: "houseCleaning",
+                state: { houseCleaning: true },
+              }}
             >
-              {" "}
-              Book Now
-            </NavLink>
+              <span className="btn btn-primary d-block px-1 py-3">
+                {" "}
+                Book Now
+              </span>
+            </Link>
           </div>
         </div>
       </div>

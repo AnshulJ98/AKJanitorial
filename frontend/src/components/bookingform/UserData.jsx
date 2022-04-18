@@ -9,8 +9,8 @@ function UserData({ formData, setFormData }) {
 
   return (
     <div className="user-data-container">
-      <div class="input-group px-5">
-        <label class="lead fw-normal">Name: </label>
+      <div className="input-group px-5">
+        <label className="lead fw-normal">Name: </label>
         <input
           type="text"
           value={formData.userData.name}
@@ -24,8 +24,8 @@ function UserData({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group px-5">
-        <label class="lead fw-normal">Email: </label>
+      <div className="input-group px-5">
+        <label className="lead fw-normal">Email: </label>
         <input
           type="text"
           value={formData.userData.email}
@@ -39,8 +39,8 @@ function UserData({ formData, setFormData }) {
           }}
         />
       </div>
-      <div class="input-group px-5">
-        <label class="lead fw-normal">Phone Number: </label>
+      <div className="input-group px-5">
+        <label className="lead fw-normal">Phone Number: </label>
         <input
           type="number"
           value={formData.userData.phone}

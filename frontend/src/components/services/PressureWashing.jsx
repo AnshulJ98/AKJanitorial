@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function PressureWashing() {
   return (
@@ -47,13 +47,18 @@ function PressureWashing() {
               AK Janitorial’s pressure washing services makes sure that you have
               one less stubborn thing to worry about in day to day life.
             </p>
-            <NavLink
-              className="btn btn-primary  px-4 py-3 my-4 "
-              to="/services/pressurewashing"
+            <Link
+              to={{
+                pathname: "/form",
+                search: "pressureWashing",
+                state: { pressureWashing: true },
+              }}
             >
-              {" "}
-              Book Now
-            </NavLink>
+              <span className="btn btn-primary d-block px-1 py-3">
+                {" "}
+                Book Now
+              </span>
+            </Link>
           </div>
         </div>
       </div>

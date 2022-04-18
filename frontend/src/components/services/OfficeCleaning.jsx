@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function OfficeCleaning() {
   return (
@@ -47,13 +47,18 @@ function OfficeCleaning() {
               tidy place, productivity shoots up. AK Janitorial is at your
               service to help you go the extra mile every single day.
             </p>
-            <NavLink
-              className="btn btn-primary  px-4 py-3 my-4 "
-              to="/services/officecleaning"
+            <Link
+              to={{
+                pathname: "/form",
+                search: "officeCleaning",
+                state: { officeCleaning: true },
+              }}
             >
-              {" "}
-              Book Now
-            </NavLink>
+              <span className="btn btn-primary d-block px-1 py-3">
+                {" "}
+                Book Now
+              </span>
+            </Link>
           </div>
         </div>
       </div>
