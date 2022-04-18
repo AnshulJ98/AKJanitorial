@@ -87,12 +87,9 @@ function TestimonialsForm() {
                       ) {
                         console.log(formData);
                         axios
-                          .post(
-                            "https://akjanitorial.ca:8000/feedback-submit/",
-                            {
-                              formData: formData,
-                            }
-                          )
+                          .post("https://akjanitorial.ca/feedback-submit/", {
+                            formData: formData,
+                          })
                           .then((res) => alert("Form Submitted"))
                           .catch((errors) => console.log(errors));
                       } else {

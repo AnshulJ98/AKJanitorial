@@ -191,7 +191,7 @@ function Form() {
                   console.log(formData);
                   if (page === FormTitles.length - 1) {
                     axios
-                      .post("https://akjanitorial.ca:8000/api/", {
+                      .post("https://akjanitorial.ca/api/", {
                         formData: formData,
                       })
                       .then((res) => alert("Form Submitted"))
