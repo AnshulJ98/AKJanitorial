@@ -347,7 +347,7 @@ function Home() {
           muted
           playsInline
         >
-          <source src="home-clip.mp4" type="video/mp4" />
+          <source src="home-clip.mp4" type="video/webm" />
         </video>
       </div>
     </div>
