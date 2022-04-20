@@ -113,6 +113,7 @@ def GetFeedbackView(request, *args, **kwargs):
     return Response(serializer_class.data)
 
 @api_view(['GET', 'POST'])
+@csrf_exempt
 def ContactUsView(request, *args, **kwargs):
     contactUs=request.data['contactUs']
     message = MIMEText(contactUs['message'] +"\n" +contactUs['name'] +"\n"+ contactUs['email'])
