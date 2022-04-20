@@ -336,39 +336,13 @@ function Home() {
           our team is equipped to meet your needs.
         </p>
       </div>
-      <div className="container text-center my-3">
-        {" "}
-        <video
-          id="landing-video"
-          controls
-          ref={videoRef}
-          loop
-          autoPlay
-          muted
-          playsInline
-        >
-          <source
-            src="https://akjanitorial.ca/media/home-clip.webm"
-            type="video/webm"
-          />
-        </video>
-      </div>
-      <div
-        className="container text-center my-3"
-        dangerouslySetInnerHTML={{
-          __html: `<video className="app__backgroundVideo" id="landing-video" controls autoplay loop muted playsinline>
-      <source src="https://akjanitorial.ca/media/home-clip.webm" type="video/webm" />
-      Your browser does not support the video tag.
-</video>`,
-        }}
-      />
       <div
         className="container text-center my-3"
         dangerouslySetInnerHTML={{
           __html: `<video className="app__backgroundVideo" id="landing-video" controls autoplay loop muted playsinline>
       <source src="https://akjanitorial.ca/media/home-clip.mp4" type="video/mp4" />
       Your browser does not support the video tag.
-</video>`,
+      </video>`,
         }}
       />
     </div>
