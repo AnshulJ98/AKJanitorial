@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { NavLink } from "react-router-dom";
 
 function ContactUs() {
+  const [contactUs, setContactUs] = useState({
+    name: null,
+    email: null,
+    message: null,
+  });
   return (
     <div className="contact">
       <div className="position-relative overflow-hidden p-5 p-md-5 m-0  bg-light contact-banner">
@@ -116,12 +122,19 @@ function ContactUs() {
                     </div>
                   </div>
                   <br></br>
-                  <button
-                    type="submit"
+                  <span
+                    onClick={() => {
+                      axios
+                        .post("http://localhost:8000/contact-us/", {
+                          contactUs: contactUs,
+                        })
+                        .then((res) => alert("Thank You For Reaching Out!"))
+                        .catch((errors) => console.log(errors));
+                    }}
                     className="btn btn-primary send-message"
                   >
                     Submit
-                  </button>
+                  </span>
                 </form>
               </div>
             </div>

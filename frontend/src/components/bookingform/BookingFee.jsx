@@ -4,8 +4,8 @@ import { nanoid } from "nanoid";
 import "./BookingFee.css";
 
 function BookingFee({ formData, setFormData }) {
-  const appId = "sandbox-sq0idb-iijb3slqYThG-HkqsyIofA";
-  const locationId = "L6XX49T2E929P";
+  const appId = "sq0idp-bC3mePAkYv5USetQTwogpw";
+  const locationId = "LTD2PHTN0YB4V";
   useEffect(async () => {
     const appendSquareScript = () => {
       const script = document.createElement("script");

@@ -22,6 +22,8 @@ from rest_framework.response import Response
 from square.client import Client
 from nanoid import generate
 
+from google_auth_oauthlib.flow import InstalledAppFlow
+
 
 from django.views.decorators.csrf import csrf_exempt
 from .models import Feedback
@@ -49,6 +51,9 @@ TIME_LIST=[
     ]
 
 SQUARE_ACCESS_TOKEN= environ.get('SQUARE_ACCESS_TOKEN')
+
+GMAIL_USER= environ.get('GMAIL_USER')
+GMAIL_PASSWORD= environ.get('GMAIL_PASSWORD')
 
 client = Client(
     access_token=SQUARE_ACCESS_TOKEN,
@@ -97,6 +102,36 @@ def GetFeedbackView(request, *args, **kwargs):
     queryset=Feedback.objects.all()
     serializer_class = FeedbackSerializer(queryset, many=True)
     return Response(serializer_class.data)
+
+@api_view(['GET', 'POST'])
+@csrf_exempt
+def ContactUsView(request, *args, **kwargs):
+    print(request)
+    sent_from = gmail_user
+    to = ['person_a@gmail.com', 'person_b@gmail.com']
+    subject = 'Lorem ipsum dolor sit amet'
+    body = 'consectetur adipiscing elit'
+    email_text = """\
+    From: %s
+    To: %s
+    Subject: %s
+
+    %s
+    """ % (sent_from, ", ".join(to), subject, body)
+    message = MIMEText('youuuyoyoyyy asedkrfyu')
+    message['to'] = 'reyol17576@aikusy.com'
+    message['from'] = 'akartarjanitorial@gmail.com'
+    message['subject'] = 'subb'
+    raw_message = base64.urlsafe_b64encode(message.as_string().encode("utf-8"))
+    try:
+        credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+        service = googleapiclient.discovery.build('gmail', 'v1', credentials=credentials)
+        message = service.users().messages().send(userId='akartarjanitorial@gmail.com', body=message).execute()
+        print ("Email sent successfully!")
+    except Exception as ex:
+        print ("Something went wrong….",ex)
+    return Response(status=200)
+
 @api_view(['GET', 'POST'])
 @csrf_exempt
 def GetEvents(request, *args, **kwargs):
@@ -131,10 +166,6 @@ def GetEvents(request, *args, **kwargs):
         print(date)
         if date in dates:
             dates[date][start_time+'-'+end_time]=False
-            print("YYOYO")
-        else: 
-            print("NOOO")
-        print(TIME_LIST.index(start_time+"-"+end_time))
     pprint(dates)
     return Response(dates,status=200)
 
@@ -195,7 +226,7 @@ def CreateEvent(request):
     },
     }
     new_event = {
-    'summary': "Cleaning Scheduled for "+user_data['name']+" "+ user_data['email'],
+    'summary': "Cleaning Scheduled for "+user_data['name']+" "+ user_data['phone']+" "+ user_data['email']+" "+ user_data['address'],
     'description': desc,
     'start': {
         'dateTime': startdt.isoformat("T"),

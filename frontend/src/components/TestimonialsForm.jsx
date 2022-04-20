@@ -87,7 +87,7 @@ function TestimonialsForm() {
                       ) {
                         console.log(formData);
                         axios
-                          .post("https://akjanitorial.ca/feedback-submit/", {
+                          .post("http://localhost:8000/feedback-submit/", {
                             formData: formData,
                           })
                           .then((res) => alert("Form Submitted"))

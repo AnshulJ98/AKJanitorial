@@ -16,7 +16,7 @@ function UserData({ formData, setFormData }) {
           value={formData.userData.name}
           onChange={(e) => {
             let h1 = formData.userData;
-            h1.name = e.target.value;
+            h1.name = e.target.value == "" ? null : e.target.value;
             setFormData({
               ...formData,
               userData: h1,
@@ -31,7 +31,7 @@ function UserData({ formData, setFormData }) {
           value={formData.userData.email}
           onChange={(e) => {
             let h1 = formData.userData;
-            h1.email = e.target.value;
+            h1.email = e.target.value == "" ? null : e.target.value;
             setFormData({
               ...formData,
               userData: h1,
@@ -46,7 +46,22 @@ function UserData({ formData, setFormData }) {
           value={formData.userData.phone}
           onChange={(e) => {
             let h1 = formData.userData;
-            h1.phone = e.target.value;
+            h1.phone = e.target.value == "" ? null : e.target.value;
+            setFormData({
+              ...formData,
+              userData: h1,
+            });
+          }}
+        />
+      </div>
+      <div className="input-group px-5">
+        <label className="lead fw-normal">Address: </label>
+        <input
+          type="text"
+          value={formData.userData.address}
+          onChange={(e) => {
+            let h1 = formData.userData;
+            h1.address = e.target.value == "" ? null : e.target.value;
             setFormData({
               ...formData,
               userData: h1,

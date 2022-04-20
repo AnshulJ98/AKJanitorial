@@ -5,6 +5,7 @@ app_name = 'cleaners'
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('api/', views.ApiView, name='apiview'),
+    path('contact-us/', views.ContactUsView, name='contactusview'),
     path('feedback-submit/', views.FeedbackView, name='feedbackview'),
     path('get-feedback-data/', views.GetFeedbackView, name='getfeedbackview'),
     path('get-events/', views.GetEvents, name='geteventsview'),

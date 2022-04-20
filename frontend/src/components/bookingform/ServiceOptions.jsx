@@ -15,7 +15,7 @@ function HouseCleaningOptions({ formData, setFormData }) {
           value={formData.houseCleaningData.numberOfRooms}
           onChange={(e) => {
             let h1 = formData.houseCleaningData;
-            h1.numberOfRooms = e.target.value;
+            h1.numberOfRooms = e.target.value <= 1 ? 1 : e.target.value;
             setFormData({
               ...formData,
               houseCleaningData: h1,
@@ -30,7 +30,7 @@ function HouseCleaningOptions({ formData, setFormData }) {
           value={formData.houseCleaningData.numberOfBathrooms}
           onChange={(e) => {
             let h1 = formData.houseCleaningData;
-            h1.numberOfBathrooms = e.target.value;
+            h1.numberOfBathrooms = e.target.value <= 1 ? 1 : e.target.value;
             setFormData({
               ...formData,
               houseCleaningData: h1,
@@ -43,10 +43,11 @@ function HouseCleaningOptions({ formData, setFormData }) {
         <label className="lead fw-normal mt-2">Area (in sq. ft.): </label>
         <input
           type="number"
+          step={500}
           value={formData.houseCleaningData.area}
           onChange={(e) => {
             let h1 = formData.houseCleaningData;
-            h1.area = e.target.value;
+            h1.area = e.target.value <= 500 ? 500 : e.target.value;
             setFormData({
               ...formData,
               houseCleaningData: h1,
@@ -144,7 +145,7 @@ function OfficeCleaningOptions({ formData, setFormData }) {
           value={formData.officeCleaningData.cabins}
           onChange={(e) => {
             let h1 = formData.officeCleaningData;
-            h1.cabins = e.target.value;
+            h1.cabins = e.target.value <= 1 ? 1 : e.target.value;
             setFormData({
               ...formData,
               officeCleaningData: h1,
@@ -159,7 +160,7 @@ function OfficeCleaningOptions({ formData, setFormData }) {
           value={formData.officeCleaningData.numberOfWashrooms}
           onChange={(e) => {
             let h1 = formData.officeCleaningData;
-            h1.numberOfWashrooms = e.target.value;
+            h1.numberOfWashrooms = e.target.value <= 1 ? 1 : e.target.value;
             setFormData({
               ...formData,
               officeCleaningData: h1,
@@ -171,10 +172,11 @@ function OfficeCleaningOptions({ formData, setFormData }) {
         <label className="lead fw-normal">Area (in sq. ft.): </label>
         <input
           type="number"
+          step={500}
           value={formData.officeCleaningData.area}
           onChange={(e) => {
             let h1 = formData.officeCleaningData;
-            h1.area = e.target.value;
+            h1.area = e.target.value <= 500 ? 500 : e.target.value;
             setFormData({
               ...formData,
               officeCleaningData: h1,
@@ -219,7 +221,7 @@ function RenovationCleaningOptions({ formData, setFormData }) {
           value={formData.renovationCleaningData.numberOfRooms}
           onChange={(e) => {
             let h1 = formData.renovationCleaningData;
-            h1.numberOfRooms = e.target.value;
+            h1.numberOfRooms = e.target.value <= 1 ? 1 : e.target.value;
             setFormData({
               ...formData,
               renovationCleaningData: h1,
@@ -234,7 +236,7 @@ function RenovationCleaningOptions({ formData, setFormData }) {
           value={formData.renovationCleaningData.numberOfBathrooms}
           onChange={(e) => {
             let h1 = formData.renovationCleaningData;
-            h1.numberOfBathrooms = e.target.value;
+            h1.numberOfBathrooms = e.target.value <= 1 ? 1 : e.target.value;
             setFormData({
               ...formData,
               renovationCleaningData: h1,
@@ -246,10 +248,11 @@ function RenovationCleaningOptions({ formData, setFormData }) {
         <label className="lead fw-normal">Area (in sq. ft.): </label>
         <input
           type="number"
+          step={500}
           value={formData.renovationCleaningData.area}
           onChange={(e) => {
             let h1 = formData.renovationCleaningData;
-            h1.area = e.target.value;
+            h1.area = e.target.value <= 500 ? 500 : e.target.value;
             setFormData({
               ...formData,
               renovationCleaningData: h1,
@@ -369,10 +372,11 @@ function PressureWashingOptions({ formData, setFormData }) {
         <label className="lead fw-normal">Area (in sq. ft.): </label>
         <input
           type="number"
+          step={500}
           value={formData.pressureWashingData.area}
           onChange={(e) => {
             let h1 = formData.pressureWashingData;
-            h1.area = e.target.value;
+            h1.area = e.target.value <= 500 ? 500 : e.target.value;
             setFormData({
               ...formData,
               pressureWashingData: h1,
@@ -447,7 +451,7 @@ function MoveCleaningOptions({ formData, setFormData }) {
           value={formData.moveCleaningData.numberOfRooms}
           onChange={(e) => {
             let h1 = formData.moveCleaningData;
-            h1.numberOfRooms = e.target.value;
+            h1.numberOfRooms = e.target.value <= 1 ? 1 : e.target.value;
             setFormData({
               ...formData,
               moveCleaningData: h1,
@@ -462,7 +466,7 @@ function MoveCleaningOptions({ formData, setFormData }) {
           value={formData.moveCleaningData.numberOfBathrooms}
           onChange={(e) => {
             let h1 = formData.moveCleaningData;
-            h1.numberOfBathrooms = e.target.value;
+            h1.numberOfBathrooms = e.target.value <= 1 ? 1 : e.target.value;
             setFormData({
               ...formData,
               moveCleaningData: h1,
@@ -474,10 +478,11 @@ function MoveCleaningOptions({ formData, setFormData }) {
         <label className="lead fw-normal">Area (in sq. ft.): </label>
         <input
           type="number"
+          step={500}
           value={formData.moveCleaningData.area}
           onChange={(e) => {
             let h1 = formData.moveCleaningData;
-            h1.area = e.target.value;
+            h1.area = e.target.value <= 500 ? 500 : e.target.value;
             setFormData({
               ...formData,
               moveCleaningData: h1,
@@ -573,7 +578,7 @@ function MaidCleaningOptions({ formData, setFormData }) {
           value={formData.maidCleaningData.numberOfRooms}
           onChange={(e) => {
             let h1 = formData.maidCleaningData;
-            h1.numberOfRooms = e.target.value;
+            h1.numberOfRooms = e.target.value <= 1 ? 1 : e.target.value;
             setFormData({
               ...formData,
               maidCleaningData: h1,
@@ -588,7 +593,7 @@ function MaidCleaningOptions({ formData, setFormData }) {
           value={formData.maidCleaningData.numberOfBathrooms}
           onChange={(e) => {
             let h1 = formData.maidCleaningData;
-            h1.numberOfBathrooms = e.target.value;
+            h1.numberOfBathrooms = e.target.value <= 1 ? 1 : e.target.value;
             setFormData({
               ...formData,
               maidCleaningData: h1,
@@ -600,10 +605,11 @@ function MaidCleaningOptions({ formData, setFormData }) {
         <label className="lead fw-normal">Area (in sq. ft.): </label>
         <input
           type="number"
+          step={500}
           value={formData.maidCleaningData.area}
           onChange={(e) => {
             let h1 = formData.maidCleaningData;
-            h1.area = e.target.value;
+            h1.area = e.target.value <= 500 ? 500 : e.target.value;
             setFormData({
               ...formData,
               maidCleaningData: h1,

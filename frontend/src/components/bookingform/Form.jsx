@@ -36,7 +36,7 @@ function Form() {
     index: i,
     services: [i + 1],
     image1: "",
-    bookingTime: "",
+    bookingTime: null,
     houseCleaningSelected: true,
     officeCleaningSelected: false,
     pressureWashingSelected: false,
@@ -58,7 +58,7 @@ function Form() {
     houseCleaningData: {
       numberOfRooms: 1,
       numberOfBathrooms: 1,
-      area: 0,
+      area: 500,
       livingArea: false,
       basement: false,
       kitchen: false,
@@ -67,13 +67,13 @@ function Form() {
     officeCleaningData: {
       cabins: 1,
       numberOfWashrooms: 1,
-      area: 0,
+      area: 500,
       carpet: false,
     },
     renovationCleaningData: {
       numberOfRooms: 1,
       numberOfBathrooms: 1,
-      area: 0,
+      area: 500,
       livingArea: false,
       basement: false,
       kitchen: false,
@@ -83,7 +83,7 @@ function Form() {
       request: "",
     },
     pressureWashingData: {
-      area: 0,
+      area: 500,
       driveway: false,
       patio: false,
       cementedBackyard: false,
@@ -91,7 +91,7 @@ function Form() {
     moveCleaningData: {
       numberOfRooms: 1,
       numberOfBathrooms: 1,
-      area: 0,
+      area: 500,
       livingArea: false,
       basement: false,
       kitchen: false,
@@ -100,15 +100,16 @@ function Form() {
     maidCleaningData: {
       numberOfRooms: 1,
       numberOfBathrooms: 1,
-      area: 0,
+      area: 500,
     },
     otherCleaningData: {
       request: "",
     },
     userData: {
-      name: "",
-      email: "",
-      phone: "",
+      name: null,
+      email: null,
+      phone: null,
+      address: null,
     },
   });
 
@@ -140,7 +141,7 @@ function Form() {
       return <BookingFee formData={formData} setFormData={setFormData} />;
     }
   };
-
+  console.log(formData.bookingTime == null);
   return (
     <div className="form mt-5">
       <div className="progressbar">
@@ -184,26 +185,34 @@ function Form() {
             >
               Prev
             </button>
-            {page != FormTitles.length - 1 && (
-              <button
-                className="display-4 fw-normal fs-5"
-                onClick={() => {
-                  console.log(formData);
-                  if (page === FormTitles.length - 1) {
-                    axios
-                      .post("https://akjanitorial.ca/api/", {
-                        formData: formData,
-                      })
-                      .then((res) => alert("Form Submitted"))
-                      .catch((errors) => console.log(errors));
-                  } else {
-                    setPage((currPage) => currPage + 1);
-                  }
-                }}
-              >
-                {"Next"}
-              </button>
-            )}
+            {page != FormTitles.length - 1 &&
+              !(page == 3 && formData.bookingTime == null) &&
+              !(
+                page == 4 &&
+                (formData.userData.name == null ||
+                  formData.userData.email == null ||
+                  formData.userData.phone == null ||
+                  formData.userData.address == null)
+              ) && (
+                <button
+                  className="display-4 fw-normal fs-5"
+                  onClick={() => {
+                    console.log(formData);
+                    if (page === FormTitles.length - 1) {
+                      axios
+                        .post("http://localhost:8000/api/", {
+                          formData: formData,
+                        })
+                        .then((res) => alert("Form Submitted"))
+                        .catch((errors) => console.log(errors));
+                    } else {
+                      setPage((currPage) => currPage + 1);
+                    }
+                  }}
+                >
+                  {"Next"}
+                </button>
+              )}
           </div>
         </div>
       </div>

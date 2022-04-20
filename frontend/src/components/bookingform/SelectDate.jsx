@@ -9,7 +9,7 @@ function SelectDate({ formData, setFormData }) {
   }, []);
   const getAvailableDates = () => {
     axios
-      .post("http://akjanitorial.ca/get-events/")
+      .post("http://localhost:8000/get-events/")
       .then((res) => {
         console.log(res.data);
         const fd = res.data;
