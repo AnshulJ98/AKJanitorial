@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Form from "./bookingform/Form";
 import { NavLink } from "react-router-dom";
 
 function Home() {
+  const videoRef = useRef(undefined);
+  useEffect(() => {
+    videoRef.current.defaultMuted = true;
+  });
   return (
     <div>
       <div className="position-relative overflow-hidden p-5 p-md-5 m-0  bg-light home-banner">
@@ -334,8 +338,16 @@ function Home() {
       </div>
       <div className="container text-center my-3">
         {" "}
-        <video id="landing-video" controls>
-          <source src="/AK-Janitorial-clip.mp4" type="video/mp4" />
+        <video
+          id="landing-video"
+          controls
+          ref={videoRef}
+          loop
+          autoPlay
+          muted
+          playsInline
+        >
+          <source src="home-clip.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
