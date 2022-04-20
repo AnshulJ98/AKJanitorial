@@ -3,6 +3,7 @@ import copy
 import googleapiclient.discovery
 import datetime
 import pytz
+import base64
 
 from google.oauth2 import service_account
 from dateutil import parser
@@ -22,8 +23,12 @@ from rest_framework.response import Response
 from square.client import Client
 from nanoid import generate
 
+import os.path
+from email.mime.text import MIMEText
+from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
-
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
 
 from django.views.decorators.csrf import csrf_exempt
 from .models import Feedback
@@ -37,6 +42,7 @@ load_dotenv(path.join(basedir, '.env'))
 CAL_ID= environ.get('CAL_ID')
 
 SCOPES = ['https://www.googleapis.com/auth/calendar']
+SCOPES1 = ['https://www.googleapis.com/auth/gmail.send']
 SERVICE_ACCOUNT_FILE = './google-credentials.json'
 
 TIME_LIST=[
@@ -107,26 +113,18 @@ def GetFeedbackView(request, *args, **kwargs):
 @csrf_exempt
 def ContactUsView(request, *args, **kwargs):
     print(request)
-    sent_from = gmail_user
-    to = ['person_a@gmail.com', 'person_b@gmail.com']
-    subject = 'Lorem ipsum dolor sit amet'
-    body = 'consectetur adipiscing elit'
-    email_text = """\
-    From: %s
-    To: %s
-    Subject: %s
-
-    %s
-    """ % (sent_from, ", ".join(to), subject, body)
-    message = MIMEText('youuuyoyoyyy asedkrfyu')
-    message['to'] = 'reyol17576@aikusy.com'
-    message['from'] = 'akartarjanitorial@gmail.com'
-    message['subject'] = 'subb'
-    raw_message = base64.urlsafe_b64encode(message.as_string().encode("utf-8"))
+    print(os.path.curdir)
+    message = MIMEText("youuuyoyoyyy asedkrfyu")
+    message["to"] = "reyol17576@aikusy.com"
+    message["from"] = "akartarjanitorial@gmail.com"
+    message["subject"] = "subb"
+    raw_message = base64.urlsafe_b64encode(message.as_bytes())
+    raw=base64.urlsafe_b64encode(message.as_string().encode()).decode()
+    body = {"raw": raw}
     try:
-        credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-        service = googleapiclient.discovery.build('gmail', 'v1', credentials=credentials)
-        message = service.users().messages().send(userId='akartarjanitorial@gmail.com', body=message).execute()
+        creds = Credentials.from_authorized_user_file("token.json", SCOPES1)
+        service = googleapiclient.discovery.build("gmail", "v1", credentials=creds)
+        message = service.users().messages().send(userId="akartarjanitorial@gmail.com", body=body).execute()
         print ("Email sent successfully!")
     except Exception as ex:
         print ("Something went wrong….",ex)
