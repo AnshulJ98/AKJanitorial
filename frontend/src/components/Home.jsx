@@ -3,10 +3,6 @@ import Form from "./bookingform/Form";
 import { NavLink } from "react-router-dom";
 
 function Home() {
-  const videoRef = useRef(undefined);
-  useEffect(() => {
-    videoRef.current.defaultMuted = true;
-  });
   return (
     <div>
       <div className="position-relative overflow-hidden p-5 p-md-5 m-0  bg-light home-banner">
@@ -342,7 +338,7 @@ function Home() {
           __html: `<video className="app__backgroundVideo" id="landing-video" controls autoplay loop muted playsinline>
       <source src="https://akjanitorial.ca/media/home-clip.mp4" type="video/mp4" />
       Your browser does not support the video tag.
-      </video>`,
+</video>`,
         }}
       />
     </div>
