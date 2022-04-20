@@ -56,9 +56,19 @@ function ImageUpload({ formData, setFormData }) {
                 id="file-upload1"
                 type="file"
                 name="myImage"
-                onChange={(event) => {
+                onChange={async (event) => {
                   console.log(event.target.files[0]);
                   setSelectedImage1(event.target.files[0]);
+                  const fileReader = new FileReader();
+                  fileReader.readAsDataURL(event.target.files[0]);
+                  fileReader.onload = () => {
+                    console.log(fileReader);
+                    setFormData({
+                      ...formData,
+                      image1str: fileReader.result,
+                    });
+                  };
+
                   setFormData({
                     ...formData,
                     image1: event.target.files[0],
@@ -113,6 +123,16 @@ function ImageUpload({ formData, setFormData }) {
                 onChange={(event) => {
                   console.log(event.target.files[0]);
                   setSelectedImage2(event.target.files[0]);
+                  const fileReader = new FileReader();
+                  fileReader.readAsDataURL(event.target.files[0]);
+                  fileReader.onload = () => {
+                    console.log(fileReader);
+                    setFormData({
+                      ...formData,
+                      image2str: fileReader.result,
+                    });
+                  };
+
                   setFormData({
                     ...formData,
                     image2: event.target.files[0],
@@ -168,6 +188,16 @@ function ImageUpload({ formData, setFormData }) {
                 onChange={(event) => {
                   console.log(event.target.files[0]);
                   setSelectedImage3(event.target.files[0]);
+                  const fileReader = new FileReader();
+                  fileReader.readAsDataURL(event.target.files[0]);
+                  fileReader.onload = () => {
+                    console.log(fileReader);
+                    setFormData({
+                      ...formData,
+                      image3str: fileReader.result,
+                    });
+                  };
+
                   setFormData({
                     ...formData,
                     image3: event.target.files[0],
@@ -222,6 +252,16 @@ function ImageUpload({ formData, setFormData }) {
                 onChange={(event) => {
                   console.log(event.target.files[0]);
                   setSelectedImage4(event.target.files[0]);
+                  const fileReader = new FileReader();
+                  fileReader.readAsDataURL(event.target.files[0]);
+                  fileReader.onload = () => {
+                    console.log(fileReader);
+                    setFormData({
+                      ...formData,
+                      image4str: fileReader.result,
+                    });
+                  };
+
                   setFormData({
                     ...formData,
                     image4: event.target.files[0],
@@ -276,6 +316,16 @@ function ImageUpload({ formData, setFormData }) {
                 onChange={(event) => {
                   console.log(event.target.files[0]);
                   setSelectedImage5(event.target.files[0]);
+                  const fileReader = new FileReader();
+                  fileReader.readAsDataURL(event.target.files[0]);
+                  fileReader.onload = () => {
+                    console.log(fileReader);
+                    setFormData({
+                      ...formData,
+                      image5str: fileReader.result,
+                    });
+                  };
+
                   setFormData({
                     ...formData,
                     image5: event.target.files[0],

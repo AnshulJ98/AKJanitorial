@@ -254,6 +254,28 @@ function OtherCleaningOptions({ formData, setFormData }) {
     </div>
   );
 }
+function ServiceFrequency({ formData, setFormData }) {
+  return (
+    <div>
+      <h3 className="px-5 my-3 display-6 fs-3 fw-normal text-black">
+        Service Frequency
+      </h3>
+      <div className="input-group px-5">
+        <p className="lead">{formData.serviceFrequency == 0 && "One-Time"}</p>
+        <p className="lead">{formData.serviceFrequency == 1 && "Weekly"}</p>
+        <p className="lead">
+          {formData.serviceFrequency == 2 && "Bi-Weekly (Every 2 weeks)"}
+        </p>
+        <p className="lead">
+          {formData.serviceFrequency == 3 && "Monthly (Every 4 weeks)"}
+        </p>
+        <p className="lead">
+          {formData.serviceFrequency == 4 && "3 Months (Every 12 weeks)"}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 function UserData({ formData, setFormData }) {
   return (
@@ -283,48 +305,28 @@ function SelectedImages({ formData, setFormData }) {
         Uploaded Images
       </h3>
       <div className="text-center">
-        {formData.image1 && (
-          <img
-            alt="not found"
-            width={"350px"}
-            src={URL.createObjectURL(formData.image1)}
-          />
+        {formData.image1str && (
+          <img alt="not found" width={"350px"} src={formData.image1str} />
         )}
       </div>
       <div className="text-center">
-        {formData.image2 && (
-          <img
-            alt="not found"
-            width={"350px"}
-            src={URL.createObjectURL(formData.image2)}
-          />
+        {formData.image2str && (
+          <img alt="not found" width={"350px"} src={formData.image2str} />
         )}
       </div>
       <div className="text-center">
-        {formData.image3 && (
-          <img
-            alt="not found"
-            width={"350px"}
-            src={URL.createObjectURL(formData.image3)}
-          />
+        {formData.image3str && (
+          <img alt="not found" width={"350px"} src={formData.image3str} />
         )}
       </div>
       <div className="text-center">
-        {formData.image4 && (
-          <img
-            alt="not found"
-            width={"350px"}
-            src={URL.createObjectURL(formData.image4)}
-          />
+        {formData.image4str && (
+          <img alt="not found" width={"350px"} src={formData.image4str} />
         )}
       </div>
       <div className="text-center">
-        {formData.image5 && (
-          <img
-            alt="not found"
-            width={"350px"}
-            src={URL.createObjectURL(formData.image5)}
-          />
+        {formData.image5str && (
+          <img alt="not found" width={"350px"} src={formData.image5str} />
         )}
       </div>
     </div>
@@ -396,6 +398,9 @@ function BookingDetails({ formData, setFormData }) {
       )}
       {otherCleaningSelected && (
         <OtherCleaningOptions formData={formData} setFormData={setFormData} />
+      )}
+      {ServiceFrequency && (
+        <ServiceFrequency formData={formData} setFormData={setFormData} />
       )}
       {UserData && <UserData formData={formData} setFormData={setFormData} />}
       {SelectedImages && (

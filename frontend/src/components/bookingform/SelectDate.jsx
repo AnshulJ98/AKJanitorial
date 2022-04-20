@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DayTimePicker from "react-day-time-picker-timeslots";
+import "./spinner.css";
 
 function SelectDate({ formData, setFormData }) {
   const [availableDates, setAvailableDates] = useState("");
@@ -9,7 +10,7 @@ function SelectDate({ formData, setFormData }) {
   }, []);
   const getAvailableDates = () => {
     axios
-      .post("http://localhost:8000/get-events/")
+      .post("http://akjanitorial.ca/get-events/")
       .then((res) => {
         console.log(res.data);
         const fd = res.data;
@@ -89,12 +90,19 @@ function SelectDate({ formData, setFormData }) {
 
   return (
     <div className="select-date-container">
-      <div className="input-group  px-5">
-        <DayTimePicker
-          timeSlotSizeMinutes={120}
-          timeSlotValidator={timeSlotValidator}
-          onConfirm={onConfirm}
-        />
+      <div className="input-group  px-5 justify-content-center">
+        {!availableDates && (
+          <div className="spinner-container">
+            <div className="loading-spinner"></div>
+          </div>
+        )}
+        {availableDates && (
+          <DayTimePicker
+            timeSlotSizeMinutes={120}
+            timeSlotValidator={timeSlotValidator}
+            onConfirm={onConfirm}
+          />
+        )}
 
         <label className="gap"> </label>
       </div>

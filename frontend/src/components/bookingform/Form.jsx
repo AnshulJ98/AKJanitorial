@@ -6,6 +6,7 @@ import UserData from "./UserData";
 import BookingDetails from "./BookingDetails";
 import BookingFee from "./BookingFee";
 import ImageUpload from "./ImageUpload";
+import ServiceFrequency from "./ServiceFrequency";
 import { useLocation } from "react-router-dom";
 
 import "./Form.css";
@@ -34,8 +35,9 @@ function Form() {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     index: i,
-    services: [i + 1],
+    services: [String(i + 1)],
     image1: "",
+    serviceFrequency: 0,
     bookingTime: null,
     houseCleaningSelected: true,
     officeCleaningSelected: false,
@@ -119,6 +121,7 @@ function Form() {
     "Select All Options",
     "Image Upload",
     "Select Date",
+    "Service Frequency",
     "Please Enter Your Details",
     "Booking Details",
     "Booking Fee",
@@ -134,8 +137,10 @@ function Form() {
     } else if (page === 3) {
       return <SelectDate formData={formData} setFormData={setFormData} />;
     } else if (page === 4) {
-      return <UserData formData={formData} setFormData={setFormData} />;
+      return <ServiceFrequency formData={formData} setFormData={setFormData} />;
     } else if (page === 5) {
+      return <UserData formData={formData} setFormData={setFormData} />;
+    } else if (page === 6) {
       return <BookingDetails formData={formData} setFormData={setFormData} />;
     } else {
       return <BookingFee formData={formData} setFormData={setFormData} />;
@@ -149,18 +154,20 @@ function Form() {
           style={{
             width:
               page === 0
-                ? "14.2%"
+                ? "12.2%"
                 : page === 1
-                ? "28.4%"
+                ? "24.4%"
                 : page === 2
-                ? "42.6%"
+                ? "36.6%"
                 : page === 3
-                ? "56.8%"
+                ? "48.8%"
                 : page === 4
-                ? "71%"
+                ? "60%"
                 : page === 5
-                ? "85.2%"
+                ? "72.2%"
                 : page === 6
+                ? "84.2%"
+                : page === 7
                 ? "100%"
                 : "100%",
           }}
@@ -188,7 +195,7 @@ function Form() {
             {page != FormTitles.length - 1 &&
               !(page == 3 && formData.bookingTime == null) &&
               !(
-                page == 4 &&
+                page == 5 &&
                 (formData.userData.name == null ||
                   formData.userData.email == null ||
                   formData.userData.phone == null ||
@@ -197,17 +204,7 @@ function Form() {
                 <button
                   className="display-4 fw-normal fs-5"
                   onClick={() => {
-                    console.log(formData);
-                    if (page === FormTitles.length - 1) {
-                      axios
-                        .post("http://localhost:8000/api/", {
-                          formData: formData,
-                        })
-                        .then((res) => alert("Form Submitted"))
-                        .catch((errors) => console.log(errors));
-                    } else {
-                      setPage((currPage) => currPage + 1);
-                    }
+                    setPage((currPage) => currPage + 1);
                   }}
                 >
                   {"Next"}

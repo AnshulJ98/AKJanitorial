@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
+import axios from "axios";
 
 import "./BookingFee.css";
-
 function BookingFee({ formData, setFormData }) {
   const appId = "sq0idp-bC3mePAkYv5USetQTwogpw";
   const locationId = "LTD2PHTN0YB4V";
+
   useEffect(async () => {
     const appendSquareScript = () => {
       const script = document.createElement("script");
 
-      script.src = "https://sandbox.web.squarecdn.com/v1/square.js";
+      script.src = "https://web.squarecdn.com/v1/square.js";
       script.async = true;
 
       document.body.appendChild(script);
@@ -18,11 +19,8 @@ function BookingFee({ formData, setFormData }) {
     };
     appendSquareScript();
     const initializeCard = async (payments) => {
-      console.log("INITCARD");
       const card = await payments.card();
-
       await card.attach("#card-container");
-
       return card;
     };
 
@@ -32,7 +30,7 @@ function BookingFee({ formData, setFormData }) {
         sourceId: token,
       });
 
-      const paymentResponse = await fetch("http://127.0.0.1:8000/payment/", {
+      const paymentResponse = await fetch("http://akjanitorial.ca/payment/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,9 +39,22 @@ function BookingFee({ formData, setFormData }) {
       });
 
       console.log(paymentResponse);
-      if (paymentResponse.ok) {
-        console.log("Payment Success");
+      if ((paymentResponse.status = 200)) {
+        console.log(formData);
+        axios
+          .post("http://akjanitorial.ca/api/", {
+            formData: formData,
+          })
+          .then((res) => alert("Booking Success"))
+          .catch((errors) => console.log(errors));
+        alert(
+          "Payment Success!!. Your appointment has been booked succesfully. You will soon recieve a confirmation and our team will reach out to you as the booking date approaches."
+        );
         return paymentResponse.json();
+      } else {
+        alert(
+          "Error, Payment Failed. Please Check Your Card Details and try again."
+        );
       }
 
       const errorBody = await paymentResponse.text();
@@ -133,7 +144,13 @@ function BookingFee({ formData, setFormData }) {
   return (
     <div className="booking-fee-container">
       <div id="payment-form">
+        <div class="alert alert-primary" role="alert">
+          The booking fee is non-refundable and will be adjusted in the final
+          invoice. The final price will be determined during the visit for your
+          selected date and time.
+        </div>
         <div id="card-container"></div>
+
         <button
           className="btn btn-primary pay-button1"
           id="card-button"
@@ -141,8 +158,8 @@ function BookingFee({ formData, setFormData }) {
         >
           Pay $30.00
         </button>
+        <div id="payment-status-container"></div>
       </div>
-      <div id="payment-status-container"></div>
     </div>
   );
 }

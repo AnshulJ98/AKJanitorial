@@ -210,6 +210,17 @@ form-select {
   align-content: center;
 }
 
+.service-frequency-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: left;
+  align-content: center;
+}
+
 .select-date-container {
   height: 100%;
   width: 100%;

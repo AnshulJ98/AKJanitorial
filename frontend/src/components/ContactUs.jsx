@@ -1,13 +1,31 @@
 import React, { useState } from "react";
 import axios from "axios";
+
 import { NavLink } from "react-router-dom";
+
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+axios.defaults.xsrfCookieName = "csrftoken";
 
 function ContactUs() {
   const [contactUs, setContactUs] = useState({
-    name: null,
-    email: null,
-    message: null,
+    name: "",
+    email: "",
+    message: "",
   });
+  const onSubmit = (event) => {
+    event.preventDefault(); // Prevent default submission
+    axios
+      .post("http://akjanitorial.ca//contact-us/", {
+        contactUs: contactUs,
+      })
+      .then((res) => alert("Thank You For Reaching Out!"))
+      .catch((errors) =>
+        alert(
+          "The Email could not be sent. Please check if your email is valid."
+        )
+      );
+  };
+
   return (
     <div className="contact">
       <div className="position-relative overflow-hidden p-5 p-md-5 m-0  bg-light contact-banner">
@@ -79,7 +97,7 @@ function ContactUs() {
               ></img>
               <div className="mx-5">
                 <span className="text-muted fs-6">
-                  Address <br></br>
+                  Locations <br></br>
                 </span>
                 <p>
                   Lower mainland, Abbotsford, Mission, North Vancouver, West
@@ -92,8 +110,15 @@ function ContactUs() {
           <div className="col-md-5">
             <div className="mb-3">
               <div className="mb-3">
-                <form>
+                <form onSubmit={onSubmit}>
                   <textarea
+                    value={contactUs.message}
+                    onChange={(e) => {
+                      setContactUs({
+                        ...contactUs,
+                        message: e.target.value,
+                      });
+                    }}
                     className="form-control mb-3"
                     id="exampleFormControlTextarea1"
                     cols="20"
@@ -104,6 +129,13 @@ function ContactUs() {
                   <div className="row">
                     <div className="col-6">
                       <input
+                        value={contactUs.name}
+                        onChange={(e) => {
+                          setContactUs({
+                            ...contactUs,
+                            name: e.target.value,
+                          });
+                        }}
                         type="text"
                         className="form-control"
                         id="exampleFormControlInput1"
@@ -113,6 +145,13 @@ function ContactUs() {
                     </div>
                     <div className="col-6">
                       <input
+                        value={contactUs.email}
+                        onChange={(e) => {
+                          setContactUs({
+                            ...contactUs,
+                            email: e.target.value,
+                          });
+                        }}
                         type="email"
                         className="form-control"
                         id="exampleFormControlInput2"
@@ -122,19 +161,12 @@ function ContactUs() {
                     </div>
                   </div>
                   <br></br>
-                  <span
-                    onClick={() => {
-                      axios
-                        .post("http://localhost:8000/contact-us/", {
-                          contactUs: contactUs,
-                        })
-                        .then((res) => alert("Thank You For Reaching Out!"))
-                        .catch((errors) => console.log(errors));
-                    }}
+                  <button
+                    type="submit"
                     className="btn btn-primary send-message"
                   >
                     Submit
-                  </span>
+                  </button>
                 </form>
               </div>
             </div>

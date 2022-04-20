@@ -13,6 +13,7 @@ function UserData({ formData, setFormData }) {
         <label className="lead fw-normal">Name: </label>
         <input
           type="text"
+          required
           value={formData.userData.name}
           onChange={(e) => {
             let h1 = formData.userData;
@@ -27,7 +28,8 @@ function UserData({ formData, setFormData }) {
       <div className="input-group px-5">
         <label className="lead fw-normal">Email: </label>
         <input
-          type="text"
+          type="email"
+          required
           value={formData.userData.email}
           onChange={(e) => {
             let h1 = formData.userData;
@@ -42,7 +44,8 @@ function UserData({ formData, setFormData }) {
       <div className="input-group px-5">
         <label className="lead fw-normal">Phone Number: </label>
         <input
-          type="number"
+          type="tel"
+          required
           value={formData.userData.phone}
           onChange={(e) => {
             let h1 = formData.userData;
@@ -58,6 +61,7 @@ function UserData({ formData, setFormData }) {
         <label className="lead fw-normal">Address: </label>
         <input
           type="text"
+          required
           value={formData.userData.address}
           onChange={(e) => {
             let h1 = formData.userData;
