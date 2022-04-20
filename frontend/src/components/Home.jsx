@@ -347,7 +347,10 @@ function Home() {
           muted
           playsInline
         >
-          <source src="home-clip.mp4" type="video/webm" />
+          <source
+            src="https://akjanitorial.ca/media/home-clip.webm"
+            type="video/webm"
+          />
         </video>
       </div>
     </div>
