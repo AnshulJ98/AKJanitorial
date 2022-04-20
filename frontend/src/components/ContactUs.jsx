@@ -3,9 +3,6 @@ import axios from "axios";
 
 import { NavLink } from "react-router-dom";
 
-axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-axios.defaults.xsrfCookieName = "csrftoken";
-
 function ContactUs() {
   const [contactUs, setContactUs] = useState({
     name: "",
