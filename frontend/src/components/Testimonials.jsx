@@ -10,7 +10,7 @@ function Testimonials() {
   }, []);
   const getFeedbackData = () => {
     axios
-      .post("http://akjanitorial.ca/get-feedback-data/")
+      .post("https://akjanitorial.ca/get-feedback-data/")
       .then((res) => {
         const fd = res.data;
         setFeedBackData(fd);

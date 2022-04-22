@@ -48,7 +48,7 @@ function BookingFee({ formData, setFormData }) {
         sourceId: token,
       });
 
-      const paymentResponse = await fetch("http://akjanitorial.ca/payment/", {
+      const paymentResponse = await fetch("https://akjanitorial.ca/payment/", {
         method: "POST",
         mode: "same-origin",
         headers: {
@@ -63,7 +63,7 @@ function BookingFee({ formData, setFormData }) {
       if ((paymentResponse.status = 200)) {
         console.log(formData);
         axios
-          .post("http://akjanitorial.ca/api/", {
+          .post("https://akjanitorial.ca/api/", {
             formData: formData,
           })
           .then((res) => alert("Booking Success"))

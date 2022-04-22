@@ -13,7 +13,7 @@ function ContactUs() {
   const onSubmit = (event) => {
     event.preventDefault(); // Prevent default submission
     axios
-      .post("http://akjanitorial.ca/contact-us/", {
+      .post("https://akjanitorial.ca/contact-us/", {
         contactUs: contactUs,
       })
       .then((res) => alert("Thank You For Reaching Out!"))
