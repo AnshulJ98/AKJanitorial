@@ -10,7 +10,7 @@ import ServiceFrequency from "./ServiceFrequency";
 import { useLocation } from "react-router-dom";
 
 import "./Form.css";
-import axios from "axios";
+
 let i = 0;
 function Form() {
   const props = useLocation();

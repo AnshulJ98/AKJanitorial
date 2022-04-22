@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 function TestimonialsForm() {
   const [formData, setFormData] = useState({
     name: "",

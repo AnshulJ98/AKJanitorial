@@ -32,9 +32,22 @@ SECRET_KEY = environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_COOKIE_NAME = "XSRF-TOKEN"
-
+CSRF_COOKIE_NAME = "csrftoken"
+CSRF_HEADER_NAME = "HTTP_X_CSRFTOKEN"
 # Application definition
+Access_Control_Allow_Origin: [
+    "http://0.0.0.0",
+    "http://localhost",
+    "http://akjanitorial.ca",
+    "http://31.220.108.76",
+    "http://akjanitorial.ca:3000",
+    "http://31.220.108.76:3000",
+    "http://akjanitorial.ca:8000",
+    "http://31.220.108.76:8000",
+    "http://akjanitorial.ca:443",
+    "http://31.220.108.76:443",
+    "https://akjanitorial.ca"
+]
 
 INSTALLED_APPS = [
     'cleaners.apps.CleanersConfig',

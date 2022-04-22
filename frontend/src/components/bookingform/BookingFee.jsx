@@ -1,12 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 import axios from "axios";
-
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 import "./BookingFee.css";
 function BookingFee({ formData, setFormData }) {
   const appId = "sq0idp-bC3mePAkYv5USetQTwogpw";
   const locationId = "LTD2PHTN0YB4V";
-
+  const getCookie = (name) => {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+      var cookies = document.cookie.split(";");
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = jQuery.trim(cookies[i]);
+        if (cookie.substring(0, name.length + 1) === name + "=") {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  };
   useEffect(async () => {
     const appendSquareScript = () => {
       const script = document.createElement("script");
@@ -32,8 +46,11 @@ function BookingFee({ formData, setFormData }) {
 
       const paymentResponse = await fetch("http://akjanitorial.ca/payment/", {
         method: "POST",
+        mode: "same-origin",
         headers: {
+          Accept: "application/json",
           "Content-Type": "application/json",
+          "X-CSRFToken": getCookie("csrftoken"),
         },
         body,
       });

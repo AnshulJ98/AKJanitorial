@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 function Testimonials() {
   const [feedBackData, setFeedBackData] = useState("");
   useEffect(() => {
@@ -87,7 +88,9 @@ function Testimonials() {
                               <p className="lead">{review.name}</p>
                             )}
                             {review.name && (
-                              <span className="text-left">{review.name}</span>
+                              <span className="text-left">
+                                {review.message}
+                              </span>
                             )}
                           </div>
                         </div>

@@ -3,6 +3,9 @@ import axios from "axios";
 import DayTimePicker from "react-day-time-picker-timeslots";
 import "./spinner.css";
 
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+
 function SelectDate({ formData, setFormData }) {
   const [availableDates, setAvailableDates] = useState("");
   useEffect(() => {
