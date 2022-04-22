@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 function SelectDate({ formData, setFormData }) {
   return (
     <div className="service-frequency-container p-5">
+      <div class="alert alert-primary" role="alert">
+        Duration for reccuring bookings is 6 months.
+      </div>
       <div className="form-check form-check-inline">
         <input
           className="form-check-input mx-2"
@@ -113,9 +116,6 @@ function SelectDate({ formData, setFormData }) {
           3 months. (Every 12 weeks)
         </label>
       </div>
-      <p className="px-5 mt-5 lead fs-6">
-        Duration for reccuring bookings is 6 months. <br></br>
-      </p>
     </div>
   );
 }

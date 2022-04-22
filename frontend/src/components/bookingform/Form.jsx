@@ -112,6 +112,9 @@ function Form() {
       email: null,
       phone: null,
       address: null,
+      city: null,
+      province: null,
+      postalcode: null,
     },
   });
 
@@ -199,12 +202,29 @@ function Form() {
                 (formData.userData.name == null ||
                   formData.userData.email == null ||
                   formData.userData.phone == null ||
-                  formData.userData.address == null)
+                  formData.userData.address == null ||
+                  formData.userData.city == null ||
+                  formData.userData.province == null ||
+                  formData.userData.postalcode == null)
               ) && (
                 <button
                   className="display-4 fw-normal fs-5"
                   onClick={() => {
                     setPage((currPage) => currPage + 1);
+                    if (page == FormTitles.length - 2) {
+                      let h1 = formData.userData;
+                      h1.address +=
+                        " City: " +
+                        h1.city +
+                        " Province: " +
+                        h1.province +
+                        " Postal Code: " +
+                        h1.postalcode;
+                      setFormData({
+                        ...formData,
+                        userData: h1,
+                      });
+                    }
                   }}
                 >
                   {"Next"}

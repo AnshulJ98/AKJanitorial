@@ -295,6 +295,15 @@ function UserData({ formData, setFormData }) {
       <div className="input-group px-5">
         <p className="lead">Address: {formData.userData.address}</p>
       </div>
+      <div className="input-group px-5">
+        <p className="lead">Address: {formData.userData.city}</p>
+      </div>
+      <div className="input-group px-5">
+        <p className="lead">Address: {formData.userData.province}</p>
+      </div>
+      <div className="input-group px-5">
+        <p className="lead">Address: {formData.userData.postalcode}</p>
+      </div>
     </div>
   );
 }

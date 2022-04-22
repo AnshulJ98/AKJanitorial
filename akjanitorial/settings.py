@@ -163,3 +163,17 @@ CORS_ALLOWED_ORIGINS = [
     "https://akjanitorial.ca",
     "https://www.akjanitorial.ca"
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://0.0.0.0",
+    "http://localhost",
+    "http://akjanitorial.ca",
+    "http://31.220.108.76",
+    "http://akjanitorial.ca:3000",
+    "http://31.220.108.76:3000",
+    "http://akjanitorial.ca:8000",
+    "http://31.220.108.76:8000",
+    "http://akjanitorial.ca:443",
+    "http://31.220.108.76:443",
+    "https://akjanitorial.ca"
+]

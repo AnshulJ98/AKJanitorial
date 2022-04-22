@@ -8,11 +8,11 @@ function ImageUpload({ formData, setFormData }) {
   return (
     <div className="image-upload-container">
       <div className="px-5 upload-images">
-        <p className="lead">
+        <div class="alert alert-primary mt-3" role="alert">
           Uploading Images is totally optional. You can get a more accurate and
           quicker quote by uploading images.<br></br>You will also recieve
           discount by uploading images!
-        </p>
+        </div>
         <div>
           {selectedImage1 && (
             <div className="text-center">

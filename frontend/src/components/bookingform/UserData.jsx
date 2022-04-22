@@ -73,6 +73,54 @@ function UserData({ formData, setFormData }) {
           }}
         />
       </div>
+      <div className="input-group px-5">
+        <label className="lead fw-normal">City: </label>
+        <input
+          type="text"
+          required
+          value={formData.userData.city}
+          onChange={(e) => {
+            let h1 = formData.userData;
+            h1.city = e.target.value == "" ? null : e.target.value;
+            setFormData({
+              ...formData,
+              userData: h1,
+            });
+          }}
+        />
+      </div>
+      <div className="input-group px-5">
+        <label className="lead fw-normal">Province: </label>
+        <input
+          type="text"
+          required
+          value={formData.userData.province}
+          onChange={(e) => {
+            let h1 = formData.userData;
+            h1.province = e.target.value == "" ? null : e.target.value;
+            setFormData({
+              ...formData,
+              userData: h1,
+            });
+          }}
+        />
+      </div>
+      <div className="input-group px-5">
+        <label className="lead fw-normal">Postal Code: </label>
+        <input
+          type="text"
+          required
+          value={formData.userData.postalcode}
+          onChange={(e) => {
+            let h1 = formData.userData;
+            h1.postalcode = e.target.value == "" ? null : e.target.value;
+            setFormData({
+              ...formData,
+              userData: h1,
+            });
+          }}
+        />
+      </div>
     </div>
   );
 }

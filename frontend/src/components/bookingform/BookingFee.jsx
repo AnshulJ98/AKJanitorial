@@ -50,6 +50,7 @@ function BookingFee({ formData, setFormData }) {
         alert(
           "Payment Success!!. Your appointment has been booked succesfully. You will soon recieve a confirmation and our team will reach out to you as the booking date approaches."
         );
+        setTimeout((window.location.href = "/"), 18000);
         return paymentResponse.json();
       } else {
         alert(
