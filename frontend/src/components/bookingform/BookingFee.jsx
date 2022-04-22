@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 import axios from "axios";
+import jQuery from "jquery";
+
+import "./BookingFee.css";
+
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-import "./BookingFee.css";
+
 function BookingFee({ formData, setFormData }) {
   const appId = "sq0idp-bC3mePAkYv5USetQTwogpw";
   const locationId = "LTD2PHTN0YB4V";
