@@ -83,7 +83,6 @@ class IndexView(generic.ListView):
         return {'x':1}
 
 @api_view(['GET', 'POST'])
-@csrf_exempt
 def ApiView(request, *args, **kwargs):
     from pprint import pprint
     jdata=json.loads(json.dumps(request.data))
@@ -94,7 +93,6 @@ def ApiView(request, *args, **kwargs):
     return Response(status=200)
 
 @api_view(['GET', 'POST'])
-@csrf_exempt
 def FeedbackView(request, *args, **kwargs):
     data=request.data['formData']
     name=data['name']
@@ -106,14 +104,12 @@ def FeedbackView(request, *args, **kwargs):
     return Response(status=200)
 
 @api_view(['GET', 'POST'])
-@csrf_exempt
 def GetFeedbackView(request, *args, **kwargs):
     queryset=Feedback.objects.all()
     serializer_class = FeedbackSerializer(queryset, many=True)
     return Response(serializer_class.data)
 
 @api_view(['GET', 'POST'])
-@csrf_exempt
 def ContactUsView(request, *args, **kwargs):
     contactUs=request.data['contactUs']
     message = MIMEText(contactUs['message'] +"\n" +contactUs['name'] +"\n"+ contactUs['email'])
@@ -144,7 +140,6 @@ def ContactUsView(request, *args, **kwargs):
     return Response(status=200)
 
 @api_view(['GET', 'POST'])
-@csrf_exempt
 def GetEvents(request, *args, **kwargs):
     credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
     service = googleapiclient.discovery.build('calendar', 'v3', credentials=credentials)
@@ -181,7 +176,6 @@ def GetEvents(request, *args, **kwargs):
     return Response(dates,status=200)
 
 
-@csrf_exempt
 def CreateEvent(request):
     from pprint import pprint
     credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
@@ -382,7 +376,6 @@ def CreateEvent(request):
     return Response(status=200)
 
 @api_view(['GET', 'POST'])
-@csrf_exempt
 def PaymentView(request, *args, **kwargs):
     from pprint import pprint
     pprint(request.data)
